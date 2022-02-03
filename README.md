@@ -61,7 +61,6 @@ This is the official AI-HealthCare-Assistant documentation <br/>
 
 [![features1](./src/assets/readme/features1.png)](https://example.com)
 
-![image](https://user-images.githubusercontent.com/62067806/145749165-d26223c0-62d9-4e4b-8419-6173298fcdb6.png)
 It is an AI health assistant that matches patients with doctors based on symptoms..The assistant will suggest 
 the nearest doctors to the patients, create a medical record and store it in Blockchain to make them 
 accessible to any of the patient's chosen doctors with granted permission.<br>

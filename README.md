@@ -2,13 +2,29 @@
 <div id="top" align="center"> </div>
 
 
-<center>
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
- </center>
+<div id="top" align="center"> </div>
+<h1 align="center">
+
+  <div id="badges">
+
+   <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+  </a>
+
+  <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/issues">
+    <img src="https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+  </a>
+
+  <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/stargazers">
+    <img src="https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+  </a>
+   <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/network/members">
+      <img src="https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+    </a>
+  </div>
+
+</h1>
+
 
 <!-- PROJECT LOGO -->
 
@@ -16,7 +32,7 @@
 <div align="center">
 
   
-<img src="https://user-images.githubusercontent.com/78981558/155504905-3bd2d8db-64f5-413c-b7d2-d4e7842ddad8.png" width="200" height="200"/>
+<img src="https://user-images.githubusercontent.com/78981558/155504905-3bd2d8db-64f5-413c-b7d2-d4e7842ddad8.png" width="250" height="250"/>
 
 
 <h3 align="center">AI-HealthCare-Assistant</h3>
@@ -60,16 +76,16 @@ This is the official AI-HealthCare-Assistant documentation <br/>
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!--[![features1](./src/assets/readme/features1.png)](https://example.com)-->
-<b>"NearestDoctor" </b> is an AI healthcare assistant that basicly uses AI and machine learning alogithms in order to improve patient experience and appointment scheduling. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also our solution offers a very unique concept with developing patient’s records using secure Blockchain .The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission.<br> 
-Thanks to the decentralized nature of blockchain, patient records would be securely spread among a 
-large number of servers, posing little risk to their sensitive information.<br>
-This web application centralizes the schedules and medical services in a single dashboard, This 
-solution offers a real-time overview of the coverage of reports that facilitate the management of 
-resources.<br>
- ## Project main features :
-
-
+<b>"NearestDoctor" </b> is an AI healthcare assistant that basicly uses AI and machine learning alogithms in order to improve patients experience by providing them a professional medical assistance. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also our solution offers a very unique concept with developing patient’s records using Blockchain .The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission. Thanks to the decentralized nature of blockchain, patient records would be securely spread among a large number of servers, posing little risk to their sensitive information.<br>
+This web application centralizes the schedules and medical services in a single dashboard, This solution offers a real-time overview of the coverage of reports that facilitate the management of resources.<br>
+ ## Project main features
+ 1. <b> Symptoms Detection :</b> using Artificial Intelligence for specialist recommandation and illness Detection.
+ 3. <b> Appointement Scheduling :</b> based on the nearest doctor to your location or the first available appointement.
+ 4. <b> Medical Records : </b> securly stored in blockchain using smart contracts.
+ 5. <b> Blogs and forum : </b> using machine learning for patients satisfaction prediction.
+ 6. <b> Real-time reports :</b> using machine learning to offer an overview of many aspects of the application.
+ 7. <b> Advanced authentication : </b> using facial recognition to match the identity of a person , Card ID data extraction and machine learning for identity verification.
+ 8. <b> Paramedical e-shop : </b> using machine learning for patients behavioral analysis prediction .
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -83,6 +99,7 @@ This is the list of the major frameworks/libraries used to build our project.
 * [NodeJS](https://nodejs.org/en/)
 * [MongoDB](https://www.mongodb.com/)
 * [ExpressJS](http://expressjs.com/)
+* [Python](https://www.python.org/)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -202,19 +219,7 @@ Use this space to list resources you find helpful and would like to give credit 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/ahlem-phantom/AI-HealthCare-Assistant/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/ahlem-phantom/AI-HealthCare-Assistant/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/ahlem-laajili/
-[product-screenshot]: images/screenshot.png
+
 © 2021 GitHub, Inc.
 Terms
 Privacy

@@ -1,10 +1,6 @@
 # AI-HealthCare-Assistant
-<div id="top" align="center"> </div>
-
-
-<div id="top" align="center"> </div>
-<h1 align="center">
-
+<div id="top" align="center">
+  <img src="https://user-images.githubusercontent.com/78981558/155504905-3bd2d8db-64f5-413c-b7d2-d4e7842ddad8.png" width="250" height="250"/>
   <div id="badges">
 
    <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/graphs/contributors">
@@ -22,25 +18,13 @@
       <img src="https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
     </a>
   </div>
-
-</h1>
-
-
-<!-- PROJECT LOGO -->
-
-<br />
-<div align="center">
-
-  
-<img src="https://user-images.githubusercontent.com/78981558/155504905-3bd2d8db-64f5-413c-b7d2-d4e7842ddad8.png" width="250" height="250"/>
-
-
 <h3 align="center">AI-HealthCare-Assistant</h3>
 
   <p align="center">
 This is the official AI-HealthCare-Assistant documentation <br/>
   </p>
-</div>
+
+ </div>
 
 
 

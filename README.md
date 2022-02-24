@@ -51,6 +51,8 @@ This is the official AI-HealthCare-Assistant documentation <br/>
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#project-main-features">Project Main Features</a></li>
+        <li><a href="#project-technical-architecture">Project Technical Architecture</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -89,17 +91,24 @@ This web application centralizes the schedules and medical services in a single 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Project Technical Architecture 
 
+<div align="center">
+  <h1>
+<img src="https://user-images.githubusercontent.com/78981558/155615523-4663648b-50a2-4e45-a67e-3685dd28206d.png" width="700" height="500">
+</h1>
+</div>
 
 ### Built With
 
-This is the list of the major frameworks/libraries used to build our project. 
+This is the list of the major frameworks/libraries used to build our project :
 <br/>
 * [REACT](https://reactjs.org/)
 * [NodeJS](https://nodejs.org/en/)
-* [MongoDB](https://www.mongodb.com/)
 * [ExpressJS](http://expressjs.com/)
 * [Python](https://www.python.org/)
+* [MongoDB](https://www.mongodb.com/)
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>

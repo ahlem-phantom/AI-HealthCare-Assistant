@@ -11,11 +11,12 @@
   
 
 <!-- PROJECT LOGO -->
+
 <br />
 <div align="center">
 
-<!--<img src="https://user-images.githubusercontent.com/78981558/144307220-97088e08-8895-4ddf-825e-01da5000f83d.jpg" width="150" height="150"/>-->
   
+<img src="https://user-images.githubusercontent.com/78981558/155504905-3bd2d8db-64f5-413c-b7d2-d4e7842ddad8.png" width="150" height="150"/>
 
 
 <h3 align="center">AI-HealthCare-Assistant</h3>

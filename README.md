@@ -75,13 +75,15 @@ This web application centralizes the schedules and medical services in a single 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Project Technical Architecture 
+### 📐 Project Technical Architecture 
 
 <div align="center">
   <h1>
 <img src="https://user-images.githubusercontent.com/78981558/155615523-4663648b-50a2-4e45-a67e-3685dd28206d.png" width="700" height="500">
 </h1>
 </div>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### 🚀 Built With
 
@@ -113,27 +115,21 @@ This is the list of the major frameworks/libraries used to build our project :
     
   </div>
   
- 
-  
-
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## ✨ Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### 🚧 Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+You may find below the list things you need to use this project :
+* Make sure MongoDB is running on your system.
+* You will need to install yarn or npm command line .
 
 ### 🛠 Installation
 
@@ -143,11 +139,22 @@ _In order to install the app you need to follow the instructions below :_
    ```sh
    git clone https://github.com/ahlem-phantom/AI-HealthCare-Assistant.git
    ```
-2. Install NPM packages
+2. Install NPM packages dependencies 
    ```sh
-   npm install
+   npm install 
    ```
-3. Run the server
+   Or 
+   
+    ```sh
+   yarn install 
+   ```
+   
+3. Run the server on 
+   ```sh
+   npm run development
+   ```
+4. Open localhost:3000 in the browser and that's it you can enjoy the project 🎉!
+
  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -155,7 +162,7 @@ _In order to install the app you need to follow the instructions below :_
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## ⚡ Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -166,7 +173,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- ROADMAP -->
-## Roadmap
+## 🚩 Roadmap
 
 - [ ] Application FrontEnd 
 - [ ] Authentication Module 
@@ -182,7 +189,7 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## 😎 Contributing
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
@@ -192,15 +199,6 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some features to project'`)
 4. Push to the Branch (`git push origin Yourbranch`)
 5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -218,7 +216,7 @@ Project Link: [https://github.com/ahlem-phantom/AI-HealthCare-Assistant](https:/
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## 🙌 Acknowledgments
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 

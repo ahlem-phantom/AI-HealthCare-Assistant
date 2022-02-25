@@ -19,7 +19,7 @@
     </a>
   </div>
 <h3 align="center">AI-HealthCare-Assistant</h3>
-
+  
   <p align="center">
 This is the official AI-HealthCare-Assistant documentation <br/>
   </p>

@@ -1,4 +1,4 @@
-# AI-HealthCare-Assistant
+# 💕 AI-HealthCare-Assistant
 <div id="top" align="center">
   <img src="https://user-images.githubusercontent.com/78981558/155504905-3bd2d8db-64f5-413c-b7d2-d4e7842ddad8.png" width="250" height="250"/>
   <div id="badges">
@@ -60,18 +60,18 @@ This is the official AI-HealthCare-Assistant documentation <br/>
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## 📃 About The Project
 
 <b>"NearestDoctor" </b> is an AI healthcare assistant that basicly uses AI and machine learning alogithms in order to improve patients experience by providing them a professional medical assistance. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also our solution offers a very unique concept with developing patient’s records using Blockchain .The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission. Thanks to the decentralized nature of blockchain, patient records would be securely spread among a large number of servers, posing little risk to their sensitive information.<br>
 This web application centralizes the schedules and medical services in a single dashboard, This solution offers a real-time overview of the coverage of reports that facilitate the management of resources.<br>
- ## Project main features
- 1. <b> Symptoms Detection :</b> using Artificial Intelligence for specialist recommandation and illness Detection.
- 3. <b> Appointement Scheduling :</b> based on the nearest doctor to your location or the first available appointement.
- 4. <b> Medical Records : </b> securly stored in blockchain using smart contracts.
- 5. <b> Blogs and forum : </b> using machine learning for patients satisfaction prediction.
- 6. <b> Real-time reports :</b> using machine learning to offer an overview of many aspects of the application.
- 7. <b> Advanced authentication : </b> using facial recognition to match the identity of a person , Card ID data extraction and machine learning for identity verification.
- 8. <b> Paramedical e-shop : </b> using machine learning for patients behavioral analysis prediction .
+ ## 📜 Project main features
+ 1. 🤖 <b> Symptoms Detection :</b> using Artificial Intelligence for specialist recommandation and illness Detection.
+ 3. 📅 <b> Appointement Scheduling :</b> based on the nearest doctor to your location or the first available appointement.
+ 4. 📘 <b> Medical Records : </b> securly stored in blockchain using smart contracts.
+ 5. 💬 <b> Blogs and forum : </b> using machine learning for patients satisfaction prediction.
+ 6. 📈 <b> Real-time reports :</b> using machine learning to offer an overview of many aspects of the application.
+ 7. 🙋 <b> Advanced authentication : </b> using facial recognition to match the identity of a person , Card ID data extraction and machine learning for identity verification.
+ 8. :shopping_cart: <b> Paramedical e-shop : </b> using machine learning for patients behavioral analysis prediction .
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -83,16 +83,38 @@ This web application centralizes the schedules and medical services in a single 
 </h1>
 </div>
 
-### Built With
+### 🚀 Built With
 
 This is the list of the major frameworks/libraries used to build our project :
 <br/>
-* [REACT](https://reactjs.org/)
-* [NodeJS](https://nodejs.org/en/)
-* [ExpressJS](http://expressjs.com/)
-* [Python](https://www.python.org/)
-* [MongoDB](https://www.mongodb.com/)
 
+
+  <div id="badges" align="center">
+
+
+   <a href="https://www.mongodb.com/">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original-wordmark.svg" title="MongoDB" alt="MongoDB" width="150" height="150"/>
+    </a>
+ <a href="https://reactjs.org/">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="150" height="150"/>
+  </a>
+     <a href="https://nodejs.org/en/">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="150" height="150"/>
+  </a>
+  <a href="http://expressjs.com/">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" title="ExpressJS" alt="ExpressJS" width="150" height="150"/>
+    </a>
+  
+  
+  
+   <a href="https://www.python.org/">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" alt="Python" width="150" height="150"/>
+  </a>
+    
+  </div>
+  
+ 
+  
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -113,7 +135,7 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 
-### Installation
+### 🛠 Installation
 
 _In order to install the app you need to follow the instructions below :_
 
@@ -185,7 +207,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+## 💌 Contact
 
 Email : 4TWIN3@esprit.tn
 

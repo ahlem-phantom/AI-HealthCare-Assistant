@@ -62,15 +62,15 @@ This is the official AI-HealthCare-Assistant documentation <br/>
 <!-- ABOUT THE PROJECT -->
 ## 📃 About The Project
 
-<b>"NearestDoctor" </b> is an AI healthcare assistant that basicly uses AI and machine learning alogithms in order to improve patients experience by providing them a professional medical assistance. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also our solution offers a very unique concept with developing patient’s records using Blockchain .The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission. Thanks to the decentralized nature of blockchain, patient records would be securely spread among a large number of servers, posing little risk to their sensitive information.<br>
+<b>"NearestDoctor" </b> is an AI healthcare assistant that basicly uses AI and machine learning alogithms in order to improve patients experience by providing them a professional medical assistance. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also our solution offers a very unique concept with developing patient’s records using Blockchain .The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission. Thanks to the decentralized nature of Blockchain, patient records would be securely spread among a large number of servers, posing little risk to their sensitive information.<br>
 This web application centralizes the schedules and medical services in a single dashboard, This solution offers a real-time overview of the coverage of reports that facilitate the management of resources.<br>
  ## 📜 Project main features
- 1. 🤖 <b> Symptoms Detection :</b> using Artificial Intelligence for specialist recommandation and illness Detection.
+ 1. 🤖 <b> Symptoms Detection :</b> using Artificial Intelligence for specialist recommandation and illness detection.
  3. 📅 <b> Appointement Scheduling :</b> based on the nearest doctor to your location or the first available appointement.
  4. 📘 <b> Medical Records : </b> securly stored in blockchain using smart contracts.
  5. 💬 <b> Blogs and forum : </b> using machine learning for patients satisfaction prediction.
  6. 📈 <b> Real-time reports :</b> using machine learning to offer an overview of many aspects of the application.
- 7. 🙋 <b> Advanced authentication : </b> using facial recognition to match the identity of a person , Card ID data extraction and machine learning for identity verification.
+ 7. 🙋 <b> Advanced authentication : </b> using facial recognition to match the identity of a doctor , Card ID data extraction and machine learning for identity verification.
  8. :shopping_cart: <b> Paramedical e-shop : </b> using machine learning for patients behavioral analysis prediction .
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -87,7 +87,7 @@ This web application centralizes the schedules and medical services in a single 
 
 ### 🚀 Built With
 
-This is the list of the major frameworks/libraries used to build our project :
+This project is based on MERN Stack technology. This is the list of the major frameworks/libraries used to build our project :
 <br/>
 
 
@@ -106,8 +106,6 @@ This is the list of the major frameworks/libraries used to build our project :
   <a href="http://expressjs.com/">
     <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" title="ExpressJS" alt="ExpressJS" width="150" height="150"/>
     </a>
-  
-  
   
    <a href="https://www.python.org/">
     <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" alt="Python" width="150" height="150"/>
@@ -175,15 +173,41 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## 🚩 Roadmap
 
-- [ ] Application FrontEnd 
-- [ ] Authentication Module 
-- [ ] Make Login Logout forms 
-- [ ] Multi-language Support
-  - [ ] Chinese
-  - [ ] Spanish
+See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/issues) for a list of proposed features (and known issues).
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+ - [x] Phase 1 : Project Study, Requirement Analysis and Prototyping 
+	 - Problematic definition 
+	 - State of the art
+	 - Preliminary Feasibility Study
+	 - Solution & functional/technical requirements
+	 - Wireframes of the solution
 
+- [ ] Phase 2 : Advanced Features Specification, Application Design & Realization
+	- Data Model
+	- Physical architecture and technical environments 
+	- Specification of the advanced features
+	- Advanced Feasibility Study (Cases studied problems and Results - development Back-end) 
+	- Development of static user interfaces (Front-end)-> depending on the project
+	- First NodeJS components (scenarios and case studies tests) 
+	- Static User Interfaces (Front-end)
+
+- [ ] Phase 3.1 : Realization Of Advanced Features, Deployment And Tests
+  - Implementation of the solution (V1)
+  - Continuation Back-End development
+  - Collecting and using flow from external application(Phase 2 + Phase 3) 
+  - Consuming REST services by the front-end
+  - Development of final user interfaces (Front-end) 
+  - Exposing REST services by the back-end Node.js
+  - Integration
+  - Implemented Application V1
+
+- [ ] Phase 3.2 : Realization Of Advanced Features, Deployment And Tests
+  - Finalization of final delivrable (V2)
+  - Final Integration/Deployment of the solution 
+  - Tests
+  - Implemented Application V2 
+  - Tests results
+  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -191,7 +215,7 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 <!-- CONTRIBUTING -->
 ## 😎 Contributing
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+If you have a suggestion that would make this better, please fork the repo and create a pull request. Any contributions you make are **greatly appreciated**.
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
@@ -206,9 +230,15 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- CONTACT -->
 ## 💌 Contact
+Project Mentor :  ameni.rommene@esprit.tn 
 
-Email : 4TWIN3@esprit.tn
-
+Project Members : 
+ * ahlem.laajili@esprit.tn 
+ * skander.turki@esprit.tn
+ * syrine.zahras@esprit.tn 
+ * nesrine.benmahmoud@esprit.tn 
+ * hichem.bemzammal@esprit.tn
+ 
 Project Link: [https://github.com/ahlem-phantom/AI-HealthCare-Assistant](https://github.com/ahlem-phantom/AI-HealthCare-Assistant)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -219,7 +249,6 @@ Project Link: [https://github.com/ahlem-phantom/AI-HealthCare-Assistant](https:/
 ## 🙌 Acknowledgments
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)

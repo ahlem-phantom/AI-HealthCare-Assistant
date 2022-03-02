@@ -244,7 +244,6 @@ Project Link: [https://github.com/ahlem-phantom/AI-HealthCare-Assistant](https:/
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 <!-- ACKNOWLEDGMENTS -->
 ## 🙌 Acknowledgments
 
@@ -262,7 +261,4 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
+Developed with 💕 by **AlphaCoders**.

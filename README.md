@@ -29,33 +29,18 @@ This is the official AI-HealthCare-Assistant documentation <br/>
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#---about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#project-main-features">Project Main Features</a></li>
-        <li><a href="#project-technical-architecture">Project Technical Architecture</a></li>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-    
-  </ol>
-</details>
+- [📃 About The Project](#---about-the-project)
+  * [📜 Project main features](#---project-main-features)
+  * [📐 Project Technical Architecture](#---project-technical-architecture)
+  * [🚀 Built With](#---built-with)
+- [✨ Getting Started](#--getting-started)
+  * [🚧 Prerequisites](#---prerequisites)
+  * [🛠 Installation](#---installation)
+- [⚡ Usage](#--usage)
+- [🚩 Roadmap](#---roadmap)
+- [😎 Contributing](#---contributing)
+- [💌 Contact](#---contact)
+- [🙌 Acknowledgments](#---acknowledgments)
 
 
 
@@ -92,24 +77,26 @@ This project is based on MERN Stack technology. This is the list of the major fr
 
 
   <div id="badges" align="center">
-
-
+	
    <a href="https://www.mongodb.com/">
     <img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original-wordmark.svg" title="MongoDB" alt="MongoDB" width="150" height="150"/>
     </a>
- <a href="https://reactjs.org/">
+	
+   <a href="https://reactjs.org/">
     <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="150" height="150"/>
-  </a>
+    </a>
+	
      <a href="https://nodejs.org/en/">
     <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="150" height="150"/>
-  </a>
-  <a href="http://expressjs.com/">
+    </a>
+	
+    <a href="http://expressjs.com/">
     <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" title="ExpressJS" alt="ExpressJS" width="150" height="150"/>
     </a>
   
-   <a href="https://www.python.org/">
+    <a href="https://www.python.org/">
     <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" alt="Python" width="150" height="150"/>
-  </a>
+     </a>
     
   </div>
   

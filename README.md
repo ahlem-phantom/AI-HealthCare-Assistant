@@ -64,7 +64,7 @@ This is the official AI-HealthCare-Assistant documentation <br/>
 
 <b>"NearestDoctor" </b> is an AI healthcare assistant that basicly uses AI and machine learning alogithms in order to improve patients experience by providing them a professional medical assistance. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also our solution offers a very unique concept with developing patient’s records using Blockchain .The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission. Thanks to the decentralized nature of Blockchain, patient records would be securely spread among a large number of servers, posing little risk to their sensitive information.<br>
 This web application centralizes the schedules and medical services in a single dashboard, This solution offers a real-time overview of the coverage of reports that facilitate the management of resources.<br>
- ## 📜 Project main features
+ ### 📜 Project main features
  1. 🤖 <b> Symptoms Detection :</b> using Artificial Intelligence for specialist recommandation and illness detection.
  3. 📅 <b> Appointement Scheduling :</b> based on the nearest doctor to your location or the first available appointement.
  4. 📘 <b> Medical Records : </b> securly stored in blockchain using smart contracts.

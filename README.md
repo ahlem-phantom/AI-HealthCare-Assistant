@@ -60,18 +60,17 @@ This is the official AI-HealthCare-Assistant documentation <br/>
 
 <!-- ABOUT THE PROJECT -->
 ## 📃 About The Project
+<b>"NearestDoctor"</b> is an AI healthcare assistant that uses AI and machine learning algorithms to improve patients' experience by providing them professional medical assistance. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also, our solution offers a very unique concept with developing patient records using Blockchain. The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission. Thanks to the decentralized nature of Blockchain, patient records would be securely spread among a large number of servers, posing little risk to their sensitive information.<br>
+This web application centralizes the schedules and medical services in a single dashboard. This solution offers a real-time overview of the coverage of reports that facilitate the management of resources.<br>
 
-<b>"NearestDoctor" </b> is an AI healthcare assistant that basicly uses AI and machine learning alogithms in order to improve patients experience by providing them a professional medical assistance. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also our solution offers a very unique concept with developing patient’s records using Blockchain .The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission. Thanks to the decentralized nature of Blockchain, patient records would be securely spread among a large number of servers, posing little risk to their sensitive information.<br>
-This web application centralizes the schedules and medical services in a single dashboard, This solution offers a real-time overview of the coverage of reports that facilitate the management of resources.<br>
  ### 📜 Project Main features
- 1. 🤖 <b> Symptoms Detection :</b> using Artificial Intelligence for specialist recommandation and illness detection.
- 3. 📅 <b> Appointement Scheduling :</b> based on the nearest doctor to your location or the first available appointement.
- 4. 📘 <b> Medical Records : </b> securly stored in blockchain using smart contracts.
- 5. 💬 <b> Blogs and forum : </b> using machine learning for patients satisfaction prediction.
- 6. 📈 <b> Real-time reports :</b> using machine learning to offer an overview of many aspects of the application.
- 7. 🙋 <b> Advanced authentication : </b> using facial recognition to match the identity of a doctor , Card ID data extraction and machine learning for identity verification.
- 8. :shopping_cart: <b> Paramedical e-shop : </b> using machine learning for patients behavioral analysis prediction .
-
+1. **🤖 Symptoms Detection:** using Artificial Intelligence for specialist recommendation and illness detection.
+2. **📅 Appointment Scheduling:** based on the nearest doctor to your location or the first available appointment.
+3. **📘 Medical Records:** securely stored in the blockchain using smart contracts.
+4. **💬 Blogs and Forum:** using machine learning for patient satisfaction prediction.
+5. **📈 Real-time reports:** using machine learning to offer an overview of many aspects of the application.
+6. **🙋 Advanced authentication:** using facial recognition to match the identity of a doctor, Card ID data extraction, and machine learning for identity verification.
+7. **🛒 Paramedical e-shop:** using machine learning for patient's behavioral analysis prediction.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### 📐 Project Technical Architecture 
@@ -86,7 +85,7 @@ This web application centralizes the schedules and medical services in a single 
 
 ### 🚀 Built With
 
-This project is based on MERN Stack technology. This is the list of the major frameworks/libraries used to build our project :
+**NearestDoctor** is built using MERN Stack technology. You may find below the list of the frameworks/libraries that we used to build our project :
 <br/>
 
 
@@ -119,15 +118,13 @@ This project is based on MERN Stack technology. This is the list of the major fr
 
 <!-- GETTING STARTED -->
 ## ✨ Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### 🚧 Prerequisites
 
-You may find below the list things you need to use this project :
+You may find below the list of things you need to use this project :
 * Make sure MongoDB is running on your system.
-* You will need to install yarn or npm command line .
+* You will need to install the "yarn" or "npm" command line.
 
 ### 🛠 Installation
 
@@ -164,7 +161,6 @@ _In order to install the app you need to follow the instructions below :_
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -215,7 +211,7 @@ See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/i
 <!-- CONTRIBUTING -->
 ## 😎 Contributing
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. Any contributions you make are **greatly appreciated**.
+If you have a suggestion that would make this project better, please fork the repo and create a pull request. Any contributions you make are **greatly appreciated**.
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
@@ -243,7 +239,6 @@ Don't forget to give the project a star! Thanks again!
 <!-- ACKNOWLEDGMENTS -->
 ## 🙌 Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)

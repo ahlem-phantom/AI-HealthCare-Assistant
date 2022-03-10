@@ -33,7 +33,7 @@ This is the official AI-HealthCare-Assistant documentation <br/>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#---about-the-project">About The Project</a>
       <ul>
         <li><a href="#project-main-features">Project Main Features</a></li>
         <li><a href="#project-technical-architecture">Project Technical Architecture</a></li>

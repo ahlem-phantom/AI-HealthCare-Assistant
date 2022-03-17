@@ -1,0 +1,45 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 20/09/2018 04:05
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/flaticon/font/Flaticon.eot");
+  src: url("../fonts/flaticon/font/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/flaticon/font/Flaticon.woff") format("woff"),
+       url("../fonts/flaticon/font/Flaticon.ttf") format("truetype"),
+       url("../fonts/flaticon/font/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/flaticon/font/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-tooth-1:before { content: "\f100"; }
+.flaticon-anesthesia:before { content: "\f101"; }
+.flaticon-tooth-with-braces:before { content: "\f102"; }
+.flaticon-dentist:before { content: "\f103"; }
+.flaticon-tooth:before { content: "\f104"; }
+.flaticon-dental-care-1:before { content: "\f105"; }
+.flaticon-dental-care:before { content: "\f106"; }
+.flaticon-bacteria:before { content: "\f107"; }

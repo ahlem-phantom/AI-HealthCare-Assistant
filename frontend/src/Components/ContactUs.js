@@ -1,11 +1,10 @@
-import Background1 from "../img/bg_1.jpg"
 
 function ContactUs(){
 
     return(
         <div> 
   <section className="home-slider ">
-    <div className="slider-item bread-item" style={{backgroundImage: "url(" + Background1 + ")"}} data-stellar-background-ratio="0.5">
+    <div className="slider-item bread-item" style={{backgroundImage: 'url("assets/images/bg_1.jpg")'}} data-stellar-background-ratio="0.5">
       <div className="overlay" />
       <div className="container" data-scrollax-parent="true">
         <div className="row slider-text align-items-end">

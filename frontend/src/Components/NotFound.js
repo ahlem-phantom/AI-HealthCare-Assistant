@@ -1,14 +1,12 @@
-import Background from "../img/404.jpg"
-import Background1 from "../img/bg_1.jpg"
 
 function NotFound(){
     return(
     <section >
-    <div class="slider-item" style={{backgroundImage: "url(" + Background + ")"}}>
-    <img src={Background} alt="aa"/>
-    
+    <div class="slider-item" style={{backgroundImage: 'url("assets/images/bg_1.jpg")'}}>
+    <img src="../img/bg_1.jpg" alt="aa"/>
     </div>
     
-  </section>);
+  </section>
+  );
 }
 export default NotFound;

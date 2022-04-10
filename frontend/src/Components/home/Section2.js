@@ -13,7 +13,7 @@ function Section2 (){
         <h3 className="mb-4">Opening Hours</h3>
         <p className="openinghours d-flex">
           <span>Monday - Friday</span>
-          <span>8:00 - 19:00</span>
+          <span>8:00 - 19:00</span> 
         </p>
         <p className="openinghours d-flex">
           <span>Saturday</span>

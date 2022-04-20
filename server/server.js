@@ -52,8 +52,10 @@ require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 const blogRoute = require('./app/routes/blog.routes')
 const userRoute = require('./app/routes/users.routes')
+const AppointementRoutes = require('./app/routes/AppRoutes');
 app.use('/blogs', blogRoute)
 app.use('/users', userRoute)
+app.use('/Appointments', AppointementRoutes);
 
 
 

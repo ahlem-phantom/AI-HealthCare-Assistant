@@ -1,0 +1,149 @@
+$base-height: 377px;
+$base-dimension: 16px;
+$base-border-radius: 12px;
+$base-button-size: 52px;
+$primary-color: #0360a5;
+$accent-color: #f6f7f9;
+$background-color: #fff;
+$font-color: #888;
+
+@mixin AddAppBox-container {
+  display: flex;
+  position: relative  ;
+  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.2);
+  flex-direction: column;
+  left: 35%;
+  z-index: 1;
+}
+
+@mixin AddAppBox-header {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  padding: $base-dimension;
+  color: $background-color;
+  background-color: $primary-color;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin AddAppBox-main {
+  box-sizing: border-box;
+  width: 100%;
+  padding: calc(2 * #{$base-dimension}) #{$base-dimension};
+  line-height: calc(#{$base-dimension} + #{$base-dimension} / 2);
+  color: $font-color;
+  text-align: center;
+}
+
+
+
+@mixin AddAppBox-floating-button {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  background-color: $accent-color;
+}
+
+h1 {
+  margin: 0;
+  font-size: $base-dimension;
+  line-height: 1;
+}
+
+button {
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+  outline: 0 !important;
+  cursor: pointer;
+
+  &.AddAppBox-open {
+    @include AddAppBox-floating-button;
+    margin: $base-dimension;
+  }
+
+  &.AddAppBox-close {
+    @include AddAppBox-floating-button;
+    display: none;
+    margin: $base-dimension calc(2 * #{$base-dimension} + #{$base-button-size})
+      $base-dimension $base-dimension;
+  }
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  height: calc(#{$base-dimension} + #{$base-dimension} / 2);
+  padding: 0 calc(#{$base-dimension} / 2);
+  font-family: inherit;
+  font-size: $base-dimension;
+  line-height: calc(#{$base-dimension} + #{$base-dimension} / 2);
+  color: $font-color;
+  background-color: none;
+  border: 0;
+  outline: 0 !important;
+  resize: none;
+  overflow: hidden;
+
+  &::placeholder {
+    color: $font-color;
+  }
+}
+
+.AddAppBox-popup {
+  @include AddAppBox-container;
+  display: none;
+  bottom: calc(2 * #{$base-dimension} + #{$base-button-size});
+  right: $base-dimension;
+  width: $base-height;
+  height: auto;
+  background-color: $background-color;
+  border-radius: $base-dimension;
+
+  .AddAppBox-popup__header {
+    @include AddAppBox-header;
+    border-top-right-radius: $base-border-radius;
+    border-top-left-radius: $base-border-radius;
+
+    .AddAppBox-popup__avatar {
+      margin-top: -32px;
+      background-color: $primary-color;
+      border: 5px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+    }
+  }
+
+  .AddAppBox-popup__main {
+    @include AddAppBox-main;
+  }
+
+  
+}
+
+.AddAppBox-panel {
+  @include AddAppBox-container;
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: $base-height;
+  background-color: $background-color;
+
+  .AddAppBox-panel__header {
+    @include AddAppBox-header;
+    flex: 0 0 auto;
+  }
+
+  .AddAppBox-panel__main {
+    @include AddAppBox-main;
+    flex: 1 1 auto;
+  }
+
+  
+}

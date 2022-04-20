@@ -27,6 +27,18 @@ import Doctors from './pages/patient/doctors';
 import EditDoctor from './pages/patient/edit-doctor';
 import DoctorDetail from './pages/patient/doctor-detail';
 
+//doctor layouts
+import DashboardDoctor from './pages/doctor/dashboard';
+import DoctorProfile from './pages/doctor/profile';
+import Doctor from './pages/doctor';
+import DoctorPatients from './pages/doctor/patients';
+import DoctorAppointements from './pages/doctor/appointements';
+import DoctorBlogs from './pages/doctor/blogs';
+import DoctorAddBlog from './pages/doctor/add-blogs';
+import Calendar from './pages/doctor/calendar';
+import UpdateAppointment from './pages/doctor/updateAppointment';
+
+
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -51,7 +63,16 @@ export default function Router() {
     },
     {
       path: '/doctor',
+      element: <Doctor />,
       children: [
+        { path: 'app', element: <DashboardDoctor />},
+        { path: 'profile', element: <DoctorProfile />},
+        { path: 'patients', element: <DoctorPatients />},
+        { path: 'calendar', element: <Calendar />},
+        { path: 'appointments', element: <DoctorAppointements />},
+        { path: 'update_appointment/:id', element: <UpdateAppointment /> },
+        { path: 'blogs', element: <DoctorBlogs />},
+        { path: 'add-blog', element: <DoctorAddBlog />}
 
       ]
     },

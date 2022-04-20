@@ -26,6 +26,14 @@ import AddDoctor from './pages/patient/add-doctor';
 import Doctors from './pages/patient/doctors';
 import EditDoctor from './pages/patient/edit-doctor';
 import DoctorDetail from './pages/patient/doctor-detail';
+import RecordsDoctor from "./pages/doctor/Records";
+import Record from "./components/RecordComponents/index";
+import MedicalRecord from "./components/RecordComponents/MedicalRecord";
+import Medication from "./components/RecordComponents/Medication";
+import Allergie from "./components/RecordComponents/Allergie";
+import AddOldProblem from "./components/RecordComponents/AddOldProblem";
+import OldProblems from "./components/RecordComponents/oldproblems";
+import Prescription from "./components/RecordComponents/Prescription";
 
 //doctor layouts
 import DashboardDoctor from './pages/doctor/dashboard';
@@ -72,7 +80,27 @@ export default function Router() {
         { path: 'appointments', element: <DoctorAppointements />},
         { path: 'update_appointment/:id', element: <UpdateAppointment /> },
         { path: 'blogs', element: <DoctorBlogs />},
-        { path: 'add-blog', element: <DoctorAddBlog />}
+        { path: 'add-blog', element: <DoctorAddBlog />},
+        
+        //records
+        {
+          path: "records",
+          element: <RecordsDoctor />,
+        },
+        {
+          path: "record",
+          element: <Record />,
+          children: [
+            { path: "medicalrecord/:id", element: <MedicalRecord /> },
+            { path: "prescription", element: <Prescription /> },
+            { path: "medication", element: <Medication /> },
+            { path: "allergies", element: <Allergie /> },
+            { path: "oldproblem/:id", element: <OldProblems /> },
+            { path: "addoldproblem/:id", element: <AddOldProblem /> },
+          ],
+        },
+
+
 
       ]
     },

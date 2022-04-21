@@ -50,15 +50,40 @@ app.use('/public', express.static('public'));
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
+const path = require('path');
+const morgan = require('morgan');
+const talkToChatbot = require('./chatbot');
+const fulfillmentRoutes = require('./fulfillment');
 var recordRouter = require('./app/routes/Record');
+var productRouter = require('./app/routes/product.route');
 const blogRoute = require('./app/routes/blog.routes')
 const userRoute = require('./app/routes/users.routes')
 const AppointementRoutes = require('./app/routes/AppRoutes');
+
+
+app.use(morgan('dev'));
 app.use('/blogs', blogRoute)
+app.use('/products', productRouter)
 app.use('/users', userRoute)
 app.use('/Appointments', AppointementRoutes);
 app.use('/records', recordRouter);
 
+app.post('/chatbot', bodyParser.json(), bodyParser.urlencoded({ extended: true }), async(req, res) => {
+    const message = req.body.message
+        //console.log('message' + message)
+
+    talkToChatbot(message)
+        .then((response) => {
+            res.send({ message: response })
+        })
+        .catch((error) => {
+            console.log('Something went wrong: ' + error)
+            res.send({
+                error: 'Error occured here',
+            })
+        })
+})
+app.use(fulfillmentRoutes)
 
 
 // set port, listen for requests

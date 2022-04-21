@@ -98,10 +98,10 @@ function EditDoctor() {
   };
   const handleEdit = (e) => {
     e.preventDefault();
-    const formData = new FormData()
+    //const formData = new FormData()
     
-    axios.post("http://localhost:8080/users/user-profile", 
-    formData.append('picture', picture), {}).then(res => { console.log(res)})
+    //axios.post("http://localhost:8080/users/user-profile", 
+    //formData.append('picture', picture), {}).then(res => { console.log(res)})
     
     axios
       .put("http://localhost:8080/users/update-user/" + params.id, {

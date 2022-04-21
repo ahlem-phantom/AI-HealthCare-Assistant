@@ -130,7 +130,12 @@ function Navbar() {
                        <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/contact">
                           <span>Contact Us</span>
                        </Link>     
-              </li>         
+              </li> 
+              <li className="nav-item">        
+                 <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/shop">
+                    <span>Shop</span>
+                 </Link>     
+        </li>        
                <li className="nav-item cta">        
                        <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/role">
                           <span>Get Started</span>

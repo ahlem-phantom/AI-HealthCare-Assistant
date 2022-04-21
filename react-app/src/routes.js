@@ -45,6 +45,7 @@ import DoctorBlogs from './pages/doctor/blogs';
 import DoctorAddBlog from './pages/doctor/add-blogs';
 import Calendar from './pages/doctor/calendar';
 import UpdateAppointment from './pages/doctor/updateAppointment';
+import Shop from './pages/shop';
 
 
 // ----------------------------------------------------------------------
@@ -54,6 +55,7 @@ export default function Router() {
     {
       path: '/',
       children: [
+        { path: 'shop', element: <Shop /> },
         { path: '', element: <Home /> },
         { path: 'role', element: <Role /> },
         { path: 'contact', element: <Contact /> },

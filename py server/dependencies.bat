@@ -1,0 +1,1 @@
+python -m venv facevenv & cd facevenv\Scripts & .\activate & cd../.. & pip install -r requirements.txt

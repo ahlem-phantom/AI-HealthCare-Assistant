@@ -72,7 +72,7 @@ router.route('/').get((req, res, next) => {
     }
   })
 });
-// Get Single User
+// Get Single User ID
 router.route('/user/:id').get((req, res, next) => {
     userSchema.findById(req.params.id, (error, data) => {
     if (error) {
@@ -81,6 +81,17 @@ router.route('/user/:id').get((req, res, next) => {
       res.json(data)
     }
   })
+})
+
+// Get Single User Email
+router.route('/resetPass/:confirmationCode').get((req, res, next) => {
+  userSchema.findOne({confirmationCode: req.params.confirmationCode}, (error, data) => {
+  if (error) {
+    return next(error)
+  } else {
+    res.json(data)
+  }
+})
 })
 
 // Update User

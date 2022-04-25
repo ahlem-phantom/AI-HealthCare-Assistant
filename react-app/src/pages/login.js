@@ -2,13 +2,16 @@ import React, { useState, useRef, useEffect } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
+import { Button, Divider } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import AuthService from "../services/auth.service";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 import { Container, Stack,Typography } from "@mui/material";
 import Footer from "../components/footer";
 import { Link } from "react-router-dom";
+import Iconify from '../components/Iconify';
+
 const required = (value) => {
   if (!value) {
     return (
@@ -20,6 +23,13 @@ const required = (value) => {
 };
 
 const Login = (props) => {
+  const ContentStyle = styled('div')(({ theme }) => ({
+    maxWidth: 700,
+    margin: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  }));
   const form = useRef();
   const checkBtn = useRef();
 
@@ -92,6 +102,15 @@ const Login = (props) => {
   useEffect(() => {
     loadScript(`${process.env.PUBLIC_URL}js/main.js`);
   });
+
+  const handleface = (e) => {
+    navigate("/face-log", { replace: true });
+
+  }
+  const handlelinkedin =(e) => {
+    const linkedinRedirectUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${process.env.REACT_APP_CLIENTID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&scope=r_liteprofile,r_emailaddress`;
+    window.location.href = linkedinRedirectUrl
+  }
  
   return (
     <div>
@@ -139,9 +158,30 @@ const Login = (props) => {
           </div>
           </div>
           <br/><br/>
+          <ContentStyle>
 
-          
-        <Container maxWidth="sm">
+<Container>
+      <Stack direction="row" spacing={2}>
+<Button fullWidth size="large" color="error" variant="contained">
+  <Iconify icon="eva:google-fill" color="white" height={24} width={20} /> &nbsp;<b> Gmail </b>
+</Button>
+<Button fullWidth size="large" color="primary" variant="contained" >
+  <Iconify icon="eva:linkedin-fill" color="white" height={24} width={20} onClick={handlelinkedin} />   &nbsp;<b> Linkedin </b>
+</Button>
+<Button fullWidth size="large" color="secondary" variant="contained" onClick={handleface}>
+  <Iconify icon="mdi:face-recognition" color="white" height={24} width={20} />   &nbsp;<b> Face ID  </b>
+</Button>
+</Stack>
+
+<Divider sx={{ my: 3 }}>
+<Typography variant="body2" sx={{ color: 'text.secondary' }}>
+  OR
+  
+</Typography>
+
+</Divider>
+</Container>
+<Container maxWidth="sm">
             <Stack sx={{ mb: 5 }}>
               <Typography sx={{ color: "text.secondary" }}>
                 Enter your info details below.
@@ -215,6 +255,8 @@ const Login = (props) => {
             <br/><br/>
 
         </Container>
+</ContentStyle>
+        
       <Footer />
     </div>
   );

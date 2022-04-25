@@ -1,0 +1,33 @@
+.img-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  .img-overlay:before {
+    content: ' ';
+    display: block;
+    /* adjust 'height' to position overlay content vertically */
+    height: 70%;
+  }
+  
+  
+  
+  .role-button { 
+    background-color: 	#87CEEB;
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    font-weight: bold;
+    display: inline-block; 
+    font-size: 24px; 
+    width: 100%;
+    border-radius:360px;
+   } 
+
+   

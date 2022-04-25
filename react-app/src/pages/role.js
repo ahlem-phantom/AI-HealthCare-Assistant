@@ -69,7 +69,7 @@ function Role() {
     <div class="img-overlay">
     <button className="role-button text-center cta">DOCTOR</button>
   </div>
-  <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/register-doctor">
+  <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/verification">
 
       <p className="button text-center"><a className="btn btn-primary btn-outline-primary px-4 py-3">     
                     <span>Sign Up</span>

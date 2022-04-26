@@ -17,6 +17,25 @@ function BlogDetails() {
    console.log(res.data);
    setBlog(res.data);
  }; getBlogs();}, [] )
+ const [search, setSearch] = useState("");
+ const [searchR, setSearchR] = useState([]);
+
+ const onChangeSearch = (e) => {
+     const search = e.target.value;
+     setSearch(search);
+   };
+
+   const handleSearch = (e) => {
+     e.preventDefault();
+
+
+     const getSearchR = async () => {
+         const res = await axios("http://localhost:8080/blogs/search/"+`${search}`);
+         console.log(res.data);
+         setSearchR(res.data);
+       };
+     getSearchR();
+ };
 
   return (
     <div className="main-wrapper">
@@ -44,7 +63,7 @@ function BlogDetails() {
                         <li>
                           <a href="#.">
                             <i className="fa fa-user-o" />{" "}
-                            <span>By Ahlem Njili</span>
+                            <span>By Ahlem Ajili</span>
                           </a>
                         </li>
                       </ul>
@@ -167,227 +186,16 @@ function BlogDetails() {
                     </div>
                   </div>
                 </div>
-                <div className="widget blog-comments clearfix">
-                  <h3>Comments (3)</h3>
-                  <ul className="comments-list">
-                    <li>
-                      <div className="comment">
-                        <div className="comment-author">
-                          <img
-                            className="avatar"
-                            alt=""
-                            src="assets/img/user.jpg"
-                          />
-                        </div>
-                        <div className="comment-block">
-                          <span className="comment-by">
-                            <span className="blog-author-name">
-                              Diana Bailey
-                            </span>
-                            <span className="float-right">
-                              <span className="blog-reply">
-                                <a href="#.">
-                                  <i className="fa fa-reply" /> Reply
-                                </a>
-                              </span>
-                            </span>
-                          </span>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Nam viverra euismod odio, gravida pellentesque
-                            urna varius vitae, gravida pellentesque urna varius
-                            vitae. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Nam viverra euismod odio, gravida
-                            pellentesque urna varius vitae. Sed dui lorem,
-                            adipiscing in adipiscing et, interdum nec metus.
-                            Mauris ultricies, justo eu convallis placerat, felis
-                            enim ornare nisi, vitae mattis nulla ante id dui.
-                          </p>
-                          <span className="blog-date">December 6, 2017</span>
-                        </div>
-                      </div>
-                      <ul className="comments-list reply">
-                        <li>
-                          <div className="comment">
-                            <div className="comment-author">
-                              <img
-                                className="avatar"
-                                alt=""
-                                src="assets/img/user.jpg"
-                              />
-                            </div>
-                            <div className="comment-block">
-                              <span className="comment-by">
-                                <span className="blog-author-name">
-                                  Henry Daniels
-                                </span>
-                                <span className="float-right">
-                                  <span className="blog-reply">
-                                    <a href="#.">
-                                      <i className="fa fa-reply" /> Reply
-                                    </a>
-                                  </span>
-                                </span>
-                              </span>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nam viverra euismod odio,
-                                gravida pellentesque urna varius vitae, gravida
-                                pellentesque urna varius vitae.
-                              </p>
-                              <span className="blog-date">
-                                December 6, 2017
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="comment">
-                            <div className="comment-author">
-                              <img
-                                className="avatar"
-                                alt=""
-                                src="assets/img/user.jpg"
-                              />
-                            </div>
-                            <div className="comment-block">
-                              <span className="comment-by">
-                                <span className="blog-author-name">
-                                  Diana Bailey
-                                </span>
-                                <span className="float-right">
-                                  <span className="blog-reply">
-                                    {" "}
-                                    <a href="#.">
-                                      <i className="fa fa-reply" /> Reply
-                                    </a>
-                                  </span>
-                                </span>
-                              </span>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nam viverra euismod odio,
-                                gravida pellentesque urna varius vitae, gravida
-                                pellentesque urna varius vitae.
-                              </p>
-                              <span className="blog-date">
-                                December 7, 2017
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <div className="comment">
-                        <div className="comment-author">
-                          <img
-                            className="avatar"
-                            alt=""
-                            src="assets/img/user.jpg"
-                          />
-                        </div>
-                        <div className="comment-block">
-                          <span className="comment-by">
-                            <span className="blog-author-name">
-                              Marie Wells
-                            </span>
-                            <span className="float-right">
-                              <span className="blog-reply">
-                                <a href="#.">
-                                  <i className="fa fa-reply" /> Reply
-                                </a>
-                              </span>
-                            </span>
-                          </span>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit.
-                          </p>
-                          <span className="blog-date">December 11, 2017</span>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="comment">
-                        <div className="comment-author">
-                          <img
-                            className="avatar"
-                            alt=""
-                            src="assets/img/user.jpg"
-                          />
-                        </div>
-                        <div className="comment-block">
-                          <span className="comment-by">
-                            <span className="blog-author-name">
-                              Pamela Curtis
-                            </span>
-                            <span className="float-right">
-                              <span className="blog-reply">
-                                <a href="#.">
-                                  <i className="fa fa-reply" /> Reply
-                                </a>
-                              </span>
-                            </span>
-                          </span>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit.
-                          </p>
-                          <span className="blog-date">December 13, 2017</span>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div className="widget new-comment clearfix">
-                  <h3>Leave Comment</h3>
-                  <form>
-                    <div className="row">
-                      <div className="col-sm-8">
-                        <div className="form-group">
-                          <label>
-                            Name <span className="text-red">*</span>
-                          </label>
-                          <input type="text" className="form-control" />
-                        </div>
-                        <div className="form-group">
-                          <label>
-                            Your email address{" "}
-                            <span className="text-red">*</span>
-                          </label>
-                          <input type="email" className="form-control" />
-                        </div>
-                        <div className="form-group">
-                          <label>Comments</label>
-                          <textarea
-                            rows={4}
-                            className="form-control"
-                            defaultValue={""}
-                          />
-                        </div>
-                        <div className="comment-submit">
-                          <input
-                            type="submit"
-                            defaultValue="Submit"
-                            className="btn"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <aside className="col-md-4">
-              <div className="widget search-widget">
-                <h5>Blog Search</h5>
-                <form className="search-form">
+                <div className="widget search-widget">
+                <h5>Get More Details</h5>
+                <form className="search-form" onSubmit={handleSearch}>
                   <div className="input-group">
                     <input
                       type="text"
                       placeholder="Search..."
                       className="form-control"
+                      value={search}
+                      onChange={onChangeSearch}
                     />
                     <div className="input-group-append">
                       <button type="submit" className="btn btn-primary">
@@ -397,6 +205,27 @@ function BlogDetails() {
                   </div>
                 </form>
               </div>
+              <div className="widget post-widget">
+                <ul className="latest-posts">
+                {searchR.map((el, index) => {
+                  return (
+                  <li>
+                    <div className="post-info">
+                      <h4>
+                        <a href={el.link}>
+                          <div style={{color : 'blue', fontSize : '20px'}}>{el.title}</div>
+                        </a>
+                      </h4>
+                    </div>
+                  </li>
+                  );
+                })};
+                </ul>
+              </div>
+              </div>
+            </div>
+            <aside className="col-md-4">
+          
               <div className="widget post-widget">
                 <h5>Latest Posts</h5>
                 <ul className="latest-posts">

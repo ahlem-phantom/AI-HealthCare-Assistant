@@ -26,7 +26,7 @@ function EditBlog() {
         description,
       })
       .then((res) => console.log(res.data));
-      navigate("/patient/blogs", { replace: true });
+      navigate("/doctor/blogs", { replace: true });
   };
 
   const [blogs, setBlog] = useState([]);

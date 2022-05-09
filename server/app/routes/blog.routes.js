@@ -2,20 +2,61 @@ let mongoose = require('mongoose'),
 request = require('request'),
 cheerio = require('cheerio'),
   express = require('express'),
+  multer = require('multer'),
   router = express.Router();
-//  Blog Model
+  const { v4: uuidv4 } = require('uuid');
+  uuidv4();
+
+  //  Blog Model
 let blogSchema = require('../models/blog.model');
-// CREATE Blog
-router.route('/create-blog').post((req, res, next) => {
-    blogSchema.create(req.body, (error, data) => {
-    if (error) {
-      return next(error)
-    } else {
-      console.log(data)
-      res.json(data)
-    }
-  })
+
+
+  const DIR = './public/';
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+      cb(null, DIR);
+  },
+  filename: (req, file, cb) => {
+      const fileName = file.originalname.toLowerCase().split(' ').join('-');
+      cb(null, uuidv4() + '-' + fileName)
+  }
 });
+
+
+var upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+      if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+          cb(null, true);
+      } else {
+          cb(null, false);
+          return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+      }
+  }
+});
+
+router.post('/create-blog', upload.single('profileImg'), (req, res, next) => {
+    const url = req.protocol + '://' + req.get('host')
+      const blog = new blogSchema({
+        _id: new mongoose.Types.ObjectId(),
+        title : req.body.title,
+        description : req.body.description,
+        doctors : req.body.doctors, 
+        category : req.body.category,       
+        picture : url + '/public/' + req.file.filename
+    });
+    blog.save().then(result => {
+      res.status(201).json({
+          message: "Blog registered successfully!",
+      })
+  }).catch(err => {
+      console.log(err),
+          res.status(500).json({
+              error: err
+          });
+  })
+})
 // READ Blog
 router.route('/').get((req, res, next) => {
     blogSchema.find((error, data) => {
@@ -35,6 +76,18 @@ router.route('/blog/:id').get((req, res, next) => {
       res.json(data)
     }
   })
+})
+
+
+// Get Doctor Blogs
+router.route('/blog-doctor/:doctors').get((req, res, next) => {
+  blogSchema.find({doctors : req.params.doctors}, (error, data) => {
+  if (error) {
+    return next(error)
+  } else {
+    res.json(data)
+  }
+})
 })
 
 // Update Blog

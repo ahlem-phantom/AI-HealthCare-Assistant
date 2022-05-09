@@ -178,20 +178,15 @@ export default (props) => {
     email: state.user.email,
     birthdate: state.user.birthdate,
     phone: state.user.phone,
-    country: state.user.country,
-    stat: state.user.stat,
-    street: state.user.street,
-    zip: state.user.zip,
     creationDate : new Date(),
     paymentDate : new Date(),
     paymentPlan : 'premium',
     password: hashedPassword,
-    picture: 'user1.png',
     role: userrole,
   };
   const submit = (e) => { 
     e.preventDefault();
-    AuthService.register(userObject.username, userObject.email, state.user.password, userObject.birthdate, userObject.firstname, userObject.lastname, userObject.phone, userObject.role);
+    AuthService.register(userObject.username, userObject.email, state.user.password, userObject.birthdate, userObject.firstname, userObject.lastname, userObject.phone, userrole);
     Swal.fire({  
       title: 'Successfull resigration',  
       text: 'Your account have been creacted successfully, please check your email to activate your account',

@@ -19,7 +19,7 @@ const Record = () => {
     getRecords();
   }, []);
   return (
-    <>
+    <div className="page-wrapper">
     <div className="content">
       <div className="offset-md-2 col-md-8 pt-5">
         <div class="col-sm-7 col-6">
@@ -146,7 +146,7 @@ const Record = () => {
         </li>
       </ul>
       </div>
-    </>
+    </div>
   );
 };
 

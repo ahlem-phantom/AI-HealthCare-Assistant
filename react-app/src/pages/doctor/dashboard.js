@@ -23,7 +23,7 @@ function Dashboard() {
     return (
         
 
-        <div >
+      <div className="page-wrapper">
         <div className="content">
           <div className="row">
             <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">

@@ -7,10 +7,17 @@ const Blog = mongoose.model(
     views: Number,
     likes:  Number,
     picture: String,
+    category: String,
     dateCreation : {
         type: Date,
         default: Date.now
-      }
+      },
+    doctors: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User"
+        }
+      ]
   })
 );
 module.exports = Blog;

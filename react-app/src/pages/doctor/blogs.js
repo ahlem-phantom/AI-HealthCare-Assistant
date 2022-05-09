@@ -1,321 +1,473 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import dayjs from "dayjs";
+import { useNavigate } from "react-router-dom";
 function Blogs() {
-    return (
-        <div >
-  <div className="content">
-    <div className="row">
-      <div className="col-sm-8 col-4">
-        <h4 className="page-title">Blog</h4>
-      </div>
-      <div className="col-sm-4 col-8 text-right m-b-30">
-        <Link className="btn btn-primary btn-rounded float-right"
-                component={Link}
-                exact
-                to="add-blog"
-                underline="hover"
-              >
-               <i className="fa fa-plus" /> <span>Add Blog</span> 
-        </Link> 
-      </div>
+  const [blogs, setBlog] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-    </div>
-    <div className="row">
-      <div className="col-sm-6 col-md-6 col-lg-4">
-        <div className="blog grid-blog">
-          <div className="blog-image">
-            <a href="blog-details.html"><img className="img-fluid" src="assets/img/blog/blog-01.jpg" alt /></a>
-          </div>
-          <div className="blog-content">
-            <h3 className="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris.</p>
-            <a href="blog-details.html" className="read-more"><i className="fa fa-long-arrow-right" /> Read More</a>
-            <div className="blog-info clearfix">
-              <div className="post-left">
-                <ul>
-                  <li><a href="#."><i className="fa fa-calendar" /> <span>December 6, 2017</span></a></li>
-                </ul>
-              </div>
-              <div className="post-right"><a href="#."><i className="fa fa-heart-o" />21</a> <a href="#."><i className="fa fa-eye" />8</a> <a href="#."><i className="fa fa-comment-o" />17</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="col-sm-6 col-md-6 col-lg-4">
-        <div className="blog grid-blog">
-          <div className="blog-image">
-            <a href="blog-details.html"><img className="img-fluid" src="assets/img/blog/blog-02.jpg" alt /></a>
-          </div>
-          <div className="blog-content">
-            <h3 className="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris.</p>
-            <a href="blog-details.html" className="read-more"><i className="fa fa-long-arrow-right" /> Read More</a>
-            <div className="blog-info clearfix">
-              <div className="post-left">
-                <ul>
-                  <li><a href="#."><i className="fa fa-calendar" /> <span>December 6, 2017</span></a></li>
-                </ul>
-              </div>
-              <div className="post-right"><a href="#."><i className="fa fa-heart-o" />21</a> <a href="#."><i className="fa fa-eye" />8</a> <a href="#."><i className="fa fa-comment-o" />17</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="col-sm-6 col-md-6 col-lg-4">
-        <div className="blog grid-blog">
-          <div className="blog-image">
-            <a href="blog-details.html"><img className="img-fluid" src="assets/img/blog/blog-03.jpg" alt /></a>
-          </div>
-          <div className="blog-content">
-            <h3 className="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris.</p>
-            <a href="blog-details.html" className="read-more"><i className="fa fa-long-arrow-right" /> Read More</a>
-            <div className="blog-info clearfix">
-              <div className="post-left">
-                <ul>
-                  <li><a href="#."><i className="fa fa-calendar" /> <span>December 6, 2017</span></a></li>
-                </ul>
-              </div>
-              <div className="post-right"><a href="#."><i className="fa fa-heart-o" />21</a> <a href="#."><i className="fa fa-eye" />8</a> <a href="#."><i className="fa fa-comment-o" />17</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="col-sm-6 col-md-6 col-lg-4">
-        <div className="blog grid-blog">
-          <div className="blog-image">
-            <a href="blog-details.html"><img className="img-fluid" src="assets/img/blog/blog-04.jpg" alt /></a>
-          </div>
-          <div className="blog-content">
-            <h3 className="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris.</p>
-            <a href="blog-details.html" className="read-more"><i className="fa fa-long-arrow-right" /> Read More</a>
-            <div className="blog-info clearfix">
-              <div className="post-left">
-                <ul>
-                  <li><a href="#."><i className="fa fa-calendar" /> <span>December 6, 2017</span></a></li>
-                </ul>
-              </div>
-              <div className="post-right"><a href="#."><i className="fa fa-heart-o" />21</a> <a href="#."><i className="fa fa-eye" />8</a> <a href="#."><i className="fa fa-comment-o" />17</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div className="notification-box">
-    <div className="msg-sidebar notifications msg-noti">
-      <div className="topnav-dropdown-header">
-        <span>Messages</span>
-      </div>
-      <div className="drop-scroll msg-list-scroll" id="msg_list">
-        <ul className="list-box">
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">R</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author">Richard Miles </span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item new-message">
-                <div className="list-left">
-                  <span className="avatar">J</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author">John Doe</span>
-                  <span className="message-time">1 Aug</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">T</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author"> Tarah Shropshire </span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">M</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author">Mike Litorus</span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">C</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author"> Catherine Manseau </span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">D</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author"> Domenic Houston </span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">B</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author"> Buster Wigton </span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">R</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author"> Rolland Webber </span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">C</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author"> Claire Mapes </span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">M</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author">Melita Faucher</span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">J</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author">Jeffery Lalor</span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">L</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author">Loren Gatlin</span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <div className="list-item">
-                <div className="list-left">
-                  <span className="avatar">T</span>
-                </div>
-                <div className="list-body">
-                  <span className="message-author">Tarah Shropshire</span>
-                  <span className="message-time">12:28 AM</span>
-                  <div className="clearfix" />
-                  <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="topnav-dropdown-footer">
-        <a href="chat.html">See all messages</a>
-      </div>
-    </div>
-  </div>
+  const navigate = useNavigate();
+  const doctors = JSON.parse(localStorage.getItem('user')).id;
 
-</div>
+  useEffect(() => {
+    const getBlogs = async () => {
+      const res = await axios("http://localhost:8080/blogs/blog-doctor/"+doctors);
+      console.log(res.data);
+      setBlog(res.data);
+    };
+    getBlogs();
 
-    );
+
+    const getCategories = async () => {
+      const res = await axios("http://localhost:8080/blogs/categories");
+      console.log(res.data);
+      setCategories(res.data);
+    };
+    getCategories();
+    console.log(categories);
+  }, []);
+
+
+  const deletehandler = (id) => {
+    axios
+      .delete(`http://localhost:8080/blogs/delete-blog/${id}`)
+      .then((res) => console.log(res.data));
+      window.location.reload();
+    };
+
+    const [search, setSearch] = useState("");
+    const [searchR, setSearchR] = useState([]);
+    const [filtreR, setFiltreR] = useState([]);
+
+    const [showResults, setShowResults] = React.useState(true)
+
+   
+    const onChangeSearch = (e) => {
+        const search = e.target.value;
+        setSearch(search);
+      };
+   
+      const handleSearch = (e) => {
+        e.preventDefault();
+   
+        const getSearchR = async () => {
+            const res = await axios("http://localhost:8080/blogs/search-blog/"+`${search}`);
+            setSearchR(res.data);
+          };
+        getSearchR();
+        setShowResults(false)
+    };
+
+    const handleFilter = async (filtre) => {
+      const res = await axios("http://localhost:8080/blogs/filter-blog/"+`${filtre}`)
+      .then((res) => setFiltreR(res.data));
+      console.log(filtreR);
+      setShowResults(false)
+
+      };
+
+
+  return (
+    <div className="page-wrapper">
+      <div className="content">
+      <div class="">
+            <h4 class="page-title">Blog</h4>    
+          </div>
+        <div class="row">
+         
+          <br></br>
+          <div class="col-sm-4 col-12 text-right m-b-30">
+            
+          <form className="search-form" onSubmit={handleSearch}>
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      className="form-control"
+                      value={search}
+                      onChange={onChangeSearch}
+                    />
+                    <div className="input-group-append">
+                      <button type="submit" className="btn btn-primary">
+                        <i className="fa fa-search" />
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <br/>
+                
+        
+          </div>
+      
+        </div>
+        
+        { showResults ?   <div className="row">
+        <aside >
+        <Link
+              class="btn btn-primary btn-rounded float-right"
+              to={"/doctor/add-blog"}
+              component={Link}
+            >
+              <i class="fa fa-plus"></i> Add Blog
+            </Link>
+            <div className="widget tags-widget">
+                <h5>Tags</h5>
+                <ul className="tags">
+                {categories.map((el, index) => {
+                  return(
+                  <li>
+                    <a onClick={() => { handleFilter(el); }} className="tag">
+                      {el}
+                    </a>
+                  </li> 
+                  );
+                })}
+    <li>
+                    <a href="#." className="tag">
+                      Family
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#." className="tag">
+                      Medical
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#." className="tag">
+                      Injection
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#." className="tag">
+                      Secure
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#." className="tag">
+                      Insurance
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#." className="tag">
+                      Insurance
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#." className="tag">
+                      Insurance
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#." className="tag">
+                      Insurance
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#." className="tag">
+                      Insurance
+                    </a>
+                  </li>
+                  
+                </ul>
+              </div>
+
+              </aside>
+          {blogs.map((el, index) => {
+            return (
+              
+              <div className="col-sm-6 col-md-6 col-lg-4">
+                <div className="dropdown profile-action ">
+                  <a
+                    href="#"
+                    className="action-icon dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i className="fa fa-ellipsis-v" />
+                  </a>
+                  <div className="dropdown-menu dropdown-menu-right">
+                    <Link
+                      className="dropdown-item"
+                      to={`/doctor/edit-blog/${el._id}`}
+                      component={Link}
+                    >
+                      <i className="fa fa-pencil m-r-5" /> Edit
+                    </Link>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#delete_doctor"
+                      onClick={() => {
+                        deletehandler(el._id);
+                      }}
+                    >
+                      <i className="fa fa-trash-o m-r-5" /> Delete
+                    </a>
+                  </div>
+                </div>
+                <div className="blog grid-blog">
+                  <div className="blog-image">
+                    <Link
+                      className="dropdown-item"
+                      to={`/doctor/blog-details/${el._id}`}
+                      component={Link}
+                    >
+                      <img
+                        className="img-fluid" style={{height : '250px'}}
+                        src={el.picture}
+                        alt
+                      />
+                    </Link>
+                  </div>
+                  <div className="blog-content">
+                    <h3 className="blog-title">
+                      <Link to={`/doctor/blog-details/${el._id}`} component={Link}>
+                        {el.title}
+                      </Link>
+                    </h3>
+                    <p>{el.description.substr(0,195)}<b style={{fontSize : "15px"}}>.&nbsp;.&nbsp;.</b></p>
+                    <Link
+                      className="read-more"
+                      to={`/doctor/blog-details/${el._id}`}
+                      component={Link}
+                    >
+                      <i className="fa fa-long-arrow-right" /> Read More
+                    </Link>
+
+                    <div className="blog-info clearfix">
+                      <div className="post-left">
+                        <ul>
+                          <li>
+                            <a href="#.">
+                              <i className="fa fa-calendar" />{" "}
+                              {dayjs(`${el.dateCreation}`).format("DD/MM/YYYY")}{" "}
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="post-right">
+                        <a href="#.">
+                          <i className="fa fa-heart-o" />
+                          21
+                        </a>{" "}
+                        <a href="#.">
+                          <i className="fa fa-eye" />8
+                        </a>{" "}
+                        <a href="#.">
+                          <i className="fa fa-comment-o" />
+                          17
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          ;
+        </div> : null }
+      
+
+
+        <div className="row">
+          {searchR.map((el, index) => {
+            console.log(el);
+            return (
+              <div className="col-sm-6 col-md-6 col-lg-4">
+                <div className="dropdown profile-action ">
+                  <a
+                    href="#"
+                    className="action-icon dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i className="fa fa-ellipsis-v" />
+                  </a>
+                  <div className="dropdown-menu dropdown-menu-right">
+                    <Link
+                      className="dropdown-item"
+                      to={`/doctor/edit-blog/${el._id}`}
+                      component={Link}
+                    >
+                      <i className="fa fa-pencil m-r-5" /> Edit
+                    </Link>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#delete_doctor"
+                      onClick={() => {
+                        deletehandler(el._id);
+                      }}
+                    >
+                      <i className="fa fa-trash-o m-r-5" /> Delete
+                    </a>
+                  </div>
+                </div>
+                <div className="blog grid-blog">
+                  <div className="blog-image">
+                    <Link
+                      className="dropdown-item"
+                      to={`/doctor/blog-details/${el._id}`}
+                      component={Link}
+                    >
+                      <img
+                        className="img-fluid"
+                        src={el.picture}
+                        alt
+                      />
+                    </Link>
+                  </div>
+                  <div className="blog-content">
+                    <h3 className="blog-title">
+                      <Link to={`/doctor/blog-details/${el._id}`} component={Link}>
+                        {el.title}
+                      </Link>
+                    </h3>
+                    <p>{el.description}</p>
+                    <Link
+                      className="read-more"
+                      to={`/doctor/blog-details/${el._id}`}
+                      component={Link}
+                    >
+                      <i className="fa fa-long-arrow-right" /> Read More
+                    </Link>
+
+                    <div className="blog-info clearfix">
+                      <div className="post-left">
+                        <ul>
+                          <li>
+                            <a href="#.">
+                              <i className="fa fa-calendar" />{" "}
+                              {dayjs(`${el.dateCreation}`).format("DD/MM/YYYY")}{" "}
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="post-right">
+                        <a href="#.">
+                          <i className="fa fa-heart-o" />
+                          21
+                        </a>{" "}
+                        <a href="#.">
+                          <i className="fa fa-eye" />8
+                        </a>{" "}
+                        <a href="#.">
+                          <i className="fa fa-comment-o" />
+                          17
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          ;
+       </div>
+
+       <div className="row">
+          {filtreR.map((el, index) => {
+            console.log(el);
+            return (
+              <div className="col-sm-6 col-md-6 col-lg-4">
+                <div className="dropdown profile-action ">
+                  <a
+                    href="#"
+                    className="action-icon dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i className="fa fa-ellipsis-v" />
+                  </a>
+                  <div className="dropdown-menu dropdown-menu-right">
+                    <Link
+                      className="dropdown-item"
+                      to={`/doctor/edit-blog/${el._id}`}
+                      component={Link}
+                    >
+                      <i className="fa fa-pencil m-r-5" /> Edit
+                    </Link>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#delete_doctor"
+                      onClick={() => {
+                        deletehandler(el._id);
+                      }}
+                    >
+                      <i className="fa fa-trash-o m-r-5" /> Delete
+                    </a>
+                  </div>
+                </div>
+                <div className="blog grid-blog">
+                  <div className="blog-image">
+                    <Link
+                      className="dropdown-item"
+                      to={`/doctor/blog-details/${el._id}`}
+                      component={Link}
+                    >
+                      <img
+                        className="img-fluid"
+                        src={el.picture}
+                        alt
+                      />
+                    </Link>
+                  </div>
+                  <div className="blog-content">
+                    <h3 className="blog-title">
+                      <Link to={`/doctor/blog-details/${el._id}`} component={Link}>
+                        {el.title}
+                      </Link>
+                    </h3>
+                    <p>{el.description}</p>
+                    <Link
+                      className="read-more"
+                      to={`/doctor/blog-details/${el._id}`}
+                      component={Link}
+                    >
+                      <i className="fa fa-long-arrow-right" /> Read More
+                    </Link>
+
+                    <div className="blog-info clearfix">
+                      <div className="post-left">
+                        <ul>
+                          <li>
+                            <a href="#.">
+                              <i className="fa fa-calendar" />{" "}
+                              {dayjs(`${el.dateCreation}`).format("DD/MM/YYYY")}{" "}
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="post-right">
+                        <a href="#.">
+                          <i className="fa fa-heart-o" />
+                          21
+                        </a>{" "}
+                        <a href="#.">
+                          <i className="fa fa-eye" />8
+                        </a>{" "}
+                        <a href="#.">
+                          <i className="fa fa-comment-o" />
+                          17
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          ;
+       </div>
+   </div>
+    </div>
+  );
 }
 
 export default Blogs;

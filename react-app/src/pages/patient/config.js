@@ -25,11 +25,6 @@ const sidebarConfig = [
       icon : 'fa fa-address-card-o'
     },
     {
-      title: 'Blogs',
-      path: '/patient/blogs',
-      icon : 'fa fa-commenting-o'
-    },
-    {
       title: 'Doctors',
       path: '/patient/doctors',
       icon : 'fa fa-commenting-o'

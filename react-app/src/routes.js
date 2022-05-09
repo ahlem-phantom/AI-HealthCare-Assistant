@@ -21,14 +21,10 @@ import Unauthorized from './components/unauthorized';
 import Dashboard from './pages/patient/dashboard';
 import Patient from './pages/patient';
 import Appointements from './pages/patient/appointements';
-import Blogs from './pages/patient/blogs';
-import AddBlog from './pages/patient/add-blogs';
 import Symptoms from './pages/patient/symptoms';
 import Records from './pages/patient/records';
 import EditProfile from './pages/patient/edit-profile';
-import BlogDetails from './pages/patient/blog-details';
 import Profile from './pages/patient/profile';
-import EditBlog from './pages/patient/edit-blog';
 import AddDoctor from './pages/patient/add-doctor';
 import Doctors from './pages/patient/doctors';
 import EditDoctor from './pages/patient/edit-doctor';
@@ -60,8 +56,10 @@ import Register from './pages/register';
 import FaceLog from './pages/face-log';
 import FaceRegister from './pages/regsitration/face-reg';
 import Upload from './pages/patient/upload';
-
-
+import Blogs from './pages/doctor/blogs';
+import AddBlog from './pages/doctor/add-blogs';
+import EditBlog from './pages/doctor/edit-blog';
+import BlogDetails from './pages/doctor/blog-details';
 
 // ----------------------------------------------------------------------
 
@@ -103,8 +101,10 @@ export default function Router() {
         { path: 'calendar', element: <Calendar />},
         { path: 'appointments', element: <DoctorAppointements />},
         { path: 'update_appointment/:id', element: <UpdateAppointment /> },
-        { path: 'blogs', element: <DoctorBlogs />},
-        { path: 'add-blog', element: <DoctorAddBlog />},
+        { path: 'add-blog', element: <AddBlog />},
+        { path: 'blogs', element: <Blogs />},
+        { path: 'blog-details/:id', element: <BlogDetails />},
+        { path: 'edit-blog/:id', element: <EditBlog />},
         
         //records
         {
@@ -130,18 +130,14 @@ export default function Router() {
       element: currentUser && currentUser.role==='patient'  ? <Patient /> : <Unauthorized />,
       children: [
         { path: 'app', element: <Dashboard />},
-        { path: 'appointements', element: <Appointements />},
-        { path: 'blogs', element: <Blogs />},
+        { path: 'appointements', element: <Appointements />},       
         { path: 'profile', element: <Profile /> },
-        { path: 'add-blog', element: <AddBlog />},
         { path: 'symptoms', element: <Symptoms />},
         { path: 'test', element: <Test />},
         { path: 'knowmore/:result', element: <KnowMore />},
         { path: 'records', element: <Records />},
         { path: 'edit-profile', element: <EditProfile />},
         { path: 'reset-password', element: <ResetPassword />},
-        { path: 'blog-details/:id', element: <BlogDetails />},
-        { path: 'edit-blog/:id', element: <EditBlog />},
         { path: 'doctors', element: <Doctors />},
         { path: 'add-doctor', element: <AddDoctor />},
         { path: 'edit-doctor/:id', element: <EditDoctor />},

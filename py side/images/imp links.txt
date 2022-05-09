@@ -1,2 +1,0 @@
-keras and flask error::
-https://kobkrit.com/tensor-something-is-not-an-element-of-this-graph-error-in-keras-on-flask-web-server-4173a8fe15e1

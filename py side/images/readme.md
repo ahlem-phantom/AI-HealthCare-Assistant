@@ -1,1 +1,0 @@
-# You will have to edit the database dictionary in the Flask server "script2.py" as there are no images yet in this directory. You can manually upload images and edit the database dictionary or you can add the images with the help of the react application.

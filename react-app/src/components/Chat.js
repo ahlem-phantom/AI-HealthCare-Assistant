@@ -12,7 +12,7 @@ const Chat = () => {
     }
 
     axios
-      .post('http://localhost:3001/chatbot', data)
+      .post('http://localhost:8080/chatbot', data)
       .then((response) => {
         const responseData = {
           text:

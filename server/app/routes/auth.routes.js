@@ -20,6 +20,8 @@ module.exports = function(app) {
   );
 
   app.post("/api/auth/signin", controller.signin);
+  app.post("/api/auth/signinlinkedin", controller.signinlinkedin);
+  app.post("/api/auth/signinface", controller.signinface);
 
   app.get("/api/auth/confirm/:confirmationCode", controller.verifyUser)
   app.post("/api/auth/forgot", controller.resetPassword)

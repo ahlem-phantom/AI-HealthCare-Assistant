@@ -1,0 +1,132 @@
+.categories__container {
+    margin: 3rem auto;
+    background: #009efb;
+    color: #d8efed;
+    padding: 2rem 0;
+}
+
+.categories__sectionHeading {
+    margin-top: 2rem;
+}
+
+.categories__sectionHeading p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.categories__borderDiv {
+    margin: 10px 0;
+    width: 55px;
+    height: 3px;
+    background-color: #d8efed;
+}
+
+.categories__categoryHeading {
+    margin-bottom: 2rem;
+    margin-top: 3.5rem;
+}
+
+.categories__categoryHeading p {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.categories__predictionBox {
+    /* border: 2px solid red; */
+    width: 40%;
+    padding: 3rem;
+    padding-top: 1rem;
+}
+
+.categories__uploadBtn {
+    margin-bottom: 2rem;
+}
+
+.categories__checkBtnLink {
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    background-color: #d8efed;
+    color: #009efb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.categories__checkBtnLink:hover {
+    color: #009efb;
+}
+
+/* .categories__predictionBox {
+    border: 2px solid red;
+}
+
+.categories__rowContainer {
+    border: 2px solid greenyellow
+} */
+
+.categories__columnContainerDiv {
+    /* border: 2px solid #fff; */
+    margin: 1.2rem;
+    background-color: #55aadb;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.categories__serialInfo {
+    font-size: 3rem;
+    margin: 0 1rem;
+}
+
+.categories__name {
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
+    /* margin-right: 3rem; */
+}
+
+@media only screen and (max-width: 1600px) {
+    .categories__predictionBox {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .categories__predictionBox {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .categories__predictionBox {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .categories__predictionBox {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .categories__predictionBox {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .categories__predictionBox {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .categories__predictionBox {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .categories__predictionBox {
+        width: 100%;
+    }
+}

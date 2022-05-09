@@ -1,11 +1,13 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable react/style-prop-object */
-import Header from '../components/header';
 import Footer from '../components/footer';
 import { useEffect } from 'react';
 import Navbar from '../components/navbar';
 import { Link } from 'react-router-dom';
-import { Typography } from '@mui/material';
-function Role() {
+
+function Role () {
+
 
   const loadScript = (src) => {
     return new Promise(function (resolve, reject) {
@@ -26,6 +28,14 @@ function Role() {
    loadScript(`${process.env.PUBLIC_URL}js/main.js`)
   
     })
+    const patienthandler = (e) => {
+      window.location.href='/face-reg';
+      window.localStorage.setItem('role', 'patient')
+    };
+    const doctorhandler = (e) => {
+      window.location.href='/verification';
+      window.localStorage.setItem('role', 'doctor')
+    };
     return (
 <div>
   <Navbar />
@@ -36,7 +46,7 @@ function Role() {
       <div className="row slider-text align-items-end">
         <div className="col-md-7 col-sm-12 ftco-animate mb-5">
           <p className="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span className="mr-2"><a href="index.html">Home</a></span> <span>Sign Up</span></p>
-          <h1 className="mb-3 navbar-brand" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Sign Up In <span style={{ fontWeight : 'bold'  }}>Nearest</span><span style={{color : 'blue', fontWeight : 'bold' }}>Doctor</span></h1>
+          <h1 className="mb-3 navbar-brand" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Sign Up In <span style={{ fontWeight : 'bold'  }}>Nearest</span><span style={{color : '#009efb', fontWeight : 'bold' }}>Doctor</span></h1>
 
         </div>
       </div>
@@ -52,9 +62,9 @@ function Role() {
           &nbsp;
           <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/login">
 
-<p className="button text-center"><a className=" px-4 py-3">     
+<p className="button text-center">    
               <span>Sign In</span>
-           </a>
+           
            
 </p>
 </Link> 
@@ -65,18 +75,15 @@ function Role() {
           <div>
   <div className="ftco-animate">
     <div className="pricing-entry text-center">
-    <a href="#" className="gallery img d-flex align-items-center" style={{backgroundImage: 'url(images/doctor.jpg)'}}></a>
-    <div class="img-overlay">
+    <a href="ok" className="gallery img d-flex align-items-center" style={{backgroundImage: 'url(images/doctor.jpg)'}}></a>
+    <div className="img-overlay">
     <button className="role-button text-center cta">DOCTOR</button>
   </div>
-  <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/register-doctor">
-
-      <p className="button text-center"><a className="btn btn-primary btn-outline-primary px-4 py-3">     
+  <button className="nav-link" onClick={doctorhandler} >
+            <p className="button text-center"><a className="btn btn-primary btn-outline-primary px-4 py-3">     
                     <span>Sign Up</span>
-                 </a>
-                 
-      </p>
-      </Link>  
+                 </a></p>
+                 </button>
 
     </div>
   </div>
@@ -85,18 +92,20 @@ function Role() {
   <div className="container">
     <div className="row justify-content-center">
     </div>
+    <br/>
+
     <div className="row">
       <div className="col-md-12">
         <div className="pricing-entry text-center">
           <div>
-            <h3 className="mb-4">Features</h3>
+            <h3 className="mb-4" style={{color : '#009efb', fontSize:'20px', fontWeight :'bold'}}>Features</h3>
           </div>
           <ul className="">
-            <li><span class="icon-check"></span>  Diagnostic Services</li>
-            <li><span class="icon-check"></span>  Professional Consultation</li>
-            <li><span class="icon-check"></span>  Tooth Implants</li>
-            <li><span class="icon-check"></span>  Surgical Extractions</li>
-            <li><span class="icon-check"></span>  Teeth Whitening</li>
+            <li><span className="icon-check"></span>  Diagnostic Services</li>
+            <li><span className="icon-check"></span>  Appointement Management</li>
+            <li><span className="icon-check"></span>  Well secured Records </li>
+            <li><span className="icon-check"></span>  Patient Management</li>
+            <li><span className="icon-check"></span>  Blogs Search Engine</li>
           </ul>
         </div>
       </div>
@@ -110,16 +119,16 @@ function Role() {
         <div>
         <div className="ftco-animate">
           <div className="pricing-entry text-center">
-          <a href="#" className="gallery img d-flex align-items-center" style={{backgroundImage: 'url(images/patient.jpg)'}}></a>
-          <div class="img-overlay">
+          <a className="gallery img d-flex align-items-center" style={{backgroundImage: 'url(images/patient.jpg)'}}></a>
+          <div className="img-overlay">
     <button className="role-button text-center cta">PATIENT</button>
   </div>
-  <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/register-patient">
-
+  <button className="nav-link" onClick={patienthandler} >
             <p className="button text-center"><a className="btn btn-primary btn-outline-primary px-4 py-3">     
                     <span>Sign Up</span>
                  </a></p>
-                 </Link>  
+                 </button>
+                 
 
           </div>
         </div>
@@ -128,18 +137,19 @@ function Role() {
       <div className="container">
     <div className="row justify-content-center">
     </div>
+    <br/>
     <div className="row">
       <div className="col-md-12">
         <div className="pricing-entry text-center">
           <div>
-            <h3 className="mb-4">Features</h3>
+          <h3 className="mb-4" style={{color : '#009efb', fontSize:'20px', fontWeight :'bold'}}>Features</h3>
           </div>
           <ul>
-            <li>Diagnostic Services</li>
-            <li>Professional Consultation</li>
-            <li>Tooth Implants</li>
-            <li>Surgical Extractions</li>
-            <li>Teeth Whitening</li>
+          <li><span className="icon-check"></span>  Specialist Recommandation</li>
+            <li><span className="icon-check"></span>  Appointement with the nearest doctor</li>
+            <li><span className="icon-check"></span>  Well secured medical records </li>
+            <li><span className="icon-check"></span>  Mental health test with results</li>
+            <li><span className="icon-check"></span>  Engaging chatbot health assitant</li>
           </ul>
         </div>
       </div>

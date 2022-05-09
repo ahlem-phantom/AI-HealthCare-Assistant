@@ -4,8 +4,12 @@
     "description": "Node.js + MongoDB: JWT Authentication & Authorization",
     "main": "server.js",
     "scripts": {
-        "server": "nodemon index.js",
-        "start": "node index.js"
+        "build": "cd ../react-app && npm run build",
+        "install-client": "cd ../react-app && npm install",
+        "heroku-postbuild": "npm run install-client && npm run build",
+        "server": "nodemon server.js",
+        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix --prefix \"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"cd ../react-app && npm run start  --prefix \""
     },
     "keywords": [
         "node.js",
@@ -20,21 +24,30 @@
         "actions-on-google": "^3.0.0",
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.19.0",
+        "cheerio": "^1.0.0-rc.10",
+        "cookie-parser": "^1.4.6",
         "cors": "^2.8.5",
         "dialogflow": "^1.2.0",
         "dialogflow-fulfillment": "^0.6.1",
         "dotenv": "^16.0.0",
+        "ejs": "^3.1.7",
         "express": "^4.17.1",
         "express-fileupload": "^1.3.1",
         "flatted": "^3.2.5",
         "geolib": "^3.3.3",
         "geopoint": "^1.0.1",
+        "google": "^2.1.0",
         "jsonwebtoken": "^8.5.1",
         "moment": "^2.29.3",
         "mongoose": "^5.9.1",
+        "morgan": "^1.10.0",
         "multer": "^1.4.4",
         "nodemailer": "^6.7.5",
         "nodeman": "^1.1.2",
+        "on": "^1.3.0",
+        "request": "^2.88.2",
+        "stripe": "^8.222.0",
+        "superagent": "^7.1.3",
         "uuid": "^8.3.2"
     }
 }

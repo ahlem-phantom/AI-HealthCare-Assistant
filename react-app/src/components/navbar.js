@@ -28,7 +28,7 @@ function Navbar() {
         {currentUser ? (
            <div className="header">
            <div className="header-left">
-             <a href="index-2.html" className="logo">
+             <a className="logo">
                <img src="assets/img/logo.png" width={35} height={35} alt="logo" />{" "}
                <span>NearestDoctor</span>
              </a>
@@ -48,6 +48,49 @@ function Navbar() {
                 </a>
 
                 <ul className="nav user-menu float-right">
+                <li className="nav-item active"><Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/">
+                          <span >Home</span>
+                       </Link>
+                       </li>
+                       { currentUser.role ==='patient' ? (
+                       <li className="nav-item active"><Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/patient/app">
+                          <span >My Space</span>
+                       </Link></li>
+                       ):(
+                       
+                       <div></div>
+                       )}
+
+                       { currentUser.role ==='doctor' ? (
+                       <li className="nav-item active"><Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/doctor/app">
+                          <span >My Space</span>
+                       </Link></li>
+                       ):(
+                       
+                       <div></div>
+                       )}
+
+                <li className="nav-item">        
+                 <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/shop">
+                    <span>Shop</span>
+                 </Link>     
+        </li>    
+        <li className="nav-item">        
+                       <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/blog">
+                          <span>Blog</span>
+                       </Link>     
+              </li> 
+              <li className="nav-item">        
+                       <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/team">
+                          <span>About</span>
+                       </Link>     
+              </li>
+              <li className="nav-item">        
+                       <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/contact">
+                          <span>Contact Us</span>
+                       </Link>     
+              </li>    
+        
                   <li className="nav-item dropdown has-arrow">
                     <a
                       href="#"
@@ -106,7 +149,7 @@ function Navbar() {
           <div className="container">
           <img src="assets/img/logo.png" width={35} height={35} alt="logo" />{" "}
            &nbsp;
-            <a className="navbar-brand" href="index.html">Nearest<span style={{color : 'blue'}}>Doctor</span></a>
+            <a className="navbar-brand" href="index.html">Nearest<span >Doctor</span></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="oi oi-menu" /> Menu
             </button>
@@ -115,9 +158,11 @@ function Navbar() {
                 <li className="nav-item active"><Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/">
                           <span >Home</span>
                        </Link></li>
-                <li className="nav-item"><a href="about.html" className="nav-link">About</a></li>
-                <li className="nav-item"><a href="services.html" className="nav-link">Services</a></li>
-                <li className="nav-item">        
+                       <li className="nav-item">        
+                       <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/team">
+                          <span>About</span>
+                       </Link>     
+              </li>                 <li className="nav-item">        
                        <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/price">
                           <span>Pricing</span>
                        </Link>     
@@ -130,7 +175,12 @@ function Navbar() {
                        <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/contact">
                           <span>Contact Us</span>
                        </Link>     
-              </li>         
+              </li> 
+              <li className="nav-item">        
+                 <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/shop">
+                    <span>Shop</span>
+                 </Link>     
+        </li>        
                <li className="nav-item cta">        
                        <Link className="nav-link" underline="none" variant="subtitle2" component={Link} to="/role">
                           <span>Get Started</span>

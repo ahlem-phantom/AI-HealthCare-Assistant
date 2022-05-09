@@ -33,8 +33,8 @@ function Price() {
     <div className="container" data-scrollax-parent="true">
       <div className="row slider-text align-items-end">
         <div className="col-md-7 col-sm-12 ftco-animate mb-5">
-          <p className="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span className="mr-2"><a href="index.html">Home</a></span> <span>Sign Up</span></p>
-          <h1 className="mb-3 navbar-brand" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Sign Up In <span style={{ fontWeight : 'bold'  }}>Nearest</span><span style={{color : 'blue', fontWeight : 'bold' }}>Doctor</span></h1>
+          <p className="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span className="mr-2"><a href="index.html">Home</a></span> <span>Pricing</span></p>
+          <h1 className="mb-3 navbar-brand" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Pricing <span style={{ fontWeight : 'bold'  }}>Nearest</span><span style={{color : 'blue', fontWeight : 'bold' }}>Doctor</span></h1>
 
         </div>
       </div>
@@ -47,7 +47,6 @@ function Price() {
     <div className="row justify-content-center mb-5 pb-5">
       <div className="col-md-7 text-center heading-section ftco-animate">
         <h2 className="mb-3">Our Best Pricing</h2>
-        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
       </div>
     </div>
     <div className="row">

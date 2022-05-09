@@ -1,6 +1,42 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 function ResetPassword() {
+  const params = useParams();
+  const [users, setUser] = useState([]);
+  useEffect(() => {
+    const getUsers = async () => {
+      const res = await axios("http://localhost:8080/users/resetPass/" + params.confirmationCode);
+      console.log(res.data);
+      setUser(res.data);
+    };
+    getUsers();
+  }, []);
+
+  const [password, setPassword] = useState("");
+  const [resetPassword, setResetPassword] = useState("");
+
+  const onChangePassword = (e) => {
+    const password = e.target.value;
+    setPassword(password);
+  };
+
+  const onChangeResetPassword = (e) => {
+    const resetPassword = e.target.value;
+    setResetPassword(resetPassword);
+  };
+
+  const vpassword = (value) => {
+  if (value.length < 6 || value.length > 40) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        The password must be between 6 and 40 characters.
+      </div>
+    );
+  }
+};
+
   return (
     <div className="main-wrapper account-wrapper">
       <div className="account-page">
@@ -18,14 +54,26 @@ function ResetPassword() {
                 </a>
               </div>
               <div className="form-group">
-                <label>New Password </label>
-                <input type="text" className="form-control" autofocus />
+                <label htmlFor="password">New Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  value={password}
+                  onChange={onChangePassword}
+                />
               </div>
               <div className="form-group">
-                <label>Confirm New Passwordd</label>
-                <input type="text" className="form-control" autofocus />
+                <label htmlFor="password">Confirm New Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  value={resetPassword}
+                  onChange={onChangeResetPassword}
+                />
               </div>
-              <div classname="col-sm-12 text-center m-t-20">
+              <div className="col-sm-12 text-center m-t-20">
                 <button className="btn btn btn-primary btn-rounded float-center">
                   {" "}
                   Reset Password

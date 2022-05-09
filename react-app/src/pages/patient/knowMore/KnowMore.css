@@ -1,0 +1,55 @@
+.knowMore__container {
+    margin-top: 2rem;
+    /* border: 2px solid red; */
+}
+
+.knowMore__profileInfoContainer {
+    /* border: 2px solid greenyellow; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    margin-bottom: 2rem;
+}
+
+.knowMore__infoDiv {
+    margin-left: 1rem;
+}
+
+.knowMore__infoHeading p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #064848;
+}
+
+.knowMore__profileDiv img {
+    width: 100%;
+}
+
+.knowMore__sectionHeading p {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.knowMore__otherInfoDiv {
+    background-color: #d8efed;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin: 3rem auto;
+    margin-top: 1rem;
+}
+
+.knowMore__otherInfoHeading p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #064848;
+}
+
+.knowMore__otherInfoDiv ul {
+    list-style-type: square;
+    border-color: #d8efed;
+}
+
+.knowMore__otherInfoDiv li {
+    color: #064848;
+    font-size: 1.5rem;
+    font-weight: bold;
+}

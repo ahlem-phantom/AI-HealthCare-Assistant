@@ -40,7 +40,7 @@ const AddOldProblem = () => {
   };
   return (
     <div
-      class="offset-md-5 card col-md-3"
+      class="offset-md-4 card col-md-3"
       style={{ boxShadow: "5px 5px 15px black", marginTop: "20px" }}
     >
       <form

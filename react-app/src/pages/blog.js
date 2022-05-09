@@ -42,7 +42,7 @@ getBlogs();
       <div className="row slider-text align-items-end">
         <div className="col-md-7 col-sm-12 ftco-animate mb-5">
           <p className="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span className="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
-          <h1 className="mb-3 navbar-brand" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Read Our Blogs </h1>
+          <h1 className="mb-3 navbar-brand" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Read Our <span style ={{color :'#009efb' , fontWeight : 'bold'}}> Blogs</span> </h1>
 
         </div>
       </div>
@@ -180,7 +180,7 @@ getBlogs();
           </div>
         </div>
       </div> {/* END: col-md-8 */}
-      <div className="col-md-4 sidebar ftco-animate">
+      <div className="col-md-4 ftco-animate">
         <div className="sidebar-box">
           <form action="#" className="search-form">
             <div className="form-group">
@@ -234,23 +234,6 @@ getBlogs();
               </div>
             </div>
           </div>
-        </div>
-        <div className="sidebar-box ftco-animate">
-          <h3>Tag Cloud</h3>
-          <div className="tagcloud">
-            <a href="#" className="tag-cloud-link">dish</a>
-            <a href="#" className="tag-cloud-link">menu</a>
-            <a href="#" className="tag-cloud-link">food</a>
-            <a href="#" className="tag-cloud-link">sweet</a>
-            <a href="#" className="tag-cloud-link">tasty</a>
-            <a href="#" className="tag-cloud-link">delicious</a>
-            <a href="#" className="tag-cloud-link">desserts</a>
-            <a href="#" className="tag-cloud-link">drinks</a>
-          </div>
-        </div>
-        <div className="sidebar-box ftco-animate">
-          <h3>Paragraph</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
         </div>
       </div>
     </div>

@@ -1,0 +1,144 @@
+.landingPage__container {
+  width: 100%;
+}
+
+.landingPage__rowContainer {
+  --bs-gutter-x: 0;
+}
+
+.landingPage__bgInfoContainer {
+  background: #d8efed;
+}
+
+.landingPage__bgContainer img {
+  width: 100%;
+}
+
+.landingPage__bgInfo {
+  padding: 1rem;
+}
+
+.landingPage__smallPHeading p {
+  font-size: 1.2rem;
+  color: #009efb;
+}
+
+.landingPage__heading {
+  color: #009efb;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.landingPage__subHeading {
+  color: #009efb;
+  font-size: 2.5rem;
+}
+
+.landingPage__checkBtn {
+  margin: 1rem 0;
+}
+
+.landingPage__checkBtnLink {
+  background: #064848;
+  color: #fff;
+  border-radius: 2rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  text-decoration: none;
+}
+
+.landingPage__checkBtnLink:hover {
+  color: #fff;
+}
+
+@media only screen and (max-width: 1400px) {
+  .landingPage__bgInfo {
+    padding: 0;
+  }
+  .landingPage__heading {
+    font-size: 2.5rem;
+  }
+  
+  .landingPage__subHeading {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .landingPage__heading {
+    font-size: 2rem;
+  }
+  
+  .landingPage__subHeading {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .landingPage__heading {
+    font-size: 1.5rem;
+  }
+  
+  .landingPage__subHeading {
+    font-size: 1.2rem;
+  }
+
+  .landingPage__checkBtnLink {
+    font-size: 0.8rem;
+  }
+
+  .landingPage__checkBtn {
+    margin: 0.5rem 0;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .landingPage__heading {
+    font-size: 1.2rem;
+  }
+  
+  .landingPage__subHeading {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  
+  .landingPage__subHeading p {
+    margin-bottom: 0;
+  }
+
+  .landingPage__smallPHeading p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .landingPage__checkBtnLink {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .landingPage__bgInfoContainer {
+    padding: 2rem;
+  }
+  .landingPage__heading {
+    font-size: 2.5rem;
+  }
+  
+  .landingPage__subHeading {
+    font-size: 1.5rem;
+  }
+  
+  .landingPage__subHeading p {
+    margin-bottom: 1rem;
+  }
+
+  .landingPage__smallPHeading p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .landingPage__checkBtnLink {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}

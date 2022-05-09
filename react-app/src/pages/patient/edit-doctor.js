@@ -30,7 +30,7 @@ function EditDoctor() {
   const [zip, setZip] = useState("");
   const [phone, setPhone] = useState("");
   const [status, setStatus] = useState("");
-
+const [file, setFile] = useState([]);
   const navigate = useNavigate();
 
   const onChangeFirstname = (e) => {
@@ -92,16 +92,30 @@ function EditDoctor() {
     setStatus(status);
   };
 
-  const onChangePicture = (e) => {
-    const picture = e.target.files[0];
-    setPicture(picture);
+  const onChangePicture= (e) => {
+    const img = e.target.files[0];
+    setFile(img);
+    setPicture(URL.createObjectURL(img));
   };
+
+
   const handleEdit = (e) => {
     e.preventDefault();
-    const formData = new FormData()
-    
-    axios.post("http://localhost:8080/users/user-profile", 
-    formData.append('picture', picture), {}).then(res => { console.log(res)})
+ 
+    const formData = new FormData();
+    formData.append('profileImg',file);
+    const config = {
+        headers: {
+            'content-type': 'multipart/form-data'
+        }
+    };
+    const pic = JSON.parse(localStorage.getItem('user')).id;
+
+    axios.put("http://localhost:8080/users/user-profile/"+pic,formData,config)
+        .then((response) => {
+            alert("The file is successfully uploaded");
+        }).catch((error) => {
+    });
     
     axios
       .put("http://localhost:8080/users/update-user/" + params.id, {
@@ -119,6 +133,7 @@ function EditDoctor() {
         status,
       })
       .then((res) => console.log(res.data));
+     
     navigate("/patient/doctors", { replace: true });
     window.location.reload();
   };
@@ -137,11 +152,11 @@ function EditDoctor() {
       setStreet(doctors.street);
       setPhone(doctors.phone);
       setStatus(doctors.status);
+      setPicture(doctors.picture);
 
     }
   }, [doctors]);
 
-  console.log(picture.filename);
   return (
     <div className="main-wrapper">
       <div className="page-wrapper">
@@ -324,15 +339,13 @@ function EditDoctor() {
                       <label>Your avatar:</label>
                       <div className="profile-upload">
                         <div className="upload-img">
-                          <img alt src="assets/img/user.jpg" />
+                          <img alt src={picture} />
                         </div>
                         <div className="upload-input">
                           <input
-                            type="file"
-                            name="picture"
-                            onChange={onChangePicture}
+                            type="file" name="profileImg" onChange= {onChangePicture}
                             className="form-control"
-                          />
+                          />                     
                         </div>
                       </div>
                     </div>

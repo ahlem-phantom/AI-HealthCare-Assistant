@@ -7,7 +7,6 @@ import {useDispatch , useSelector} from "react-redux"
 import { useEffect } from 'react';
 import appointmentReducer from "../../Js/reducer/appointment";
 import { createHashHistory } from "history";
-import { date } from 'yup';
 
 
 
@@ -22,36 +21,57 @@ function Update (){
     },[]);
     
     const app = useSelector((state) => state.appointmentReducer.appointment);
-    console.log("aa",app.appointment);
+    
     
     const [Appointment , setAppointment] = useState({
-        Title: "",
+        Firstname: "",
+        Lastname: "",
+        Email: "",
+        Phone: "",
         StartDate: "",
         EndDate: "",
     })
 
    
-    
         React.useEffect(() => {
-            if (app.appointment) 
+           
             setAppointment({
-                Title: app.appointment.Title,
-                StartDate: app.appointment.StartDate,
-                EndDate: app.appointment.EndDate,
+                Firstname:app.appointment && app.appointment.Firstname,
+                Lastname:app.appointment && app.appointment.Lastname,
+                Email:app.appointment && app.appointment.Email,
+                Phone:app.appointment && app.appointment.Phone,
+                StartDate:app.appointment &&  app.appointment.StartDate,
+                EndDate:app.appointment && app.appointment.StartDate,
             });
-            console.log("naluti", Appointment)
+            
         },[app.appointment])
-        if (!app.appointment || app.appointment == undefined){
-                return null;
-            }
+        
          
     
     
     //console.log(Appointment)
-    const handletitleChange =(e)=>{
+    const handleFirstnameChange =(e)=>{
         setAppointment({
             ...Appointment,
-            Title: e.target.value
+            Firstname: e.target.value
+        });
+      }
+    const handleLastnameChange =(e)=>{
+        setAppointment({
+            ...Appointment,
+            Lastname: e.target.value
+        });
+      }
+      const handleEmailChange =(e)=>{
+        setAppointment({
+            ...Appointment,
+            Email: e.target.value
+        });
+      }
+      const handlePhoneChange =(e)=>{
+        setAppointment({
+            ...Appointment,
+            Phone: e.target.value
         });
       }
     const handlestartChange =(date)=>{
@@ -71,7 +91,7 @@ function Update (){
       
 
 
-    if (!app.appointment || app.appointment == undefined) return null;
+    //if (!app.appointment || app.appointment == undefined) return null;
     return (
 
     <div className="content">
@@ -88,50 +108,50 @@ function Update (){
                             <div className="form-group">
                                 <label>First Name <span className="text-danger">*</span></label>
 
-                                <input className="form-control" type="text" value={Appointment.Title}  onChange={(e) =>{handletitleChange(e)} } />
+                                <input className="form-control" type="text" value={Appointment.Firstname}  onChange={(e) =>{handleFirstnameChange(e)} } />
                             </div>
                         </div>
                         <div className="col-sm-6">
                             <div className="form-group">
-                                <label>Last Name</label>
-                                <input className="form-control" type="text" />
+                                <label>Last Name <span className="text-danger">*</span></label>
+                                <input className="form-control" value={Appointment.Lastname} type="text" onChange={(e) =>{handleLastnameChange(e)} } />
                             </div>
                         </div>
                         <div className="col-sm-6">
                             <div className="form-group">
                             <label>Email <span className="text-danger">*</span></label>
-                            <input className="form-control" type="email" />
+                            <input className="form-control" value={Appointment.Email} type="email" onChange={(e) =>{handleEmailChange(e)} } />
                             </div>
                         </div>
                         <div className="col-sm-6">
                             <div className="form-group">
-                            <label>Phone </label>
-                            <input className="form-control" type="text" />
+                            <label>Phone <span className="text-danger">*</span></label>
+                            <input className="form-control" type="text" value={Appointment.Phone} onChange={(e) =>{handlePhoneChange(e)} } />
                             </div>
                         </div>
                         <div className="col-sm-6">
                             <div className="form-group">
-                            <label>Start date </label>
+                            <label>Start date <span className="text-danger">*</span></label>
                             <DatePicker 
-                                dateFormat="DD-MM-YYYY"
-                                timeFormat="hh:mm A"
-                                placeholderText="Start Date" 
-                                initialValue={moment(Appointment.StartDate).toDate()}
-                                selected={Appointment.StartDate }
-                                onChange={handlestartChange }
+                                //dateFormat="DD-MM-YYYY"
+                                //timeFormat="hh:mm A"
+                                //placeholderText="Start Date" 
+                               // initialValue={Appointment.StartDate}
+                                //selected={Appointment.StartDate }
+                               // onChange={handlestartChange }
                              />
                             </div>
                         </div>
                         <div className="col-sm-6">
                             <div className="form-group">
-                            <label>End date </label>
+                            <label>End date <span className="text-danger">*</span></label>
                             <DatePicker 
-                                dateFormat="DD-MM-YYYY"
-                                timeFormat="hh:mm A"
-                                placeholderText="End Date" 
-                                initialValue={moment(Appointment.EndDate).toDate()}
-                                selected={Appointment.EndDate}
-                                onChange={handleendChange }
+                                //dateFormat="DD-MM-YYYY"
+                                //timeFormat="hh:mm A"
+                                //placeholderText="End Date" 
+                               // initialValue={Appointment.EndDate}
+                               // selected={Appointment.EndDate}
+                               // onChange={handleendChange }
                              />
                             </div>
                         </div>

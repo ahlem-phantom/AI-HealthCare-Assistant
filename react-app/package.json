@@ -48,6 +48,7 @@
     "redux-thunk": "^2.4.1",
     "sass": "^1.50.1",
     "simplebar-react": "^2.3.6",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },

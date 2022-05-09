@@ -54,10 +54,13 @@ var recordRouter = require('./app/routes/Record');
 const blogRoute = require('./app/routes/blog.routes')
 const userRoute = require('./app/routes/users.routes')
 const AppointementRoutes = require('./app/routes/AppRoutes');
+const ChatAppRoutes = require('./app/routes/ChatAppRoutes')
 app.use('/blogs', blogRoute)
 app.use('/users', userRoute)
 app.use('/Appointments', AppointementRoutes);
 app.use('/records', recordRouter);
+app.use('/ChatApp', ChatAppRoutes);
+
 
 
 
@@ -66,6 +69,7 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
+
 
 function initial() {
     Role.estimatedDocumentCount((err, count) => {

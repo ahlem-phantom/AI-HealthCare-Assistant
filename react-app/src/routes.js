@@ -45,6 +45,7 @@ import DoctorBlogs from './pages/doctor/blogs';
 import DoctorAddBlog from './pages/doctor/add-blogs';
 import Calendar from './pages/doctor/calendar';
 import UpdateAppointment from './pages/doctor/updateAppointment';
+import TakeAppointment from './pages/patient/take_appointment';
 
 
 // ----------------------------------------------------------------------
@@ -81,6 +82,7 @@ export default function Router() {
         { path: 'update_appointment/:id', element: <UpdateAppointment /> },
         { path: 'blogs', element: <DoctorBlogs />},
         { path: 'add-blog', element: <DoctorAddBlog />},
+
         
         //records
         {
@@ -123,6 +125,7 @@ export default function Router() {
         { path: 'add-doctor', element: <AddDoctor />},
         { path: 'edit-doctor/:id', element: <EditDoctor />},
         { path: 'doctor-details/:id', element: <DoctorDetail />},
+        { path: 'take-appointment', element: <TakeAppointment />},
       ]
     },
     {

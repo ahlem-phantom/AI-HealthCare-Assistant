@@ -3,7 +3,8 @@ import {
     GET_ONE_APPOINTMENT,
     ADD_APPOINTMENT,
     DELETE_APPOINTMENT,
-    UPDATE_APPOINTMENT
+    UPDATE_APPOINTMENT,
+    SEND_MESSAGE
 } from"../actionTypes/appointment";
  const initialState = {
      appointment: [],

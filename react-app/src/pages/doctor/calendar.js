@@ -8,6 +8,7 @@ import {useDispatch , useSelector} from "react-redux"
 import {  GetAppointments } from "../../Js/actions/appointment";
 import { useEffect } from 'react';
 import { createHashHistory } from "history";
+import AuthService from "../../services/auth.service";
 
 
 
@@ -23,12 +24,12 @@ const localizer = momentLocalizer(moment) // or globalizeLocalizer
     
 
 function Calendrier() {
-   
+    const currentUser = AuthService.getCurrentUser();
     const dispatch = useDispatch();
     
     const appointments = useSelector((state) => state.appointmentReducer.appointment);
     useEffect(() => {
-        dispatch(GetAppointments());
+        dispatch(GetAppointments(currentUser.id));
     })   
 
     
@@ -57,7 +58,7 @@ function Calendrier() {
             events={apps()}
             startAccessor= "StartDate"
             endAccessor="EndDate"
-            titleAccessor="Title"
+            titleAccessor="Firstname"
             defaultView='day'
             style={{ height: 500, margin: "50px", borderTopColor:'black' }}
             />

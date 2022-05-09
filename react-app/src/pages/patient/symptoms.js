@@ -3,9 +3,14 @@ import { useEffect } from 'react';
 import Chat from '../../components/Chat';
 import './chat.css';
 import ImageUploader from 'react-images-upload';
+import UploadImage from './uploadImage/UploadImage';
 
 function Symptoms() {
-   
+  useEffect(() => {
+    [...document.getElementsByClassName("alan")].map(n => n && n.remove());
+
+  })
+
     return (
       <div className="main-wrapper">
  
@@ -35,12 +40,8 @@ function Symptoms() {
                       <h4 className="card-title d-inline-block">Quick Diagnosis</h4>
                     </div>
                     <div className="card-body p-0">
-                    <ImageUploader
-                withIcon={true}
-                buttonText='Upload Scanner'
-                imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                maxFileSize={5242880}
-            />
+                      <UploadImage />
+                
                     </div>
                   </div>
                 </div>

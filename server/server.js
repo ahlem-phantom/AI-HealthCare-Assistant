@@ -1,20 +1,28 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
 const app = express();
-
+var cookieParser = require('cookie-parser');
+var patho = require('path');
+// view engine setup
+app.set('views', patho.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 var corsOptions = {
     origin: "http://localhost:8081"
 };
 
+
+
+
 app.use(cors(corsOptions));
+app.use(cookieParser());
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 
 
@@ -56,9 +64,14 @@ const talkToChatbot = require('./chatbot');
 const fulfillmentRoutes = require('./fulfillment');
 var recordRouter = require('./app/routes/Record');
 var productRouter = require('./app/routes/product.route');
-const blogRoute = require('./app/routes/blog.routes')
-const userRoute = require('./app/routes/users.routes')
+const blogRoute = require('./app/routes/blog.routes');
+const userRoute = require('./app/routes/users.routes');
+const oauthRoute = require('./app/routes/oauth.routes');
 const AppointementRoutes = require('./app/routes/AppRoutes');
+const contactRoute = require('./app/routes/contact.routes');
+const stripeRoute = require('./app/routes/payment.routes');
+const scrapRoute = require('./app/routes/scrap.routes');
+
 
 
 app.use(morgan('dev'));
@@ -67,6 +80,10 @@ app.use('/products', productRouter)
 app.use('/users', userRoute)
 app.use('/Appointments', AppointementRoutes);
 app.use('/records', recordRouter);
+app.use('/oauth', oauthRoute);
+app.use('/contacts', contactRoute);
+app.use('/stripe', stripeRoute);
+app.use('/scrap', scrapRoute);
 
 app.post('/chatbot', bodyParser.json(), bodyParser.urlencoded({ extended: true }), async(req, res) => {
     const message = req.body.message
@@ -85,6 +102,11 @@ app.post('/chatbot', bodyParser.json(), bodyParser.urlencoded({ extended: true }
 })
 app.use(fulfillmentRoutes)
 
+// Build setup
+app.use(express.static(path.resolve(__dirname, "../react-app/build")));
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "../react-app/build", "index.html"));
+});
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

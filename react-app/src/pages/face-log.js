@@ -5,9 +5,18 @@ import './verify.css';
 import Sketch from "react-p5";
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
+import AuthService from '../services/auth.service';
+import { Navigate } from "react-router-dom";
+import Swal from 'sweetalert2';
+import './spinner.css';
 const axios = require('axios');
 
 let video;
+let data;
+
+const mystyle = {
+	alignSelf: 'center',
+   };
 
 export class FaceLog extends Component {
 
@@ -15,9 +24,19 @@ export class FaceLog extends Component {
 		super(props);
 		this.state = {
 			verify : false,
-			idenity: ' '
+			idenity: ' ',
+			pathn: '',
+			loading: false,
+
 		};
 	}
+
+	componentDidMount(){
+		setTimeout(() => { 
+		  this.setState({loading: false})
+		},4000)
+	} // simulate loading
+
 
 	setup(p5='', canvasParentRef='') {
         p5.noCanvas();
@@ -35,10 +54,6 @@ export class FaceLog extends Component {
   			});
     }
 
-    logout(){
-    	this.stop();
-    	this.props.backhome();
-    }
 
     setup2(){
     	const button = document.getElementById('submit');
@@ -56,21 +71,53 @@ export class FaceLog extends Component {
           };
           const response = await axios.post('http://localhost:5000/verify', {'image64':image64});
           console.log(response.data.identity);
+		 
           if(response.data.identity){
+		
           	this.stop();
+			 
+			  const rolee = await axios.get("http://localhost:8080/users/usern-role/"+response.data.identity);
+
+			  
+			  AuthService.loginface(response.data.identity).then((response) => {
+				console.log(response)
+				if(rolee.data==="doctor"){
+					localStorage.setItem('role','doctor');
+					this.setState({
+						pathn : '/doctor/app'
+				})
+			}
+				else 
+				if(rolee.data==="patient"){
+					localStorage.setItem('role','patient');
+					this.setState({
+						pathn : '/patient/app'
+				})
+			  }
+			  })
+    if (this.state.loading) {
+      data = <img src="assets/img/success.png"  />
+
+    } 
 	        this.setState({
 	        	verify:true,
-	        	idenity: response.data.identity
+	        	idenity: response.data.identity		
 	        })
-			alert("Welcome  "+`${this.state.idenity}`)
-
+	
+			 
+	
+		
           } else {
           	this.stop();
-          	alert("Not a registered user!")
-          	this.props.backhome();
+			  Swal.fire({  
+				title: 'Not a registered user',  
+				text: 'Try Again',
+				icon: 'warning'
+			  });
           }
         });
     }
+
 
 	render(){
 
@@ -79,9 +126,9 @@ export class FaceLog extends Component {
 					<div className="limiter">
 						<div className="container-login100">
 							<div className="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-								
-									<span className="login100-form-title p-b-53">
-										Face Identification
+
+									<span className="login100-form-title p-b-53" style={{ color : "#009efb"}}>
+									Log in with	Face ID
 									</span>
 
 									<input/>
@@ -100,6 +147,7 @@ export class FaceLog extends Component {
 										<button id="submit" onClick={this.setup2.bind(this)} className="login100-form-btn">
 											Sign In
 										</button>
+
 									</div>
 								
 							</div>
@@ -109,11 +157,33 @@ export class FaceLog extends Component {
 					<div id="dropDownSelect1"></div></div>
 		)
 
-
+      
     	return (<div >
-    		{this.state.verify? <div><h1>Welcome, {this.state.idenity}.</h1>
-    							<button onClick={this.props.backhome} className="container-login100-form-btn">Logout!</button>
-    							</div> :  verify }
+    		{this.state.verify? <Navigate to={this.state.pathn} replace={true} /> :  verify }
+			<div className="main-wrapper account-wrapper">
+    <div className="account-page">
+      <div className="account-center">
+        <br />
+        <br /> <br />
+        <br />
+        <br />
+        <br />
+        <div className="account-box" style={{width : "900px" }} >
+
+
+            <div className="account-logo" style={{width : "900px"}}>
+			<div class="loader" style={mystyle}></div>
+<br /><br /><br />
+            <p style={{ fontSize : "20px" , color : 'black'}}>Verifying Identity</p>
+            <br /><br /><br />
+            </div>
+            <div className="col-sm-12 text-center m-t-20">
+         
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
     		</div>
 		)
 	}

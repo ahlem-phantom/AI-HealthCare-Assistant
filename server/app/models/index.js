@@ -9,6 +9,7 @@ db.user = require("./user.model");
 db.role = require("./role.model");
 db.blog = require("./blog.model");
 db.product = require("./product.model");
+db.blog = require("./contact.model");
 
 db.ROLES = ["user", "admin", "moderator"];
 

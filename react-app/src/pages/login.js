@@ -11,6 +11,8 @@ import { Container, Stack,Typography } from "@mui/material";
 import Footer from "../components/footer";
 import { Link } from "react-router-dom";
 import Iconify from '../components/Iconify';
+import Swal from 'sweetalert2';
+import './login.css';
 
 const required = (value) => {
   if (!value) {
@@ -23,20 +25,47 @@ const required = (value) => {
 };
 
 const Login = (props) => {
-  const ContentStyle = styled('div')(({ theme }) => ({
+  const loadScript = (src) => {
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement("script");
+      script.src = src;
+      script.addEventListener("load", function () {
+        resolve();
+      });
+      script.addEventListener("error", function (e) {
+        reject(e);
+      });
+      document.body.appendChild(script);
+      document.body.removeChild(script);
+    });
+  };
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    loadScript(`${process.env.PUBLIC_URL}js/main.js`);
+    window.addEventListener('message', handlePostMessage);
+   
+  });
+
+  const ContentStyle = styled('div')(() => ({
     maxWidth: 700,
     margin: 'auto',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
   }));
+
+  {/* basic form login*/}
   const form = useRef();
   const checkBtn = useRef();
+  
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [profile, setProfile] = useState([]);
+
   const navigate = useNavigate();
 
   const onChangeUsername = (e) => {
@@ -61,9 +90,18 @@ const Login = (props) => {
       AuthService.login(username, password).then(
         () => {
        //   props.history.push("/profile");
-       navigate("/patient/app", { replace: true });
-       window.location.reload();
-
+       if (window.localStorage.getItem('role').match('doctor')){
+        navigate("/doctor/app", { replace: true });
+        window.location.reload();
+       }
+       if (window.localStorage.getItem('role').match('patient')){
+        navigate("/patient/app", { replace: true });
+        window.location.reload();
+       }
+       if (window.localStorage.getItem('role').match('admin')){
+        navigate("/admin/app", { replace: true });
+        window.location.reload();
+       }
         },
 
         (error) => {
@@ -83,35 +121,56 @@ const Login = (props) => {
     }
   };
 
- 
- const loadScript = (src) => {
-    return new Promise(function (resolve, reject) {
-      var script = document.createElement("script");
-      script.src = src;
-      script.addEventListener("load", function () {
-        resolve();
-      });
-      script.addEventListener("error", function (e) {
-        reject(e);
-      });
-      document.body.appendChild(script);
-      document.body.removeChild(script);
-    });
-  };
+ {/*Linkedin oauth*/}
+  const handlelinkedin =(event) => {
+    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78zj0z0qx941dq&scope=r_liteprofile%20r_emailaddress&state=123456&redirect_uri=http://localhost:8080/oauth`
+    var width = 700,
+      height = 730,
+      left = window.screen.width / 2 - width / 2,
+      top = window.screen.height / 2 - height / 2;
 
-  useEffect(() => {
-    loadScript(`${process.env.PUBLIC_URL}js/main.js`);
-  });
+    window.open(
+      oauthUrl,
+      "Linkedin",
+      "menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=" +
+        width +
+        ", height=" +
+        height +
+        ", top=" +
+        top +
+        ", left=" +
+        left
+    );
+  }
 
+  const handlePostMessage =(event) => {
+   if (event.data.type === "profile") {
+      AuthService.loginlinkedin(event.data.profile.elements[0]["handle~"].emailAddress).then(
+        () => {
+          if(localStorage.getItem('role').match("doctor")){
+            navigate("/doctor/app", { replace: true });
+          }
+          else
+          if(localStorage.getItem('role').match("patient")){
+            window.location.reload();
+            navigate("/patient/app", { replace: true });
+          }
+       //   props.history.push("/profile");
+      
+    }).catch(error => Swal.fire({  
+      title: 'Not a registered user',  
+      text: 'Try Again',
+      icon: 'warning'
+    }));
+  }
+}
+
+{/*Face login*/}
   const handleface = (e) => {
     navigate("/face-log", { replace: true });
 
   }
-  const handlelinkedin =(e) => {
-    const linkedinRedirectUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${process.env.REACT_APP_CLIENTID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&scope=r_liteprofile,r_emailaddress`;
-    window.location.href = linkedinRedirectUrl
-  }
- 
+
   return (
     <div>
       <Navbar />
@@ -162,11 +221,8 @@ const Login = (props) => {
 
 <Container>
       <Stack direction="row" spacing={2}>
-<Button fullWidth size="large" color="error" variant="contained">
-  <Iconify icon="eva:google-fill" color="white" height={24} width={20} /> &nbsp;<b> Gmail </b>
-</Button>
-<Button fullWidth size="large" color="primary" variant="contained" >
-  <Iconify icon="eva:linkedin-fill" color="white" height={24} width={20} onClick={handlelinkedin} />   &nbsp;<b> Linkedin </b>
+<Button fullWidth size="large" color="primary" variant="contained" onClick={handlelinkedin}>
+  <Iconify icon="eva:linkedin-fill" color="white" height={24} width={20} />   &nbsp;<b> Linkedin </b>
 </Button>
 <Button fullWidth size="large" color="secondary" variant="contained" onClick={handleface}>
   <Iconify icon="mdi:face-recognition" color="white" height={24} width={20} />   &nbsp;<b> Face ID  </b>
@@ -181,7 +237,9 @@ const Login = (props) => {
 
 </Divider>
 </Container>
-<Container maxWidth="sm">
+
+</ContentStyle>
+<Container style={{ maxWidth:'700px'}}>
             <Stack sx={{ mb: 5 }}>
               <Typography sx={{ color: "text.secondary" }}>
                 Enter your info details below.
@@ -205,14 +263,16 @@ const Login = (props) => {
             <label htmlFor="password">Password</label>
             <Input
               type="password"
-              className="form-control"
+              className="form-control input-field"
               name="password"
               value={password}
               onChange={onChangePassword}
               validations={[required]}
+              
             />
+
           </div>
-          <div class="form-group text-right">
+          <div className="form-group text-right">
           <Link
                   variant="subtitle2"
                   component={Link}
@@ -241,7 +301,7 @@ const Login = (props) => {
           )}
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
-        <div class="text-center register-link">
+        <div className="text-center register-link">
         Don’t have an account? &nbsp;
         <Link
                   variant="subtitle2"
@@ -255,11 +315,11 @@ const Login = (props) => {
             <br/><br/>
 
         </Container>
-</ContentStyle>
-        
       <Footer />
+      
     </div>
   );
 };
 export default Login;
+
 

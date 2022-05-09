@@ -35,6 +35,10 @@ const User = mongoose.model(
       enum: ['Pending', 'Active', 'Inactive'],
       default: 'Pending'
     },
+    role: {
+      type: String, 
+      enum: ['doctor', 'patient', 'admin'],
+    },
     confirmationCode: { 
       type: String, 
       unique: true },

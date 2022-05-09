@@ -1,0 +1,87 @@
+.uploadImage__container {
+    margin: 5rem auto;
+}
+
+.uploadImage__dndContainer {
+    width: 40%;
+    padding: 2rem;
+    border-radius: 2rem;
+    background: #d8efed;
+}
+
+.uploadImage__dndTextDiv {
+    margin: 2rem 0;
+}
+
+.uploadImage__dndTextHeading {
+    font-size: 2rem;
+}
+
+.uploadImage__dndTextSubHeading {
+    color: gray;
+}
+
+/* .uploadImage__dndPlaceDiv {
+    padding: 3rem;
+    border: 2px dashed gray;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    background: #f9fafd;
+} */
+
+/* .uploadImage__dndPlaceDiv {
+    min-height: 17rem;
+    min-width: 20rem;
+} */
+
+.uploadImage__dndPlaceDiv img {
+    width: 100%;
+    /* border: 2px solid red; */
+}
+
+.uploadImage__dndPlaceSubHeading {
+    color: gray;
+}
+
+.uploadImage__uploadBtn {
+    color: #fff;
+    background-color: #064848;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+.uploadImage__uploadBtn:hover {
+    color: #fff;
+}
+
+.uploadImage__resultDiv {
+    margin: 2rem 0;
+    width: 40%;
+    padding: 2rem;
+    border-radius: 2rem;
+    background: #d8efed;
+}
+
+.uploadImage__resultDiv p {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .uploadImage__dndContainer {
+        width: 60%;
+    }
+    .uploadImage__resultDiv {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .uploadImage__dndContainer {
+        width: 100%;
+    }
+    .uploadImage__resultDiv {
+        width: 100%;
+    }
+}

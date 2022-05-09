@@ -1,4 +1,0 @@
-tensorflow==1.15
-flask
-flask-cors
-opencv_python

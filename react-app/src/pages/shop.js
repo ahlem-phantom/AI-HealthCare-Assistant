@@ -58,15 +58,15 @@ export default class Shop extends Component {
     <div className="container" data-scrollax-parent="true">
       <div className="row slider-text align-items-end">
         <div className="col-md-7 col-sm-12 ftco-animate mb-5">
-          <p className="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span className="mr-2"><a href="index.html">Home</a></span> <span>Sign Up</span></p>
-          <h1 className="mb-3 navbar-brand" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Sign Up In <span style={{ fontWeight : 'bold'  }}>Nearest</span><span style={{color : 'blue', fontWeight : 'bold' }}>Doctor</span></h1>
+          <p className="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span className="mr-2"><a href="index.html">Home</a></span> <span>Shop</span></p>
+          <h1 className="mb-3 navbar-brand" data-scrollax=" properties: { translateY: '70%', opacity: .9}"> <span style={{ fontWeight : 'bold'  }}>Nearest</span><span style={{color : '#009efb', fontWeight : 'bold' }}>Doctor</span> Shop</h1>
 
         </div>
       </div>
     </div>
   </div>
 </section>
-    <Page title="Dashboard | Minimal-UI">
+    <Page title="Shop">
       <Container maxWidth="xl">
       <div className="container">
         <div>

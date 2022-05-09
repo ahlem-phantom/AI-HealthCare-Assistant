@@ -40,7 +40,7 @@ function DoctorDetails() {
                       <a href="#">
                         <img
                           className="avatar"
-                          src="assets/img/doctor-03.jpg"
+                          src={doctors.picture}
                           alt
                         />
                       </a>

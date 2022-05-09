@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loading...</title>
+  </head>
+  <body>
+    <h1>Login Successful</h1>
+    <p>Profile: <%= profile.localizedFirstName %></p>
+  </body>
+  <script>
+    var profile = <%- JSON.stringify(profile)  %>
+    window.opener.postMessage({'type': 'profile', 'profile': profile}, '*')
+    window.close();
+  </script>
+</html>

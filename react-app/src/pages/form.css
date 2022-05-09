@@ -1,0 +1,94 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  .form-h2 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  .form-label {
+    margin: 10px 0;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .form-input,
+  .form-textarea {
+    display: block;
+    margin-top: 5px;
+    font-size: 1rem;
+    width: calc(100% - 20px);
+    border: 1px solid #009efb;
+    border-radius: 2px;
+    padding: 10px;
+  }
+  
+  .form-textarea {
+    height: 250px;
+  }
+  
+  .form-textarea::placeholder {
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+  }
+  
+  .form-submit {
+    justify-self: end;
+    font-size: 5rem;
+    color: #009efb;
+  }
+  
+  @media screen and (min-width: 799px) {
+    .form {
+      display: grid;
+      grid-template-areas:
+        'header .'
+        'name message'
+        'tel message'
+        'email submit';
+      align-items: start;
+      align-content: space-between;
+      justify-content: unset;
+      gap: 0.5vw 1vw;
+      padding: 40px;
+    }
+  
+    .form-h2 {
+      grid-area: header;
+      text-align: left;
+      color: #009efb;
+    }
+  
+    .form-label {
+      margin: 0;
+    }
+  
+    #name {
+      grid-area: name;
+    }
+    #email {
+      grid-area: email;
+    }
+    #tel {
+      grid-area: tel;
+    }
+  
+    #message {
+      grid-area: message;
+      height: 100%;
+    }
+  
+    .form-textarea {
+      height: 150px;
+    }
+  
+    .form-submit {
+      grid-area: submit;
+    }
+  }

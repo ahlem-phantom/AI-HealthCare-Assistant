@@ -53,7 +53,7 @@ function Doctors() {
                       to={`/patient/doctor-details/${el._id}`}
                       component={Link}
                     >
-                     <img alt src="assets/img/doctor-thumb-03.jpg" />
+                     <img alt src={el.picture} />
                     </Link>
                     </div>
                     <div className="dropdown profile-action">

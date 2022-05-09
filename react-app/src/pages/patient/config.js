@@ -15,6 +15,11 @@ const sidebarConfig = [
       icon : 'fa fa-android'
     },
     {
+      title: 'Mental Health Test',
+      path: '/patient/test',
+      icon : 'fa fa-question-circle'
+    },
+    {
       title: 'Records',
       path: '/patient/records',
       icon : 'fa fa-address-card-o'

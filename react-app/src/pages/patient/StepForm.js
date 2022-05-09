@@ -23,7 +23,6 @@ const labels = [
   "Sleep",
   "Energy",
   "Appetite",
-
   "Feeling",
   "Trouble",
   "Moving",
@@ -216,6 +215,14 @@ const handleChange = (evt, value) => {
             values={quesAnswers} 
           />
         );
+        case 11:
+          return (
+            <Success
+              handleNext={handleNext}
+              handleBack={handleBack}
+              values={quesAnswers} 
+            />
+          );
       default:
         break;
         }
@@ -225,7 +232,7 @@ const handleChange = (evt, value) => {
   return (
     <Fragment>
       {steps === labels.length ? (
-        <Success />
+        <Success values={quesAnswers}  />
       ) : (
         <Fragment>
           <Stepper

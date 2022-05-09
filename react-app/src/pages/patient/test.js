@@ -48,21 +48,18 @@ const styles = theme => ({
           <div className="row">
           <div className="col-md-12">
       <div className="card-box">
-        <h4 className="card-title">Welcome To Mental Health Test !</h4>
 
         <div className="App">
       <CssBaseline />
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            
-          </Typography>
+ 
          
         </Toolbar>
       </AppBar>
       <main className={classes.layout}>
-        <Typography variant="h2" align="center" style={{ marginTop: 80, fontWeight: "bold" }}>
-        Are You Having Mental Health Problems? 🤒
+        <Typography variant="h3" align="center" style={{ marginTop: 80, fontWeight: "bold" }}>
+        Are You Having Mental Health Problems?
         </Typography>
         <Typography
           variant="h5"

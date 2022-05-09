@@ -3,10 +3,16 @@ var Schema= mongoose.Schema;
 
 var Appointement= new Schema(
     {
-        Title:String,
+        Firstname:String,
+        Lastname:String,
+        Email:String,
+        Phone:String,
         StartDate:Date,
         EndDate:Date,
-        UserId:String
+        User : {
+            type: mongoose.Schema.Types.ObjectId, 
+            ref : "User" ,
+          },
     }
 )
 

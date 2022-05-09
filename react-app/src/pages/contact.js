@@ -8,7 +8,6 @@ import { Icon } from '@iconify/react';
 import Form from './form';
 import Info from './info';
 
-import sendCircle from '@iconify/icons-mdi/send-circle';
 import './contact-section.css';
 
 function Contact() {

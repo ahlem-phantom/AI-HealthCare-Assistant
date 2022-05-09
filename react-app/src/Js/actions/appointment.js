@@ -3,26 +3,25 @@ import {
     GET_ONE_APPOINTMENT,
     ADD_APPOINTMENT,
     UPDATE_APPOINTMENT,
-    DELETE_APPOINTMENT
 } from "../actionTypes/appointment";
 import axios from "axios";
 
-export const AddAppointment = (appointment) => async (dispatch) => {
+export const AddAppointment = (id ,appointment) => async (dispatch) => {
     try{
-        let res = await axios.post("http://localhost:8080/Appointments/", appointment);
+        let res = await axios.post(`http://localhost:8080/Appointments/${id}`, appointment);
         dispatch({type: ADD_APPOINTMENT, payload: res.data.appointment});
     } catch (error){
         console.log(error);
     }
 };
-export const GetAppointments = () => async (dispatch) =>{
+export const GetAppointments = (id) => async (dispatch) =>{
     try{
         const config = {
             headers: {
                 authorization: localStorage.getItem("token"),
             },
         };
-        const res = await axios.get("http://localhost:8080/Appointments/", config)
+        const res = await axios.get(`http://localhost:8080/Appointments/getAll/${id}`, config)
         dispatch({ type: GET_APPOINTMENTS, payload: res.data.appointments })
     }
     catch(error) {

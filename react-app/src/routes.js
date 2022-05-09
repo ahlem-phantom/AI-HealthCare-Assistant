@@ -44,6 +44,7 @@ import DoctorBlogs from './pages/doctor/blogs';
 import DoctorAddBlog from './pages/doctor/add-blogs';
 import Calendar from './pages/doctor/calendar';
 import UpdateAppointment from './pages/doctor/updateAppointment';
+import TakeAppointment from './pages/patient/take_appointment';
 import RecordsDoctor from "./pages/doctor/Records";
 import Record from "./components/RecordComponents/index";
 import MedicalRecord from "./components/RecordComponents/MedicalRecord";
@@ -142,6 +143,7 @@ export default function Router() {
         { path: 'add-doctor', element: <AddDoctor />},
         { path: 'edit-doctor/:id', element: <EditDoctor />},
         { path: 'doctor-details/:id', element: <DoctorDetail />},
+        { path: 'take-appointment', element: <TakeAppointment />},
       ]
     },
     {

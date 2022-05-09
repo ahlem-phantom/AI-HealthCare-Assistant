@@ -68,6 +68,7 @@ const blogRoute = require('./app/routes/blog.routes');
 const userRoute = require('./app/routes/users.routes');
 const oauthRoute = require('./app/routes/oauth.routes');
 const AppointementRoutes = require('./app/routes/AppRoutes');
+const ChatAppRoutes = require('./app/routes/ChatAppRoutes')
 const contactRoute = require('./app/routes/contact.routes');
 const stripeRoute = require('./app/routes/payment.routes');
 const scrapRoute = require('./app/routes/scrap.routes');
@@ -80,6 +81,8 @@ app.use('/products', productRouter)
 app.use('/users', userRoute)
 app.use('/Appointments', AppointementRoutes);
 app.use('/records', recordRouter);
+app.use('/ChatApp', ChatAppRoutes);
+
 app.use('/oauth', oauthRoute);
 app.use('/contacts', contactRoute);
 app.use('/stripe', stripeRoute);
@@ -113,6 +116,7 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
+
 
 function initial() {
     Role.estimatedDocumentCount((err, count) => {

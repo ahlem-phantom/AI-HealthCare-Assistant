@@ -1,5 +1,26 @@
 const mongoose = require("mongoose");
 
+const Role = Object.freeze({
+  Patient: 'patient',
+  Doctor: 'doctor',
+  Admin: 'admin'
+});
+const Speciality = Object.freeze({
+  Allergy: 'Allergy',
+  Dermatology: 'Dermatology',
+  Radiology: 'Radiology',
+  Neurology: 'Neurology',
+  gynecology: 'gynecology',
+  Ophthalmology: 'Ophthalmology',
+  Pediatrics: 'Pediatrics',
+  rehabilitation: 'rehabilitation',
+  Psychiatry: 'Psychiatry',
+  Surgery: 'Surgery',
+  Urology: 'Urology',
+  Nothing: 'Nothing',
+
+});
+
 const User = mongoose.model(
   "User",
   new mongoose.Schema({
@@ -47,7 +68,24 @@ const User = mongoose.model(
         type: mongoose.Schema.Types.ObjectId,
         ref: "Role"
       }
-    ]
+    ],
+    role: {
+      type: String,
+      enum: Object.values(Role),
+    },
+    speciality: {
+      type: String,
+      enum: Object.values(Speciality),
+    },
+    location : {
+      type: mongoose.Schema.Types.ObjectId, 
+      ref : "location" 
+    },
+    chatbottalks:[{
+      type: mongoose.Schema.Types.ObjectId,
+      ref : "chatbotTalks"
+    }]
+
   })
 );
 

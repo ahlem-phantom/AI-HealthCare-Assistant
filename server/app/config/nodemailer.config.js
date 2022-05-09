@@ -38,5 +38,18 @@ module.exports.sendResetPasswordEmail = (name, email, confirmationCode) => {
         <a href=http://localhost:8081/resetPassword/${confirmationCode}> Click here</a>
         </div>`,
   }).catch(err => console.log(err));
+
+
+  
 };
 
+module.exports.sendAppointementMail = (docname, doclastname,StartDate,docphone,Email) => {
+  transport.sendMail({
+    from: user,
+    to: Email,
+    subject: "[NearestDoctor] Appointement Confirmation",
+    html: `<h1>Get Your Appointement Details </h1>
+        <p>You have an appointment with ${docname} ${doclastname} at ${StartDate}if you want to cancel the appointment call this number : ${docphone}</p>
+        </div>`,
+  }).catch(err => console.log(err));
+};

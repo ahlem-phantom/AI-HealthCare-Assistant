@@ -11,6 +11,7 @@ import DatePicker from 'react-datetime';
 import moment from 'moment'
 import DatePicker2 from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import AuthService from "../../services/auth.service";
 
 
 
@@ -30,11 +31,12 @@ const AddAppBox = $.noConflict();
         });
 
 function Appointements (){
+    const currentUser = AuthService.getCurrentUser();
     //get appointments
     const dispatch = useDispatch();    
     const appointments = useSelector((state) => state.appointmentReducer.appointment);
     useEffect(() => {
-        dispatch(GetAppointments());
+        dispatch(GetAppointments(currentUser.id));
     })   
     // delete appointment
     const handleClick = (id) => {
@@ -46,7 +48,10 @@ function Appointements (){
     // Add appointment
     const [submit, setSubmit] = useState(false);
     const [appointement , setAppointment] = useState({
-        Title: "",
+        Firstname: "",
+        Lastname: "",
+        Email: "",
+        Phone: "",
         StartDate: "",
         EndDate: "",
     })
@@ -55,16 +60,35 @@ function Appointements (){
         console.log(appointement)
         e.preventDefault();
         setSubmit(true);
-        dispatch(AddAppointment(appointement));
+        dispatch(AddAppointment(currentUser.id , appointement));
         history.go("/calendar");
 
     }   
-    const handletitleChange =(e)=>{
+    const handleFirstnameChange =(e)=>{
         setAppointment({
             ...appointement,
-            Title: e.target.value
+            Firstname: e.target.value
         });
       }
+    const handleLastnameChange =(e)=>{
+        setAppointment({
+            ...appointement,
+            Lastname: e.target.value
+        });
+      }
+      const handleEmailChange =(e)=>{
+        setAppointment({
+            ...appointement,
+            Email: e.target.value
+        });
+      }
+      const handlePhoneChange =(e)=>{
+        setAppointment({
+            ...appointement,
+            Phone: e.target.value
+        });
+      }
+      
       const handlestartChange =(date)=>{
         setAppointment({
             ...appointement,
@@ -79,9 +103,9 @@ function Appointements (){
         });
       }
       //fomulaire search
-    const [FormState , setForm] = useState({
+    /*const [FormState , setForm] = useState({
         Name : "",
-        Title: "",
+        LastName: "",
         Formdate: "",
     })
     const handleformdateChange = (date) =>{
@@ -91,11 +115,11 @@ function Appointements (){
         })
         console.log("date", FormState)
     }
-    const handleformtitle = (e)=>{
+    const handleformLastName = (e)=>{
         e.preventDefault()
         setForm({
             ...FormState,
-            Title: e.target.value
+            LastName: e.target.value
         })
         console.log("title", FormState)
     }
@@ -106,16 +130,17 @@ function Appointements (){
             Name: e.target.value
         })
         console.log("name", FormState)
-    }
+    }*/
     return (
             <div >
+                <br/><br/>
                 <div className="content">
                     <div className="row">
                         <div className="col-sm-4 col-3">
                             <h4 className="page-title">Appointements</h4>
                         </div>
                         <div className="col-sm-8 col-9 text-right m-b-20">
-                            <a  className="AddAppBox-open btn btn-primary float-right btn-rounded"><i className="fa fa-plus" /> Add Employee</a>
+                            <a  className="AddAppBox-open btn btn-primary float-right btn-rounded"><i className="fa fa-plus" /> Add Appointment</a>
                         </div>
                     </div>
                     <section className="AddAppBox-popup">
@@ -137,13 +162,46 @@ function Appointements (){
                                                     <h4 className="card-title">Add an appointement</h4>
                                                     <form action="#">
                                                         <div className="form-group row">
-                                                            <label className="col-form-label col-md-2">Title:</label>
+                                                            <label className="col-form-label col-md-2">First Name:</label>
                                                             <div className="col-md-10">
                                                                 <input 
                                                                     type="text" 
                                                                     className="form-control"
-                                                                    placeholder="Add Title..." 
-                                                                    onChange={(e) =>{handletitleChange(e)} } 
+                                                                    placeholder="Firstname..." 
+                                                                    onChange={(e) =>{handleFirstnameChange(e)} } 
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <div className="form-group row">
+                                                            <label className="col-form-label col-md-2">Last Name:</label>
+                                                            <div className="col-md-10">
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="form-control"
+                                                                    placeholder="Lastname..." 
+                                                                    onChange={(e) =>{handleLastnameChange(e)} } 
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <div className="form-group row">
+                                                            <label className="col-form-label col-md-2">Email:</label>
+                                                            <div className="col-md-10">
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="form-control"
+                                                                    placeholder="Email..." 
+                                                                    onChange={(e) =>{handleEmailChange(e)} } 
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <div className="form-group row">
+                                                            <label className="col-form-label col-md-2">Phone number:</label>
+                                                            <div className="col-md-10">
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="form-control"
+                                                                    placeholder="Phone..." 
+                                                                    onChange={(e) =>{handlePhoneChange(e)} } 
                                                                 />
                                                             </div>
                                                         </div>
@@ -187,62 +245,31 @@ function Appointements (){
                                         </div>
                                 </main>                   
                     </section>
-                    <div className="row filter-row">
-                        <div className="col-sm-6 col-md-3">
-                            <div className="form-group form-focus">
-                                <input 
-                                type="text" 
-                                placeholder="Title" 
-                                onChange={(e) => {handleformtitle(e)}} 
-                                className="form-control floating" />
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3">
-                            <div className="form-group form-focus">
-                                <input 
-                                type="text" 
-                                placeholder="Patient name" 
-                                onChange={(e) => {handleformname(e)}} 
-                                className="form-control floating" />
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3">
-                            <div className="form-group form-focus">
-                                <DatePicker2 
-                                    dateFormat="dd-mm-yyyy"
-                                    placeholderText="Start Date" 
-                                    selected={FormState.Formdate}
-                                    onChange={handleformdateChange}
-                                />                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-3">
-                            <a href="#" className="btn btn-success btn-block"> Search </a>
-                        </div>
-                    </div>
+                    
                     <div className="row">
                         <div className="col-md-12">
                             <div className="table-responsive">
                             <table className="table table-striped custom-table">
                                 <thead>
                                 <tr>
-                                    <th>Title</th>
-                                    <th style={{minWidth: 200}}>Name</th>
-                                    <th>Email</th>
-                                    <th>Mobile</th>
+                                    <th style={{minWidth: 200}}>First Name</th>
+                                    <th style={{minWidth: 200}}>Last Name</th>
+                                    <th style={{minWidth: 200}}>Email</th>
+                                    <th style={{minWidth: 200}}>Mobile</th>
                                     <th style={{minWidth: 110}}>Appointment date </th>
-                                    <th style={{minWidth: 110}}>Join Date</th>
+                                    <th style={{minWidth: 110}}>End date</th>
                                     <th className="text-right">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 { appointments && appointments.map((app) => (
                                     <tr>
-                                        <td><h2>{app.Title}</h2></td>
-                                        <td>NS-0001</td>
-                                        <td>albinasimonis@example.com</td>
-                                        <td>828-634-2744</td>
+                                        <td><h2>{app.Firstname}</h2></td>
+                                        <td>{app.Lastname}</td>
+                                        <td>{app.Email}</td>
+                                        <td>{app.Phone}</td>
                                         <td>{moment(app.StartDate).format('DD-MM-YYYY hh:mm')}</td>
-                                        <td>7 May 2015</td>
+                                        <td>{moment(app.EndDate).format('DD-MM-YYYY hh:mm')}</td>
                                         <td className="text-right">
                                         <div className="dropdown dropdown-action">
                                             <a href="#" className="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>

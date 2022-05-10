@@ -51,7 +51,7 @@ const Prescription = () => {
         )
         record.map((object, index) => {
           var i = object.prescripton.indexOf(ind);
-          object.prescripton.splice(i - 1, 1);
+          object.prescripton.splice(i , 1);
           // if (i !== -1) {
           //   object.allergie=object.allergie.filter(allergie=>allergie.allergie=allergic  );
           //   console.log('alllll',object.allergie)

@@ -3,8 +3,11 @@ import Footer from '../components/footer';
 import { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 function Blog() {
 
+  
   const loadScript = (src) => {
     return new Promise(function (resolve, reject) {
       var script = document.createElement('script')
@@ -24,13 +27,23 @@ function Blog() {
    useEffect(() => {
    loadScript(`${process.env.PUBLIC_URL}js/main.js`)
    const getBlogs = async () => {
-    const res = await axios('http://localhost:8080/blog');
+    const res = await axios('http://localhost:8080/blogs');
     console.log(res.data);
     setBlog(res.data);
   };
 getBlogs();
-}, [] )
-
+})
+const [searchvalue, setSearch] = useState("")
+const handlesearchchange = (e)=>{
+    e.preventDefault()
+    setSearch( e.target.value)
+    console.log("search"+searchvalue)
+}
+const filtredBlogs = blogs && blogs.filter(
+    (blog) =>
+       blog.title.toLowerCase().includes(searchvalue.toLowerCase()) ||
+       blog.description.toLowerCase().includes(searchvalue.toLowerCase())
+);
 
     return (
 <div>
@@ -43,7 +56,6 @@ getBlogs();
         <div className="col-md-7 col-sm-12 ftco-animate mb-5">
           <p className="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span className="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
           <h1 className="mb-3 navbar-brand" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Read Our <span style ={{color :'#009efb' , fontWeight : 'bold'}}> Blogs</span> </h1>
-
         </div>
       </div>
     </div>
@@ -55,10 +67,20 @@ getBlogs();
     <div className="row">
       <div className="col-md-8">
         <div className="row">
+        {filtredBlogs && filtredBlogs.map((el, index) => {
+            return (
+            
           <div className="col-md-12 ftco-animate">
             <div className="blog-entry">
-              <a href="blog-single.html" className="block-20" style={{backgroundImage: 'url("images/image_1.jpg")'}}>
+            <Link
+                      className="dropdown-item"
+                      to={`/doctor/blog-details/${el._id}`}
+                      component={Link}
+                    >
+              <a href="blog-single.html" className="block-20" style={{backgroundImage: `url(${el.picture})`}}>
               </a>
+              </Link>
+       
               <div className="text d-flex py-4">
                 <div className="meta mb-3">
                   <div><a href="#">Sep. 20, 2018</a></div>
@@ -66,103 +88,26 @@ getBlogs();
                   <div><a href="#" className="meta-chat"><span className="icon-chat" /> 3</a></div>
                 </div>
                 <div className="desc pl-sm-3 pl-md-5">
-                  <h3 className="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                  <p><a href="blog-single.html" className="btn btn-primary btn-outline-primary">Read more</a></p>
+                <Link
+                      className="heading"
+                      to={`/doctor/blog-details/${el._id}`}
+                      component={Link}
+                    >
+                  <h3 >{el.title}</h3>
+              </Link>
+                  <p>{el.description.substr(0,250)}<b style={{fontSize : "15px"}}>.&nbsp;.&nbsp;.</b></p>
+                  <Link
+                     className="btn btn-primary btn-outline-primary"
+                      to={`/doctor/blog-details/${el._id}`}
+                      component={Link}
+                    >
+                  <p>Read more</p>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-md-12 ftco-animate">
-            <div className="blog-entry" data-aos-delay={100}>
-              <a href="blog-single.html" className="block-20" style={{backgroundImage: 'url("images/image_2.jpg")'}}>
-              </a>
-              <div className="text d-flex py-4">
-                <div className="meta mb-3">
-                  <div><a href="#">Sep. 20, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" className="meta-chat"><span className="icon-chat" /> 3</a></div>
-                </div>
-                <div className="desc pl-sm-3 pl-md-5">
-                  <h3 className="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                  <p><a href="blog-single.html" className="btn btn-primary btn-outline-primary">Read more</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-12 ftco-animate">
-            <div className="blog-entry" data-aos-delay={200}>
-              <a href="blog-single.html" className="block-20" style={{backgroundImage: 'url("images/image_3.jpg")'}}>
-              </a>
-              <div className="text d-flex py-4">
-                <div className="meta mb-3">
-                  <div><a href="#">Sep. 20, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" className="meta-chat"><span className="icon-chat" /> 3</a></div>
-                </div>
-                <div className="desc pl-sm-3 pl-md-5">
-                  <h3 className="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                  <p><a href="blog-single.html" className="btn btn-primary btn-outline-primary">Read more</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-12 ftco-animate">
-            <div className="blog-entry">
-              <a href="blog-single.html" className="block-20" style={{backgroundImage: 'url("images/image_4.jpg")'}}>
-              </a>
-              <div className="text d-flex py-4">
-                <div className="meta mb-3">
-                  <div><a href="#">Sep. 20, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" className="meta-chat"><span className="icon-chat" /> 3</a></div>
-                </div>
-                <div className="desc pl-sm-3 pl-md-5">
-                  <h3 className="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                  <p><a href="blog-single.html" className="btn btn-primary btn-outline-primary">Read more</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-12 ftco-animate">
-            <div className="blog-entry" data-aos-delay={100}>
-              <a href="blog-single.html" className="block-20" style={{backgroundImage: 'url("images/image_5.jpg")'}}>
-              </a>
-              <div className="text d-flex py-4">
-                <div className="meta mb-3">
-                  <div><a href="#">Sep. 20, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" className="meta-chat"><span className="icon-chat" /> 3</a></div>
-                </div>
-                <div className="desc pl-sm-3 pl-md-5">
-                  <h3 className="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                  <p><a href="blog-single.html" className="btn btn-primary btn-outline-primary">Read more</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-12 ftco-animate">
-            <div className="blog-entry" data-aos-delay={200}>
-              <a href="blog-single.html" className="block-20" style={{backgroundImage: 'url("images/image_6.jpg")'}}>
-              </a>
-              <div className="text d-flex py-4">
-                <div className="meta mb-3">
-                  <div><a href="#">Sep. 20, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" className="meta-chat"><span className="icon-chat" /> 3</a></div>
-                </div>
-                <div className="desc pl-sm-3 pl-md-5">
-                  <h3 className="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                  <p><a href="blog-single.html" className="btn btn-primary btn-outline-primary">Read more</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
+            )})}
         </div>
         <div className="row mt-5">
           <div className="col">
@@ -182,10 +127,10 @@ getBlogs();
       </div> {/* END: col-md-8 */}
       <div className="col-md-4 ftco-animate">
         <div className="sidebar-box">
-          <form action="#" className="search-form">
+          <form className="search-form">
             <div className="form-group">
               <span className="icon fa fa-search" />
-              <input type="text" className="form-control" placeholder="Type a keyword and hit enter" />
+              <input type="text" className="form-control" onChange={(e) =>{handlesearchchange(e)}} placeholder="Type a keyword and hit enter" />
             </div>
           </form>
         </div>

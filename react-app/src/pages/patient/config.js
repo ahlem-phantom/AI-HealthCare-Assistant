@@ -1,17 +1,12 @@
 const sidebarConfig = [{
-        title: 'Dashboard',
+        title: 'Appointements',
         path: '/patient/app',
-        icon: 'fa fa-dashboard',
+        icon: 'fa fa-calendar',
     },
     {
         title: 'Take an appointment',
         path: '/patient/take-appointment',
         icon: 'fa fa-comments',
-    },
-    {
-        title: 'Appointements',
-        path: '/patient/appointements',
-        icon: 'fa fa-calendar'
     },
     {
         title: 'Symptoms',

@@ -38,8 +38,6 @@ function BlogDetails() {
  };
 
   return (
-    <div className="main-wrapper">
-      <div className="page-wrapper">
         <div className="content">
           <div className="row">
             <div className="col-sm-12">
@@ -336,8 +334,6 @@ function BlogDetails() {
             </aside>
           </div>
         </div>
-      </div>
-    </div>
   );
 }
 export default BlogDetails;

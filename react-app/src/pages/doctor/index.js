@@ -8,11 +8,13 @@ import Dashboard from './dashboard';
 
 function Home() {
     return (
-<>
+            <>
   <div className="main-wrapper">
     <Navbar />
     <Sidebar />
-    <Outlet />
+    <div class="page-wrapper">
+      <Outlet />
+    </div>
 
   </div>
   <div className="sidebar-overlay" data-reff />

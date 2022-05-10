@@ -134,7 +134,7 @@ const [file, setFile] = useState([]);
       })
       .then((res) => console.log(res.data));
      
-    navigate("/patient/doctors", { replace: true });
+    navigate("/", { replace: true });
     window.location.reload();
   };
 
@@ -158,12 +158,11 @@ const [file, setFile] = useState([]);
   }, [doctors]);
 
   return (
-    <div className="main-wrapper">
-      <div className="page-wrapper">
+
         <div className="content">
           <div className="row">
             <div className="col-lg-8 offset-lg-2">
-              <h4 className="page-title">Edit Doctor</h4>
+              <h4 className="page-title">Edit Profile</h4>
             </div>
           </div>
           <div className="row">
@@ -396,8 +395,7 @@ const [file, setFile] = useState([]);
             </div>
           </div>
         </div>
-      </div>
-    </div>
+
   );
 }
 

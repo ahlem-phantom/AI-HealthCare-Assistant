@@ -52,7 +52,7 @@ const Allergie = () => {
         )
         record.map((object, index) => {
           var i = object.allergie.indexOf(ind);
-          object.allergie.splice(i - 1, 1);
+          object.allergie.splice(i , 1);
           // if (i !== -1) {
           //   object.allergie=object.allergie.filter(allergie=>allergie.allergie=allergic  );
           //   console.log('alllll',object.allergie)

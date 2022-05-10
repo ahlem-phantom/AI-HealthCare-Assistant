@@ -53,7 +53,7 @@ const ActiveProblem = () => {
         )
         record.map((object, index) => {
           var i = object.probActive.indexOf(ind);
-          object.probActive.splice(i - 1, 1);
+          object.probActive.splice(i, 1);
           // if (i !== -1) {
           //   object.allergie=object.allergie.filter(allergie=>allergie.allergie=allergic  );
           //   console.log('alllll',object.allergie)

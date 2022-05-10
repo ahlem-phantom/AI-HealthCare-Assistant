@@ -70,7 +70,6 @@ function Blogs() {
 
 
   return (
-    <div className="page-wrapper">
       <div className="content">
       <div class="">
             <h4 class="page-title">Blog</h4>    
@@ -466,7 +465,6 @@ function Blogs() {
           ;
        </div>
    </div>
-    </div>
   );
 }
 

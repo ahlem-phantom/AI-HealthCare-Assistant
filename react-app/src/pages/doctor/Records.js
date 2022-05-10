@@ -30,6 +30,8 @@ function Records() {
 
   return (
     <div >
+          <div className="main-wrapper">
+
       <div className="content">
         <div className="row">
           <div className="col-sm-4 col-3">
@@ -382,6 +384,7 @@ function Records() {
             <a href="chat.html">See all messages</a>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

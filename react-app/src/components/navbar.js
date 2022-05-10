@@ -109,27 +109,31 @@ function Navbar() {
                       <span>{currentUser.username}</span>
                     </a>
                     <div className="dropdown-menu">
-                      <Link
-                        className="dropdown-item"
-                        to="/patient/profile"
-                        component={Link}
-                      >
-                        My Profile
-                      </Link>
-                      <Link
-                        className="dropdown-item"
-                        to="/patient/edit-profile"
-                        component={Link}
-                      >
-                        Edit Profile
-                      </Link>
-                      <Link
-                        className="dropdown-item"
-                        to="/patient/reset-password"
-                        component={Link}
-                      >
-                        Reset Password
-                      </Link>
+                      { currentUser.role ==='patient' ? (
+                           <Link
+                           className="dropdown-item"
+                           to={`/patient/edit-doctor/${currentUser.id}`}
+                           component={Link}
+                         >
+                           Edit Profile
+                         </Link>
+                       ):(
+                       
+                       <div></div>
+                       )}
+
+                       { currentUser.role ==='doctor' ? (
+                           <Link
+                           className="dropdown-item"
+                           to={`/doctor/edit-doctor/${currentUser.id}`}
+                           component={Link}
+                         >
+                           Edit Profile
+                         </Link>
+                       ):(
+                       
+                       <div></div>
+                       )}            
                       <a
                         className="dropdown-item"
                         href="/login"

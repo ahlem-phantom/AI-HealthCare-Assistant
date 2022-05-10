@@ -69,7 +69,7 @@ import Blogs from './pages/doctor/blogs';
 import AddBlog from './pages/doctor/add-blogs';
 import EditBlog from './pages/doctor/edit-blog';
 import BlogDetails from './pages/doctor/blog-details';
-
+import {default as Scanner} from './pages/doctor/symptoms';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -103,16 +103,20 @@ export default function Router() {
             path: '/doctor',
             element: currentUser && currentUser.role === 'doctor' ? < Doctor / > : < Unauthorized / > ,
             children: [
-                { path: 'app', element: < DashboardDoctor / > },
+                { path: 'app', element: < Calendar / > },
+                { path: 'scanner', element: < Scanner / > },
+                { path: 'knowmore/:result', element: < KnowMore / > },
+                { path: 'edit-doctor/:id', element: < EditDoctor / > },
                 { path: 'profile', element: < DoctorProfile / > },
                 { path: 'patients', element: < DoctorPatients / > },
-                { path: 'calendar', element: < Calendar / > },
                 { path: 'appointments', element: < DoctorAppointements / > },
                 { path: 'update_appointment/:id', element: < UpdateAppointment / > },
                 { path: 'add-blog', element: < AddBlog / > },
                 { path: 'blogs', element: < Blogs / > },
                 { path: 'blog-details/:id', element: < BlogDetails / > },
                 { path: 'edit-blog/:id', element: < EditBlog / > },
+                { path: 'edit-doctor/:id', element: < EditDoctor / > },
+
 
                 //records
                 {
@@ -153,16 +157,13 @@ export default function Router() {
                 { path: 'app', element: < Dashboard / > },
                 { path: 'appointements', element: < Appointements / > },
                 { path: 'profile', element: < Profile / > },
+                { path: 'edit-doctor/:id', element: < EditDoctor / > },
                 { path: 'symptoms', element: < Symptoms / > },
                 { path: 'test', element: < Test / > },
                 { path: 'knowmore/:result', element: < KnowMore / > },
                 { path: 'records', element: < Records / > },
                 { path: 'edit-profile', element: < EditProfile / > },
                 { path: 'reset-password', element: < ResetPassword / > },
-                { path: 'doctors', element: < Doctors / > },
-                { path: 'add-doctor', element: < AddDoctor / > },
-                { path: 'edit-doctor/:id', element: < EditDoctor / > },
-                { path: 'doctor-details/:id', element: < DoctorDetail / > },
                 { path: 'take-appointment', element: < TakeAppointment / > },
             ]
         },

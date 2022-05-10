@@ -9,10 +9,11 @@ var Appointement= new Schema(
         Phone:String,
         StartDate:Date,
         EndDate:Date,
+        DoctorName:String,
         User : {
             type: mongoose.Schema.Types.ObjectId, 
             ref : "User" ,
-          },
+          },  
     }
 )
 

@@ -110,7 +110,8 @@ const send_message = async (req, res) => {
             var EndDate = moment(StartDate).add(30, 'minutes');
             messageReceived = "Appointment confirmed at  you will get email with all details, and you can always cancel your appointment."
             //messageSent = messageSent + StartDate
-            Appointment.create({Firstname,Email, StartDate, EndDate , User})
+            Appointment.create({Firstname,Email, StartDate, EndDate , User,DoctorName: docname + " " +doclastname })
+            Appointment.create({Firstname,Email, StartDate, EndDate , User: user, DoctorName: docname + " " +doclastname })  
             ChatTalks.create({messageSent ,messageReceived , date , user  });
             nodemailer.sendAppointementMail(
               docname,

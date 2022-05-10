@@ -33,11 +33,13 @@ import tokenize
 import shutil
 import contextlib
 import tempfile
+import warnings
 
 import setuptools
 import distutils
+from ._reqs import parse_strings
+from .extern.more_itertools import always_iterable
 
-from pkg_resources import parse_requirements
 
 __all__ = ['get_requires_for_build_sdist',
            'get_requires_for_build_wheel',
@@ -55,7 +57,7 @@ class SetupRequirementsError(BaseException):
 
 class Distribution(setuptools.dist.Distribution):
     def fetch_build_eggs(self, specifiers):
-        specifier_list = list(map(str, parse_requirements(specifiers)))
+        specifier_list = list(parse_strings(specifiers))
 
         raise SetupRequirementsError(specifier_list)
 
@@ -118,11 +120,33 @@ def _open_setup_script(setup_script):
     return getattr(tokenize, 'open', open)(setup_script)
 
 
-class _BuildMetaBackend(object):
+@contextlib.contextmanager
+def suppress_known_deprecation():
+    with warnings.catch_warnings():
+        warnings.filterwarnings('ignore', 'setup.py install is deprecated')
+        yield
 
-    def _fix_config(self, config_settings):
+
+class _BuildMetaBackend:
+
+    @staticmethod
+    def _fix_config(config_settings):
+        """
+        Ensure config settings meet certain expectations.
+
+        >>> fc = _BuildMetaBackend._fix_config
+        >>> fc(None)
+        {'--global-option': []}
+        >>> fc({})
+        {'--global-option': []}
+        >>> fc({'--global-option': 'foo'})
+        {'--global-option': ['foo']}
+        >>> fc({'--global-option': ['foo']})
+        {'--global-option': ['foo']}
+        """
         config_settings = config_settings or {}
-        config_settings.setdefault('--global-option', [])
+        config_settings['--global-option'] = list(always_iterable(
+            config_settings.get('--global-option')))
         return config_settings
 
     def _get_build_requires(self, config_settings, requirements):
@@ -150,12 +174,10 @@ class _BuildMetaBackend(object):
         exec(compile(code, __file__, 'exec'), locals())
 
     def get_requires_for_build_wheel(self, config_settings=None):
-        config_settings = self._fix_config(config_settings)
         return self._get_build_requires(
             config_settings, requirements=['wheel'])
 
     def get_requires_for_build_sdist(self, config_settings=None):
-        config_settings = self._fix_config(config_settings)
         return self._get_build_requires(config_settings, requirements=[])
 
     def prepare_metadata_for_build_wheel(self, metadata_directory,
@@ -218,8 +240,9 @@ class _BuildMetaBackend(object):
 
     def build_wheel(self, wheel_directory, config_settings=None,
                     metadata_directory=None):
-        return self._build_with_temp_dir(['bdist_wheel'], '.whl',
-                                         wheel_directory, config_settings)
+        with suppress_known_deprecation():
+            return self._build_with_temp_dir(['bdist_wheel'], '.whl',
+                                             wheel_directory, config_settings)
 
     def build_sdist(self, sdist_directory, config_settings=None):
         return self._build_with_temp_dir(['sdist', '--formats', 'gztar'],

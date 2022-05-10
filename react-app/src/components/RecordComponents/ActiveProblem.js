@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 
-const Prescription = () => {
+const ActiveProblem = () => {
+  const navigate = useNavigate();
+
   const { id } = useParams();
   const [record, setRecord] = useState([]);
-  const navigate = useNavigate();
   useEffect(() => {
     const getRecords = async () => {
       const res = await axios(`http://localhost:8080/records/${id}`);
@@ -15,15 +16,16 @@ const Prescription = () => {
     };
     getRecords();
   }, []);
+
+
   const onUpdate = (async (object) => {
     await axios.put(`http://localhost:8080/records/${id}`, object).then(
 
     )
   });
 
+
   const handleDelete = (ind) => {
-
-
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-outline-success',
@@ -45,13 +47,13 @@ const Prescription = () => {
       if (result.isConfirmed) {
         swalWithBootstrapButtons.fire(
           'Deleted!',
-          'Allergie has been deleted.',
+          `${ind} has been deleted.`,
           'success',
 
         )
         record.map((object, index) => {
-          var i = object.prescripton.indexOf(ind);
-          object.prescripton.splice(i - 1, 1);
+          var i = object.probActive.indexOf(ind);
+          object.probActive.splice(i - 1, 1);
           // if (i !== -1) {
           //   object.allergie=object.allergie.filter(allergie=>allergie.allergie=allergic  );
           //   console.log('alllll',object.allergie)
@@ -72,49 +74,47 @@ const Prescription = () => {
     })
 
   };
+
+
+
+
+
+
+
+
   return (
-    <>
-      <Link
-        class="btn btn-primary"
-        aria-current="page"
-        to={{
-          pathname: `/doctor/record/addprescription/${id}`,
-        }}
-        style={{ color: "white", marginTop: "2%", marginLeft: "40%" }}
-      >
-        <i className="fa fa-plus" aria-hidden="true" /> Add Prescription
-      </Link>
-
-
-      <div class="row">
-        {record.map((object, index) => {
-          return object.prescripton?.map((value, i) => {
-            return (
-              <div class="offset-md-2 col-sm-6 col-md-2 mt-5" style={{ marginRight: "1px" }}>
-                <div class="card" style={{ width: "300px" }}>
-                  <div class="card-body">
-                    <h1 style={{ color: "blue" }}>
-                      <b>Prescription &nbsp; {i + 1}</b>
+    <div class="row">
+      {record.map((object, index) => {
+        return object.probActive?.map((value, i) => {
+          return (
+            <div class="offset-md-2 col-sm-6 col-md-3 mt-5">
+              <div class="card">
+                <div class="card-body">
+                  <a href="#">
+                    <h1 style={{ color: "red" }}>
+                      <b>Active probleme {i + 1}</b>
                     </h1>
-                    <a href="#" key={index}>
-                      <b>{value.description}</b>
-                    </a>
-                    <br />
-                    <a href="#" key={index}>
-                      <b>{value.doctor}</b>
-                    </a>
-                    <br />
-                    <a onClick={() => handleDelete(value.description)} type="button" class="btn btn-danger">Delete</a>
+                  </a>
 
-                  </div>
+                  <p>
+                    <b key={index}>Probleme:</b>
+                    {value.probleme}
+                  </p>
+                  <p>
+                    <b key={index}>Since:</b>
+                    {value.date}
+                  </p>
+                  <a onClick={() => handleDelete(value.probleme)} type="button" class="btn btn-danger">Delete</a>
+
                 </div>
               </div>
-            );
-          });
-        })}
-      </div>
-    </>
-  );
-};
+            </div>
+          );
+        });
+      })}
+    </div>
 
-export default Prescription;
+  );
+}
+
+export default ActiveProblem;

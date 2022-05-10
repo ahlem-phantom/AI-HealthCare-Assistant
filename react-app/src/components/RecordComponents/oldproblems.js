@@ -24,16 +24,17 @@ const OldProblems = () => {
                 <div class="card-body">
                   <a href="#">
                     <h1 style={{ color: "red" }}>
-                      <b>probleme {i + 1}</b>
+                      <b>Old problem &nbsp; {i + 1}</b>
                     </h1>
+                    <br />
                   </a>
 
                   <p>
-                    <b key={index}>Probleme:</b>
+                    <b key={index}>Probleme:&nbsp;</b>
                     {value.probleme}
                   </p>
                   <p key={index}>
-                    <b>Date:</b>
+                    <b>Date:</b>&nbsp;
                     {value.date}
                   </p>
                 </div>

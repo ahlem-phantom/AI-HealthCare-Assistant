@@ -7,6 +7,14 @@ function Records() {
   // state = {
   //   records: [],
   // };
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    const getUsers = async () => {
+      const res = await axios(`http://localhost:8080/users/users-patients/patient`);
+      setUsers(res.data);
+    };
+    getUsers();
+  }, []);
 
   const [records, setRecords] = useState([]);
 
@@ -19,7 +27,6 @@ function Records() {
     getRecords();
   }, []);
   localStorage.removeItem("record");
-  const [id, setId] = useState("5eb78994dbb89024f04a2507");
 
   return (
     <div >
@@ -68,73 +75,70 @@ function Records() {
               <table className="table table-border table-striped custom-table datatable mb-0">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Address</th>
+
+                    <th>First Name</th>
+                    <th>Last Name</th>
                     <th>Phone</th>
                     <th>Email</th>
+                    <th>Birthday</th>
                     <th className="text-right">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <img
-                        width={28}
-                        height={28}
-                        src="assets/img/user.jpg"
-                        className="rounded-circle m-r-5"
-                        alt
-                      />{" "}
-                      Jennifer Robinson
-                    </td>
-                    <td>35</td>
-                    <td>1545 Dorsey Ln NE, Leland, NC, 28451</td>
-                    <td>(207) 808 8863</td>
-                    <td>jenniferrobinson@example.com</td>
+                  {users.map((object, index) => {
+                    return (
+                      <tr key={index}>
 
-                    <td className="text-right">
-                      <div className="dropdown dropdown-action">
-                        <Link
-                          className="btn btn-success"
-                          style={{
-                            backgroundColor: "gray",
-                            borderColor: "gray",
-                          }}
-                          component={Link}
-                          exact
-                          to={{
-                            pathname: `/doctor/record/medicalrecord/${id}`,
-                          }}
-                          underline="hover"
-                        >
-                          <i className="fa fa-book" />{" "}
-                          <span>Medical record</span>
-                        </Link>{" "}
-                        <a
-                          href="#"
-                          className="action-icon dropdown-toggle"
-                          data-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i className="fa fa-ellipsis-v" />
-                        </a>
-                        <div className="dropdown-menu dropdown-menu-right">
-                          <a className="dropdown-item" href="edit-patient.html">
-                            <i className="fa fa-pencil m-r-5" /> Edit
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="#"
-                            data-toggle="modal"
-                            data-target="#delete_patient"
-                          >
-                            <i className="fa fa-trash-o m-r-5" /> Delete
-                          </a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
+                        <td>{object.firstname}</td>
+                        <td>{object.lastname}</td>
+                        <td>{object.phone}</td>
+                        <td>{object.email}</td>
+                        <td>{object.birthdate}</td>
+
+                        <td className="text-right">
+                          <div className="dropdown dropdown-action">
+                            <Link
+                              className="btn btn-success"
+                              style={{
+                                backgroundColor: "gray",
+                                borderColor: "gray",
+                              }}
+                              component={Link}
+                              exact
+                              to={{
+                                pathname: `/doctor/record/medicalrecord/${object._id}`,
+                              }}
+                              underline="hover"
+                            >
+                              <i className="fa fa-book" />{" "}
+                              <span>Medical record</span>
+                            </Link>{" "}
+                            <a
+                              href="#"
+                              className="action-icon dropdown-toggle"
+                              data-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <i className="fa fa-ellipsis-v" />
+                            </a>
+                            <div className="dropdown-menu dropdown-menu-right">
+                              <a className="dropdown-item" href="edit-patient.html">
+                                <i className="fa fa-pencil m-r-5" /> Edit
+                              </a>
+                              <a
+                                className="dropdown-item"
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#delete_patient"
+                              >
+                                <i className="fa fa-trash-o m-r-5" /> Delete
+                              </a>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

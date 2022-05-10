@@ -4,15 +4,47 @@ import { Link, useLocation, useParams } from "react-router-dom";
 
 const MedicalRecord = () => {
   const { id } = useParams();
+
   const [record, setRecord] = useState([]);
+
+  const [data, setData] = useState({
+    userid: [{ "_id": id }]
+  });
+
+  const getRecords = async () => {
+    console.log(id)
+
+    const res = await axios(`http://localhost:8080/records/${id}`).then(async (res) => {
+
+      if (res.data.length !== 0) {
+        setRecord(res.data)
+      }
+      if (res.data.length === 0) {
+        console.log('data vide')
+
+
+        console.log('data', data);
+        const result = await axios.post(`http://localhost:8080/records/`, data);
+        const resul = await axios(`http://localhost:8080/records/${id}`)
+        setRecord(resul.data)
+
+
+      }
+    }
+    );
+
+
+
+  };
   useEffect(() => {
-    const getRecords = async () => {
-      const res = await axios(`http://localhost:8080/records/${id}`);
-      console.log(res.data);
-      setRecord(res.data);
-    };
     getRecords();
+
+
   }, []);
+
+
+
+
 
   localStorage.setItem("record", JSON.stringify(record[0]));
 
@@ -33,12 +65,24 @@ const MedicalRecord = () => {
               <p>
                 <b>You will find all patient's current problems here.</b>
               </p>
-              <a href="#" class="btn btn-primary">
-                View all
-              </a>
-              <a href="#" class="btn btn-primary" style={{ marginLeft: "5px" }}>
+              <Link
+                className="btn btn-primary"
+                aria-current="page"
+                to={{
+                  pathname: `/doctor/record/activeproblem/${id}`,
+                }}
+                style={{ color: "white" }}
+              >View all </Link>
+              <Link
+                class="btn btn-primary"
+                aria-current="page"
+                to={{
+                  pathname: `/doctor/record/addactiveproblem/${id}`,
+                }}
+                style={{ color: "white", marginLeft: "5px" }}
+              >
                 Add problem
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -53,24 +97,7 @@ const MedicalRecord = () => {
                 <b>You will find all patient's old problems here.</b>
               </p>
 
-              {/* {record?.map((object, index) => {
-                return object.ancienProb?.map((value, i) => {
-                  return (
-                    <div>
-                      {value.doctor}
-                      <div className="note">
-                        <h2 style={{ color: "#007bff" }}>Heart Notes</h2>
-                        <p key={i}>
-                          <b>Doctor :</b> {value.probleme}
-                        </p>
-                        <p key={i}>
-                          <b>Date :</b> {value.date}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                });
-              })} */}
+
               <Link
                 class="btn btn-primary"
                 aria-current="page"
@@ -103,16 +130,31 @@ const MedicalRecord = () => {
               <h2 style={{ color: "#007bff" }}>
                 <a href="#">Doctors notes</a>
               </h2>
-              <br />
+
               <p>
                 <b>You will find all notes about patient's heart here.</b>
               </p>
-              <a href="#" class="btn btn-primary">
+              <br />
+              <Link
+                class="btn btn-primary"
+                aria-current="page"
+                to={{
+                  pathname: `/doctor/record/doctornote/${id}`,
+                }}
+                style={{ color: "white", margin: "5px" }}
+              >
                 View details
-              </a>
-              <a href="#" class="btn btn-primary" style={{ marginLeft: "5px" }}>
+              </Link>
+              <Link
+                class="btn btn-primary"
+                aria-current="page"
+                to={{
+                  pathname: `/doctor/record/addnote/${id}`,
+                }}
+                style={{ color: "white", margin: "5px" }}
+              >
                 Add note
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -126,12 +168,26 @@ const MedicalRecord = () => {
                 <b>You will find all hereditary ilness here.</b>
               </p>
               <br />
-              <a href="#" class="btn btn-primary">
+              <Link
+                class="btn btn-primary"
+                aria-current="page"
+                to={{
+                  pathname: `/doctor/record/hereditary/${id}`,
+                }}
+                style={{ color: "white" }}
+              >
                 View details
-              </a>
-              <a href="#" class="btn btn-primary" style={{ marginLeft: "5px" }}>
+              </Link>
+              <Link
+                class="btn btn-primary"
+                aria-current="page"
+                to={{
+                  pathname: `/doctor/record/addhereditary/${id}`,
+                }}
+                style={{ color: "white", marginLeft: "5px" }}
+              >
                 Add note
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -147,12 +203,26 @@ const MedicalRecord = () => {
                 <b>You will find every patient's laboratory results here.</b>
               </p>
               <br />
-              <a href="#" class="btn btn-primary">
+              <Link
+                class="btn btn-primary"
+                aria-current="page"
+                to={{
+                  pathname: `/doctor/record/reslabo/${id}`,
+                }}
+                style={{ color: "white", marginLeft: "5px" }}
+              >
                 View results
-              </a>
-              <a href="#" class="btn btn-primary" style={{ marginLeft: "5px" }}>
+              </Link>
+              <Link
+                class="btn btn-primary"
+                aria-current="page"
+                to={{
+                  pathname: `/doctor/record/addreslabo/${id}`,
+                }}
+                style={{ color: "white", marginLeft: "5px" }}
+              >
                 Add result
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -162,3 +232,21 @@ const MedicalRecord = () => {
 };
 
 export default MedicalRecord;
+{/* {record?.map((object, index) => {
+                return object.ancienProb?.map((value, i) => {
+                  return (
+                    <div>
+                      {value.doctor}
+                      <div className="note">
+                        <h2 style={{ color: "#007bff" }}>Heart Notes</h2>
+                        <p key={i}>
+                          <b>Doctor :</b> {value.probleme}
+                        </p>
+                        <p key={i}>
+                          <b>Date :</b> {value.date}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                });
+              })} */}

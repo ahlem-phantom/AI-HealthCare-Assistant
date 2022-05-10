@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const AddOldProblem = () => {
   const { id } = useParams();
   const [record, setRecord] = useState([]);
+  
   useEffect(() => {
     const getRecords = async () => {
       const res = await axios(`http://localhost:8080/records/${id}`);
@@ -13,6 +14,7 @@ const AddOldProblem = () => {
     };
     getRecords();
   }, []);
+
  const onUpdate=(async(object)=>{
     await axios.put(`http://localhost:8080/records/${id}`,object).then(
 

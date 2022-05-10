@@ -31,6 +31,8 @@
     "fs": "^0.0.1-security",
     "google-map-react": "^2.1.10",
     "jquery": "^3.6.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.23",
     "loadash": "^1.0.0",
     "numeral": "^2.0.6",
     "prop-types": "^15.8.1",

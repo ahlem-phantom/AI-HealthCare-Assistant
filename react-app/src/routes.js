@@ -8,7 +8,7 @@ import Contact from './pages/contact';
 import Blog from './pages/blog';
 import Price from './pages/price';
 import Login from './pages/login';
-import {default as Registration} from './pages/regsitration/register';
+import { default as Registration } from './pages/regsitration/register';
 import Forgot from './pages/forgot';
 import CardVerification from './pages/regsitration/card_verification';
 import ResetPassword from './components/reset-password';
@@ -31,9 +31,17 @@ import EditDoctor from './pages/patient/edit-doctor';
 import DoctorDetail from './pages/patient/doctor-detail';
 import KnowMore from './pages/patient/knowMore/KnowMore';
 import Test from './pages/patient/test';
-
-
-
+import AddPrescription from './components/RecordComponents/AddPrescription';
+import AddDoctorNote from './components/RecordComponents/AddDoctorNote';
+import AddMedication from './components/RecordComponents/AddMedication';
+import AddAllergie from './components/RecordComponents/AddAllergie';
+import ActiveProblem from './components/RecordComponents/ActiveProblem';
+import AddActiveProblem from './components/RecordComponents/AddActiveProb';
+import AddHereditary from './components/RecordComponents/AddHerditary';
+import Hereditary from './components/RecordComponents/Hereditary';
+import Laboratory from './components/RecordComponents/Laboratory';
+import AddLaboratory from './components/RecordComponents/AddLaboratory';
+import DoctorNotes from './components/RecordComponents/DoctorNote';
 //doctor layouts
 import DashboardDoctor from './pages/doctor/dashboard';
 import DoctorProfile from './pages/doctor/profile';
@@ -65,92 +73,103 @@ import BlogDetails from './pages/doctor/blog-details';
 // ----------------------------------------------------------------------
 
 export default function Router() {
-  const currentUser = AuthService.getCurrentUser();
+    const currentUser = AuthService.getCurrentUser();
 
-  return useRoutes([
-    {
-      path: '/',
-      children: [
-        { path: '', element: <Home /> },
-        { path: 'role', element: currentUser && localStorage.getItem('role').match('doctor')  ? <Navigate to="/doctor/app" /> : currentUser && localStorage.getItem("role").match('patient') ? <Navigate to="/patient/app" /> :<Role />  },
-        { path: 'verification', element: currentUser && localStorage.getItem('role').match('doctor')  ? <Navigate to="/doctor/app" /> : currentUser && localStorage.getItem('role')==="patient" ? <Navigate to="/patient/app" /> :<CardVerification /> },
-        { path: 'contact', element:  <Contact /> },
-        { path: 'blog', element: <Blog /> },
-        { path: 'shop', element: <Shop /> },
-        { path: 'team', element: <Team/> },
-        { path: 'price', element: <Price /> },
-        { path: 'login', element: currentUser && localStorage.getItem('role').match('doctor')  ? <Navigate to="/doctor/app" /> : currentUser && localStorage.getItem('role').match('patient') ? <Navigate to="/patient/app" /> :<Login /> },
-        { path: 'face-log', element: currentUser && localStorage.getItem('role').match('doctor')  ? <Navigate to="/doctor/app" /> : currentUser && localStorage.getItem('role').match('patient') ? <Navigate to="/patient/app" /> : <FaceLog /> },
-        { path: 'face-reg', element: currentUser && localStorage.getItem('role').match('doctor')  ? <Navigate to="/doctor/app" /> : currentUser && localStorage.getItem('role').match('patient') ? <Navigate to="/patient/app" /> :<FaceRegister /> },
-        { path: 'forgot', element: currentUser && localStorage.getItem('role').match('doctor')  ? <Navigate to="/doctor/app" /> : currentUser && localStorage.getItem('role').match('patient') ? <Navigate to="/patient/app" /> :<Forgot /> },
-        { path: 'register', element: currentUser && localStorage.getItem('role').match('doctor')  ? <Navigate to="/doctor/app" /> : currentUser && localStorage.getItem('role').match('patient') ? <Navigate to="/patient/app" /> :<Register /> },
-        { path: 'registration', element:currentUser && localStorage.getItem('role').match('doctor') ? <Navigate to="/doctor/app" /> : currentUser && localStorage.getItem('role').match('patient') ? <Navigate to="/patient/app" /> : <Registration /> },
-        { path: 'confirm/:confirmationCode', element: <Welcome/> },
-        { path: 'resetPassword/:confirmationCode', element: <ResetPassword/> },
-        { path: 'upload', element: <Upload/> },
+    return useRoutes([{
+            path: '/',
+            children: [
+                { path: '', element: < Home / > },
+                { path: 'role', element: currentUser && localStorage.getItem('role').match('doctor') ? < Navigate to = "/doctor/app" / > : currentUser && localStorage.getItem("role").match('patient') ? < Navigate to = "/patient/app" / > : < Role / > },
+                { path: 'verification', element: currentUser && localStorage.getItem('role').match('doctor') ? < Navigate to = "/doctor/app" / > : currentUser && localStorage.getItem('role') === "patient" ? < Navigate to = "/patient/app" / > : < CardVerification / > },
+                { path: 'contact', element: < Contact / > },
+                { path: 'blog', element: < Blog / > },
+                { path: 'shop', element: < Shop / > },
+                { path: 'team', element: < Team / > },
+                { path: 'price', element: < Price / > },
+                { path: 'login', element: currentUser && localStorage.getItem('role').match('doctor') ? < Navigate to = "/doctor/app" / > : currentUser && localStorage.getItem('role').match('patient') ? < Navigate to = "/patient/app" / > : < Login / > },
+                { path: 'face-log', element: currentUser && localStorage.getItem('role').match('doctor') ? < Navigate to = "/doctor/app" / > : currentUser && localStorage.getItem('role').match('patient') ? < Navigate to = "/patient/app" / > : < FaceLog / > },
+                { path: 'face-reg', element: currentUser && localStorage.getItem('role').match('doctor') ? < Navigate to = "/doctor/app" / > : currentUser && localStorage.getItem('role').match('patient') ? < Navigate to = "/patient/app" / > : < FaceRegister / > },
+                { path: 'forgot', element: currentUser && localStorage.getItem('role').match('doctor') ? < Navigate to = "/doctor/app" / > : currentUser && localStorage.getItem('role').match('patient') ? < Navigate to = "/patient/app" / > : < Forgot / > },
+                { path: 'register', element: currentUser && localStorage.getItem('role').match('doctor') ? < Navigate to = "/doctor/app" / > : currentUser && localStorage.getItem('role').match('patient') ? < Navigate to = "/patient/app" / > : < Register / > },
+                { path: 'registration', element: currentUser && localStorage.getItem('role').match('doctor') ? < Navigate to = "/doctor/app" / > : currentUser && localStorage.getItem('role').match('patient') ? < Navigate to = "/patient/app" / > : < Registration / > },
+                { path: 'confirm/:confirmationCode', element: < Welcome / > },
+                { path: 'resetPassword/:confirmationCode', element: < ResetPassword / > },
+                { path: 'upload', element: < Upload / > },
 
 
-      ]
-    },
-    {
-      path: '/doctor',
-      element: currentUser && currentUser.role==='doctor'  ? <Doctor /> : <Unauthorized />,
-      children: [
-        { path: 'app', element:  <DashboardDoctor />  },
-        { path: 'profile', element: <DoctorProfile />},
-        { path: 'patients', element: <DoctorPatients />},
-        { path: 'calendar', element: <Calendar />},
-        { path: 'appointments', element: <DoctorAppointements />},
-        { path: 'update_appointment/:id', element: <UpdateAppointment /> },
-        { path: 'add-blog', element: <AddBlog />},
-        { path: 'blogs', element: <Blogs />},
-        { path: 'blog-details/:id', element: <BlogDetails />},
-        { path: 'edit-blog/:id', element: <EditBlog />},
-        
-        //records
-        {
-          path: "records",
-          element: <RecordsDoctor />,
+            ]
         },
         {
-          path: "record",
-          element: <Record />,
-          children: [
-            { path: "medicalrecord/:id", element: <MedicalRecord /> },
-            { path: "prescription", element: <Prescription /> },
-            { path: "medication", element: <Medication /> },
-            { path: "allergies", element: <Allergie /> },
-            { path: "oldproblem/:id", element: <OldProblems /> },
-            { path: "addoldproblem/:id", element: <AddOldProblem /> },
-          ],
+            path: '/doctor',
+            element: currentUser && currentUser.role === 'doctor' ? < Doctor / > : < Unauthorized / > ,
+            children: [
+                { path: 'app', element: < DashboardDoctor / > },
+                { path: 'profile', element: < DoctorProfile / > },
+                { path: 'patients', element: < DoctorPatients / > },
+                { path: 'calendar', element: < Calendar / > },
+                { path: 'appointments', element: < DoctorAppointements / > },
+                { path: 'update_appointment/:id', element: < UpdateAppointment / > },
+                { path: 'add-blog', element: < AddBlog / > },
+                { path: 'blogs', element: < Blogs / > },
+                { path: 'blog-details/:id', element: < BlogDetails / > },
+                { path: 'edit-blog/:id', element: < EditBlog / > },
+
+                //records
+                {
+                    path: "records",
+                    element: < RecordsDoctor / > ,
+                },
+                {
+                    path: "record",
+                    element: < Record / > ,
+                    children: [
+                        { path: "medicalrecord/:id", element: < MedicalRecord / > },
+                        { path: "prescription/:id", element: < Prescription / > },
+                        { path: "addprescription/:id", element: < AddPrescription / > },
+                        { path: "medication/:id", element: < Medication / > },
+                        { path: "addmedication/:id", element: < AddMedication / > },
+                        { path: "allergies/:id", element: < Allergie / > },
+                        { path: "addallergie/:id", element: < AddAllergie / > },
+                        { path: "oldproblem/:id", element: < OldProblems / > },
+                        { path: "addoldproblem/:id", element: < AddOldProblem / > },
+                        { path: "activeproblem/:id", element: < ActiveProblem / > },
+                        { path: "addactiveproblem/:id", element: < AddActiveProblem / > },
+                        { path: "addhereditary/:id", element: < AddHereditary / > },
+                        { path: "hereditary/:id", element: < Hereditary / > },
+                        { path: "addreslabo/:id", element: < AddLaboratory / > },
+                        { path: "reslabo/:id", element: < Laboratory / > },
+                        { path: "doctornote/:id", element: < DoctorNotes / > },
+                        { path: "addnote/:id", element: < AddDoctorNote / > },
+
+
+                    ],
+                },
+            ]
         },
-      ]
-    },
-    {
-      path: '/patient',
-      element: currentUser && currentUser.role==='patient'  ? <Patient /> : <Unauthorized />,
-      children: [
-        { path: 'app', element: <Dashboard />},
-        { path: 'appointements', element: <Appointements />},       
-        { path: 'profile', element: <Profile /> },
-        { path: 'symptoms', element: <Symptoms />},
-        { path: 'test', element: <Test />},
-        { path: 'knowmore/:result', element: <KnowMore />},
-        { path: 'records', element: <Records />},
-        { path: 'edit-profile', element: <EditProfile />},
-        { path: 'reset-password', element: <ResetPassword />},
-        { path: 'doctors', element: <Doctors />},
-        { path: 'add-doctor', element: <AddDoctor />},
-        { path: 'edit-doctor/:id', element: <EditDoctor />},
-        { path: 'doctor-details/:id', element: <DoctorDetail />},
-        { path: 'take-appointment', element: <TakeAppointment />},
-      ]
-    },
-    {
-      path: '/admin',
-      children: [
-      ]
-    },
-   
-  ]);
+        {
+            path: '/patient',
+            element: currentUser && currentUser.role === 'patient' ? < Patient / > : < Unauthorized / > ,
+            children: [
+                { path: 'app', element: < Dashboard / > },
+                { path: 'appointements', element: < Appointements / > },
+                { path: 'profile', element: < Profile / > },
+                { path: 'symptoms', element: < Symptoms / > },
+                { path: 'test', element: < Test / > },
+                { path: 'knowmore/:result', element: < KnowMore / > },
+                { path: 'records', element: < Records / > },
+                { path: 'edit-profile', element: < EditProfile / > },
+                { path: 'reset-password', element: < ResetPassword / > },
+                { path: 'doctors', element: < Doctors / > },
+                { path: 'add-doctor', element: < AddDoctor / > },
+                { path: 'edit-doctor/:id', element: < EditDoctor / > },
+                { path: 'doctor-details/:id', element: < DoctorDetail / > },
+                { path: 'take-appointment', element: < TakeAppointment / > },
+            ]
+        },
+        {
+            path: '/admin',
+            children: []
+        },
+
+    ]);
 }

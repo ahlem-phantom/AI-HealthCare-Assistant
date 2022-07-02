@@ -170,6 +170,28 @@ Use this space to show useful examples of how a project can be used. Additional 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+![demo1](https://user-images.githubusercontent.com/78981558/177001216-8e8c9cc2-09cd-4c7a-9639-94ec384432cb.png)
+
+![demo24](https://user-images.githubusercontent.com/78981558/177001224-b804c0df-5db0-4d4c-b83e-de964c501b0b.png)
+
+![demo10](https://user-images.githubusercontent.com/78981558/177001237-8932f8c4-31b1-4939-b3f0-042713444cb1.png)
+
+![demo21](https://user-images.githubusercontent.com/78981558/177000911-0c4cb2ca-aff1-4416-be97-5b9173215c9a.png)
+
+![demo18](https://user-images.githubusercontent.com/78981558/177000917-86dba137-ba0f-4dfd-83c3-a18fd902be11.png)
+
+![demo12](https://user-images.githubusercontent.com/78981558/177000997-ecd9c0bc-e3ca-4d0b-bb75-2e55bde0f690.png)
+
+![demo13](https://user-images.githubusercontent.com/78981558/177001041-1dec9540-ec50-47e5-8c79-22dee3dece61.png)
+
+![demo14](https://user-images.githubusercontent.com/78981558/177001043-cb8110c3-f1a0-4e2a-b9cd-ef393cbf5ec4.png)
+
+![demo5](https://user-images.githubusercontent.com/78981558/177000927-0db3daef-a870-49e8-9413-9817a44b4f8a.png)
+
+![demo3](https://user-images.githubusercontent.com/78981558/177000941-82057aa0-5496-4b69-9aa1-a1c042395fe1.png)
+
+![demo4](https://user-images.githubusercontent.com/78981558/177001352-2aab27c9-e939-4782-b2d9-0181a8888d13.png)
+
 
 <!-- ROADMAP -->
 ## 🚩 Roadmap

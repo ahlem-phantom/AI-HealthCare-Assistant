@@ -23,10 +23,13 @@
   <p align="center">
 This is the official AI-HealthCare-Assistant documentation <br/>
   </p>
-
+ <a href="https://www.youtube.com/watch?v=Kxqa83Us1m4&t=1s">
+    <img src="https://img.youtube.com/vi/Kxqa83Us1m4/0.jpg"/>
+  </a>
  </div>
 
-
+  
+  
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -178,7 +181,7 @@ See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/i
 	 - Solution & functional/technical requirements
 	 - Wireframes of the solution
 
-- [ ] Phase 2 : Advanced Features Specification, Application Design & Realization
+- [x] Phase 2 : Advanced Features Specification, Application Design & Realization
 	- Data Model
 	- Physical architecture and technical environments 
 	- Specification of the advanced features
@@ -187,7 +190,7 @@ See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/i
 	- First NodeJS components (scenarios and case studies tests) 
 	- Static User Interfaces (Front-end)
 
-- [ ] Phase 3.1 : Realization Of Advanced Features, Deployment And Tests
+- [x] Phase 3.1 : Realization Of Advanced Features, Deployment And Tests
   - Implementation of the solution (V1)
   - Continuation Back-End development
   - Collecting and using flow from external application(Phase 2 + Phase 3) 
@@ -197,7 +200,7 @@ See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/i
   - Integration
   - Implemented Application V1
 
-- [ ] Phase 3.2 : Realization Of Advanced Features, Deployment And Tests
+- [x] Phase 3.2 : Realization Of Advanced Features, Deployment And Tests
   - Finalization of final delivrable (V2)
   - Final Integration/Deployment of the solution 
   - Tests

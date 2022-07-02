@@ -112,7 +112,9 @@ This web application centralizes the schedules and medical services in a single 
    <a href="https://www.python.org/">
     <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" alt="Python" width="150" height="150"/>
   </a>
-    
+      <a href="https://flask.palletsprojects.com/en/2.1.x/">
+    <img src="https://user-images.githubusercontent.com/78981558/177000805-0c23d775-7133-4dc9-b476-8826e3a6cda3.png" title="Flask" alt="Flask" width="150" height="150"/>
+  </a>
   </div>
   
 <p align="right">(<a href="#top">back to top</a>)</p>

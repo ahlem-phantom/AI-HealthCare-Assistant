@@ -81,7 +81,7 @@ def who_is_it(image_path, database, model):
             min_dist = dist
             identity = name
     if min_dist > 5:
-        print("Not in the database.")
+        print("Does not exist in the database.")
     else:
         print ("it's " + str(identity) + ", the distance is " + str(min_dist))
     return min_dist, identity

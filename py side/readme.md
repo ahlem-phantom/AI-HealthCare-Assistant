@@ -2,7 +2,7 @@
 
 ### 🚀 Built With
 
-**NearestDoctor** is built using MERN Stack technology. You may find below the list of the frameworks/libraries that we used to build our project :
+You may find below the list of the frameworks/libraries that we used to build our project :
 <br/>
 
 

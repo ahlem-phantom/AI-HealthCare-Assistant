@@ -52,6 +52,7 @@ This is the official AI-HealthCare-Assistant documentation <br/>
     </li>
     <li><a href="#-usage">Usage</a></li>
     <li><a href="#-roadmap">Roadmap</a></li>
+    <li><a href="#-achievements">Achievements</a></li>
     <li><a href="#-contributing">Contributing</a></li>
     <li><a href="#-contact">Contact</a></li>
     <li><a href="#-acknowledgments">Acknowledgments</a></li>
@@ -76,7 +77,6 @@ This web application centralizes the schedules and medical services in a single 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ### 📐 Project Technical Architecture 
@@ -221,6 +221,7 @@ See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/i
 
 ##  🏆 Achievements 
 So far, **"NearestDoctor"** has been selected among dozens of projects to participate in the 9th edition ceremony of best projects of the year 2022 in Esprit school of engineering.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- CONTRIBUTING -->

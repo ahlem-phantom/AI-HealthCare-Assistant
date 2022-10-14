@@ -60,7 +60,6 @@ This is the official AI-HealthCare-Assistant documentation <br/>
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## 📃 About The Project
 <b>"NearestDoctor"</b> is an AI healthcare assistant that uses AI and machine learning algorithms to improve patients' experience by providing them professional medical assistance. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also, our solution offers a very unique concept with developing patient records using Blockchain. The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission. Thanks to the decentralized nature of Blockchain, patient records would be securely spread among a large number of servers, posing little risk to their sensitive information.<br>
@@ -75,6 +74,10 @@ This web application centralizes the schedules and medical services in a single 
 6. **🙋 Advanced authentication:** using facial recognition to match the identity of a doctor, Card ID data extraction, and machine learning for identity verification.
 7. **🛒 Paramedical e-shop:** using machine learning for patient's behavioral analysis prediction.
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 ### 📐 Project Technical Architecture 
 
@@ -216,6 +219,8 @@ See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/i
   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+##  🏆 Achievements 
+So far, **"NearestDoctor"** has been selected among dozens of projects to participate in the 9th edition ceremony of best projects of the year 2022 in Esprit school of engineering.
 
 
 <!-- CONTRIBUTING -->

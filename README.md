@@ -220,7 +220,7 @@ See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/i
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ##  🏆 Achievements 
-So far, **"NearestDoctor"** has been selected among dozens of projects to participate in the 9th edition ceremony of best projects of the year 2022 in Esprit school of engineering.
+So far, **NearestDoctor** has been selected among dozens of projects to participate in the 9th edition ceremony of best projects of the year 2022 in **Esprit school of engineering**.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 

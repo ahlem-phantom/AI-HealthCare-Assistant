@@ -4,19 +4,22 @@
   <div id="badges">
 
    <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+    <img src="https://img.shields.io/github/contributors/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
   </a>
 
   <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/issues">
-    <img src="https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+    <img src="https://img.shields.io/github/issues/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
   </a>
 
   <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/stargazers">
-    <img src="https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+    <img src="https://img.shields.io/github/stars/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
   </a>
    <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/network/members">
-      <img src="https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge"/>
+      <img src="https://img.shields.io/github/forks/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
     </a>
+   <a href="https://www.youtube.com/watch?v=Kxqa83Us1m4">
+    <img src="https://img.shields.io/badge/Youtube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Youtube Badge"/>
+  </a>
   </div>
 <h3 align="center">AI-HealthCare-Assistant</h3>
   

@@ -216,7 +216,7 @@ function Blogs() {
                     >
                       <img
                         className="img-fluid" style={{height : '250px'}}
-                        src={el.picture}
+                        src={el.picture ? el.picture.replace(/javascript:/gi, '') : ''}
                         alt
                       />
                     </Link>

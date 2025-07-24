@@ -25,8 +25,10 @@ const send_message = async (req, res) => {
   const Email = req.body.Usermail
   talkToChatbot(message)
   .then((response) => {
-    res.send({ message: response })
-    var messageReceived = response.fulfillmentText
+    // Sanitize the response message to prevent XSS
+    const sanitizedMessage = response.fulfillmentText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    res.send({ message: sanitizedMessage })
+    var messageReceived = sanitizedMessage
     var date = new Date();
     console.log(response)
     if(response.intent.displayName === "Take_appointment_phase1"){
@@ -139,8 +141,9 @@ const send_message = async (req, res) => {
   })
   .catch((error) => {
     console.log('Something went wrong: ' + error)
+    // Send a generic error message to prevent ServerLeak
     res.send({
-     error: 'Error occured here',
+     error: 'An error occurred while processing your request.',
     })
   })
 };
@@ -151,7 +154,7 @@ const get_messages = async (req, res) => {
       res.status(200).send({msg: "talks", talks})
     }catch(error){
       console.log(error);
-      res.status(500).send(error);
+      res.status(500).send({ error: 'An error occurred while retrieving messages.' });
     }
   };
 
@@ -173,4 +176,3 @@ module.exports = {
     get_messages,
     delete_messages
   };
-  

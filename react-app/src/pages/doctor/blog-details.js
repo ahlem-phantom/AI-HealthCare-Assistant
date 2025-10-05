@@ -4,8 +4,6 @@ import { Outlet, useParams } from "react-router-dom";
 import axios from "axios";
 import dayjs from "dayjs";
 
-
-
 function BlogDetails() {
 
   const params = useParams();
@@ -27,7 +25,6 @@ function BlogDetails() {
 
    const handleSearch = (e) => {
      e.preventDefault();
-
 
      const getSearchR = async () => {
          const res = await axios("http://localhost:8080/blogs/search/"+`${search}`);
@@ -67,7 +64,7 @@ function BlogDetails() {
                     <a href="#.">
                       <img
                         alt=""
-                        src={blogs.picture}
+                        src={encodeURI(blogs.picture)}
                         className="img-fluid"
                       />
                     </a>
@@ -131,10 +128,10 @@ function BlogDetails() {
                 <ul className="latest-posts">
                 {searchR.map((el, index) => {
                   return (
-                  <li>
+                  <li key={index}>
                     <div className="post-info">
                       <h4>
-                        <a href={el.link}>
+                        <a href={encodeURI(el.link)}>
                           <div style={{color : 'blue', fontSize : '20px'}}>{el.title}</div>
                         </a>
                       </h4>

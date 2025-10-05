@@ -40,7 +40,7 @@ function DoctorDetails() {
                       <a href="#">
                         <img
                           className="avatar"
-                          src={doctors.picture}
+                          src={doctors.picture ? doctors.picture : ''}
                           alt
                         />
                       </a>

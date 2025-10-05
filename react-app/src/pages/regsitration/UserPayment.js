@@ -9,7 +9,7 @@ import { UserContext } from "./UserContext";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import StripeCheckout from 'react-stripe-checkout';
-const STRIPE_PUBLISHABLE = 'pk_test_51KkgQ1BHNzRaB25PEYP77hzfRdhQQhRyu58DiteDA7sHdE4QG5gsOQYzUG9JPvGtF0eBFEvH7ZyMEXqnn3Nc71xQ00u2WOqoGf'
+const STRIPE_PUBLISHABLE = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
 
 const CURRENCY = 'USD';
 const successPayment = data => {

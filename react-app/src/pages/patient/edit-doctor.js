@@ -94,8 +94,12 @@ const [file, setFile] = useState([]);
 
   const onChangePicture= (e) => {
     const img = e.target.files[0];
-    setFile(img);
-    setPicture(URL.createObjectURL(img));
+    if (img && (img.type === "image/jpeg" || img.type === "image/png")) {
+      setFile(img);
+      setPicture(URL.createObjectURL(img));
+    } else {
+      alert("Please upload a valid image file (JPEG/PNG).");
+    }
   };
 
 

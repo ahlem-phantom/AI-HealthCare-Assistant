@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
     })
   })
   .catch((error) => {
-    res.status(500).send(`${error}`)
+    res.status(500).send(`${error.message}`) // Sanitize error output
     console.error(error)
   })
 });
@@ -41,5 +41,3 @@ function requestEmail(token) {
   }
   
 module.exports = router;
-
-  

@@ -4,6 +4,10 @@ const cors = require("cors");
 const app = express();
 var cookieParser = require('cookie-parser');
 var patho = require('path');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const csurf = require('csurf');
+
 // view engine setup
 app.set('views', patho.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -11,20 +15,16 @@ var corsOptions = {
     origin: "http://localhost:8081"
 };
 
-
-
-
 app.use(cors(corsOptions));
 app.use(cookieParser());
+app.use(helmet()); // Added helmet for security headers
+app.use(csurf({ cookie: true })); // Added csurf for CSRF protection
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
-
 
 const db = require("./app/models");
 const Role = db.role;
@@ -55,6 +55,13 @@ app.get("/", (req, res) => {
 });
 app.use('/public', express.static('public'));
 
+// Apply rate limiting to all routes
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100 // limit each IP to 100 requests per windowMs
+});
+app.use(limiter);
+
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
@@ -72,8 +79,6 @@ const ChatAppRoutes = require('./app/routes/ChatAppRoutes')
 const contactRoute = require('./app/routes/contact.routes');
 const stripeRoute = require('./app/routes/payment.routes');
 const scrapRoute = require('./app/routes/scrap.routes');
-
-
 
 app.use(morgan('dev'));
 app.use('/blogs', blogRoute)
@@ -116,7 +121,6 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
-
 
 function initial() {
     Role.estimatedDocumentCount((err, count) => {

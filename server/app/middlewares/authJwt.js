@@ -23,7 +23,8 @@ verifyToken = (req, res, next) => {
 isAdmin = (req, res, next) => {
   User.findById(req.userId).exec((err, user) => {
     if (err) {
-      res.status(500).send({ message: err });
+      console.error(err); // Log the error for server-side debugging
+      res.status(500).send({ message: "An error occurred while retrieving user information." });
       return;
     }
 
@@ -33,7 +34,8 @@ isAdmin = (req, res, next) => {
       },
       (err, roles) => {
         if (err) {
-          res.status(500).send({ message: err });
+          console.error(err); // Log the error for server-side debugging
+          res.status(500).send({ message: "An error occurred while retrieving roles." });
           return;
         }
 
@@ -54,7 +56,8 @@ isAdmin = (req, res, next) => {
 isModerator = (req, res, next) => {
   User.findById(req.userId).exec((err, user) => {
     if (err) {
-      res.status(500).send({ message: err });
+      console.error(err); // Log the error for server-side debugging
+      res.status(500).send({ message: "An error occurred while retrieving user information." });
       return;
     }
 
@@ -64,7 +67,8 @@ isModerator = (req, res, next) => {
       },
       (err, roles) => {
         if (err) {
-          res.status(500).send({ message: err });
+          console.error(err); // Log the error for server-side debugging
+          res.status(500).send({ message: "An error occurred while retrieving roles." });
           return;
         }
 

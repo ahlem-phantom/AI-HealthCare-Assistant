@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import DOMPurify from 'dompurify';
 
 function Doctors() {
   const [doctors, setDoctor] = useState([]);
@@ -53,7 +54,7 @@ function Doctors() {
                       to={`/patient/doctor-details/${el._id}`}
                       component={Link}
                     >
-                     <img alt src={el.picture} />
+                     <img alt src={DOMPurify.sanitize(el.picture)} />
                     </Link>
                     </div>
                     <div className="dropdown profile-action">

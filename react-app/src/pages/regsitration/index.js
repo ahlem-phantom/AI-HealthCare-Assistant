@@ -169,7 +169,7 @@ export default (props) => {
   };
 
 
-  const hashedPassword = bcrypt.hashSync(state.user.password, '$2a$10$CwTycUXWue0Thq9StjUM0u') // hash created previously created upon sign up
+  const hashedPassword = bcrypt.hashSync(state.user.password, bcrypt.genSaltSync(10)); // Generate a secure salt
 
   const userObject = {
     firstname: state.user.firstname,

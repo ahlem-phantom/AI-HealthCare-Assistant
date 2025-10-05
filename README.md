@@ -244,11 +244,11 @@ Don't forget to give the project a star! Thanks again!
 ## Upcoming Version (v2)
 We are currently working on **v2** of this project, which will include:
 
-- Enhanced user interface (UI) and improved user experience (UX) for a more intuitive workflow
+- Enhanced user interface (UI) and improved user experience (UX)
 - Full CI/CD pipeline for automated testing, deployment, and continuous integration
 - Exciting new features and innovative functionalities to extend the app's capabilities
 - Fully functional application with optimized performance and stability
-- Upgraded versions of all libraries and dependencies for better compatibility and security
+- Upgraded versions of all libraries and dependencies
 - Scalable architecture to support future expansions
 - Integration of LLM AI models for faster and more accurate results
 - Migration from Node.js backend to **FastAPI** 

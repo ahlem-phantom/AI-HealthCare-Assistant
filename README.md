@@ -265,7 +265,9 @@ We're actively working on the next major release:
 ## 🏆 Achievements
 
 🎖️ **NearestDoctor was selected among dozens of projects** to participate in the **9th Edition Ceremony of Best Engineering Projects of 2022** at **Esprit School of Engineering**, Tunisia.
-
+<div align="center">
+<img src="https://github.com/user-attachments/assets/669b98fd-3237-49a5-a666-44da002cef35" width="300" height="300" alt="NearestDoctor Logo"/>
+</div>
 ---
 
 ## 🤝 Contributing

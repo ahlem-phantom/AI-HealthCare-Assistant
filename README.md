@@ -303,6 +303,19 @@ Built with 💕 by **AlphaCoders** 5 engineering students from Esprit School of 
 
 ---
 
+## ⚠️ Deprecation Notice
+
+> **Important:** This project was built in 2022 and several of its core libraries and dependencies are now **outdated or deprecated**. The codebase across all four modules `react-app/`, `server/`, `py side/`, and `blockchain/`  requires updates before it can be safely run in a modern environment.
+>
+> Known areas that need attention:
+> - **React**: project uses an older setup; migration to current React + Vite recommended, update of deprecated dependencies
+> - **Node.js / Express**: dependencies likely have known CVEs; run `npm audit` and update
+> - **Python / Flask**: AI service dependencies (TensorFlow, OpenCV, etc.) need version pinning and updates.
+>
+> A full dependency refresh is planned as part of **v3**. Contributions to modernize the stack are very welcome, see [Contributing](#-contributing).
+
+---
+
 ## 🙌 Acknowledgments
 
 - [Choose an Open Source License](https://choosealicense.com)

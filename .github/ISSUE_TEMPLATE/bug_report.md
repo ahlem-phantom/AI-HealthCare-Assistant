@@ -1,38 +1,80 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+name: 🐛 Bug Report
+about: Report a bug to help us improve NearestDoctor
+title: '[BUG] '
+labels: 'bug, needs-triage'
+assignees: 'ahlem-phantom'
+---
+
+## 🐛 Bug Description
+A clear and concise description of what the bug is.
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## 📍 Affected Module
+Which part of the application is affected? (check all that apply)
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+- [ ] 🤖 AI Symptom Detection / Chatbot (Dialogflow)
+- [ ] 📍 Appointment Scheduling / Google Maps
+- [ ] 🔗 Blockchain Medical Records
+- [ ] 🫁 X-Ray Lung Diagnosis
+- [ ] 🪪 Card ID Verification (Nanonets OCR)
+- [ ] 🤳 Face ID Authentication
+- [ ] 🔐 Login / OAuth (LinkedIn / Username / Password)
+- [ ] 🛒 Paramedical E-Shop
+- [ ] 📰 Blogs / Web Scraping Search
+- [ ] 💳 Payments (Stripe)
+- [ ] 🎙️ Voice Assistant (ALAN SDK)
+- [ ] 🧠 Mental Health Test
+- [ ] Other (describe below)
 
-**Expected behavior**
+---
+
+## ✅ Expected Behavior
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+## ❌ Actual Behavior
+A clear and concise description of what actually happened.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+---
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+## 📸 Screenshots / Screen Recording
+If applicable, add screenshots or a screen recording to help explain the problem.
 
-**Additional context**
-Add any other context about the problem here.
+---
+
+## 🖥️ Environment
+
+**Desktop:**
+| Field | Value |
+|-------|-------|
+| OS | e.g. Windows 11, macOS Ventura, Ubuntu 22.04 |
+| Browser | e.g. Chrome 120, Firefox 121, Safari 17 |
+| Node.js version | e.g. 16.13.1 |
+| Python version | e.g. 3.9.7 |
+
+**Mobile (if applicable):**
+| Field | Value |
+|-------|-------|
+| Device | e.g. Samsung Galaxy S22 |
+| OS | e.g. Android 13 |
+| Browser | e.g. Chrome Mobile |
+
+---
+
+## 📋 Logs / Error Output
+If applicable, paste any relevant console errors or server logs here.
+
+```
+// paste logs here
+```
+
+---
+
+## ⚠️ Deprecation Note
+> This project uses dependencies from 2022 that are currently outdated. If your bug may be related to a deprecated library, please mention it here and consider checking `npm audit` or `pip-audit` output.
+
+---
+
+## 💡 Additional Context
+Any other context, workarounds you've tried, or related issues.

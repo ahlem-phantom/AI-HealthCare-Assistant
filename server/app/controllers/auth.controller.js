@@ -25,7 +25,7 @@ exports.signup = (req, res) => {
 
   user.save((err, user) => {
     if (err) {
-      res.status(500).send({ message: err });
+      res.status(500).send({ message: "An error occurred during registration." });
       return;
     }
 
@@ -36,14 +36,14 @@ exports.signup = (req, res) => {
         },
         (err, roles) => {
           if (err) {
-            res.status(500).send({ message: err });
+            res.status(500).send({ message: "An error occurred while assigning roles." });
             return;
           }
 
           user.roles = roles.map((role) => role._id);
           user.save((err) => {
             if (err) {
-              res.status(500).send({ message: err });
+              res.status(500).send({ message: "An error occurred while saving user roles." });
               return;
             }
 
@@ -63,14 +63,14 @@ exports.signup = (req, res) => {
     } else {
       Role.findOne({ name: "user" }, (err, role) => {
         if (err) {
-          res.status(500).send({ message: err });
+          res.status(500).send({ message: "An error occurred while assigning default role." });
           return;
         }
 
         user.roles = [role._id];
         user.save((err) => {
           if (err) {
-            res.status(500).send({ message: err });
+            res.status(500).send({ message: "An error occurred while saving user roles." });
             return;
           }
           res.send({
@@ -96,7 +96,7 @@ exports.signin = (req, res) => {
     .populate("roles", "-__v")
     .exec((err, user) => {
       if (err) {
-        res.status(500).send({ message: err });
+        res.status(500).send({ message: "An error occurred during sign-in." });
         return;
       }
 
@@ -150,7 +150,7 @@ exports.signinlinkedin = (req, res) => {
     .populate("roles", "-__v")
     .exec((err, user) => {
       if (err) {
-        res.status(500).send({ message: err });
+        res.status(500).send({ message: "An error occurred during LinkedIn sign-in." });
         return;
       }
 
@@ -186,7 +186,7 @@ exports.signinface = (req, res) => {
     .populate("roles", "-__v")
     .exec((err, user) => {
       if (err) {
-        res.status(500).send({ message: err });
+        res.status(500).send({ message: "An error occurred during Facebook sign-in." });
         return;
       }
 
@@ -227,7 +227,7 @@ exports.verifyUser = (req, res, next) => {
       user.status = "Active";
       user.save((err) => {
         if (err) {
-          res.status(500).send({ message: err });
+          res.status(500).send({ message: "An error occurred during verification." });
           return;
         }
       });

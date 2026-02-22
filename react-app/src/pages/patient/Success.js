@@ -101,7 +101,7 @@ const Success =  ({
                   <li>
                     <div className="post-info">
                       <h4>
-                        <a href={el.link}>
+                        <a href={el.link.startsWith('http') ? el.link : '#'}>
                           <div style={{color : 'blue', fontSize : '20px'}}>{el.title}</div>
                         </a>
                       </h4>

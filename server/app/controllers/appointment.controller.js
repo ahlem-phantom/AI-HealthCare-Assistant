@@ -10,7 +10,7 @@ const get_appointment = async (req, res) => {
     res.status(200).send({msg: "appointments", appointments})
   }catch(error){
     console.log(error);
-    res.status(500).send(error);
+    res.status(500).send({msg: "Internal server error"});
   }
 };
 const appointment_create_post = async (req, res) => {
@@ -58,7 +58,7 @@ const appointment_delete = (req, res) => {
         res.status(200).send({msg: "appointment", appointment})
       }catch(error){
         console.log(error);
-        res.status(500).send(error);
+        res.status(500).send({msg: "Internal server error"});
       }
     };
     const addlocation = async (req, res) => {
@@ -84,5 +84,3 @@ const appointment_delete = (req, res) => {
     addlocation
     
   };
-  
-  

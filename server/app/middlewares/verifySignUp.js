@@ -8,7 +8,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
     username: req.body.username
   }).exec((err, user) => {
     if (err) {
-      res.status(500).send({ message: err });
+      res.status(500).send({ message: "An error occurred while checking the username." });
       return;
     }
 
@@ -22,7 +22,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
       email: req.body.email
     }).exec((err, user) => {
       if (err) {
-        res.status(500).send({ message: err });
+        res.status(500).send({ message: "An error occurred while checking the email." });
         return;
       }
 
@@ -38,6 +38,10 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
 
 checkRolesExisted = (req, res, next) => {
   if (req.body.roles) {
+    if (!Array.isArray(req.body.roles) || req.body.roles.length > 1000) { // Limit the length of roles array
+      res.status(400).send({ message: "Invalid roles array." });
+      return;
+    }
     for (let i = 0; i < req.body.roles.length; i++) {
       if (!ROLES.includes(req.body.roles[i])) {
         res.status(400).send({

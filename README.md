@@ -1,284 +1,320 @@
-# 💕 AI-HealthCare-Assistant
-<div id="top" align="center">
-  <img src="https://user-images.githubusercontent.com/78981558/155504905-3bd2d8db-64f5-413c-b7d2-d4e7842ddad8.png" width="250" height="250"/>
-  <div id="badges">
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/78981558/155504905-3bd2d8db-64f5-413c-b7d2-d4e7842ddad8.png" width="180" height="180" alt="NearestDoctor Logo"/>
 
-   <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
-  </a>
+  <h1>🏥 NearestDoctor - AI Healthcare Assistant</h1>
 
-  <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/issues">
-    <img src="https://img.shields.io/github/issues/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
-  </a>
+  <p><strong>Your intelligent, AI-powered companion for smarter, faster, and safer healthcare.</strong></p>
 
-  <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/stargazers">
-    <img src="https://img.shields.io/github/stars/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
-  </a>
-   <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/network/members">
+  <p>
+    <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/graphs/contributors">
+      <img src="https://img.shields.io/github/contributors/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
+    </a>
+    <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/issues">
+      <img src="https://img.shields.io/github/issues/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
+    </a>
+    <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/stargazers">
+      <img src="https://img.shields.io/github/stars/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
+    </a>
+    <a href="https://github.com/ahlem-phantom/AI-HealthCare-Assistant/network/members">
       <img src="https://img.shields.io/github/forks/ahlem-phantom/AI-HealthCare-Assistant.svg?style=for-the-badge"/>
     </a>
-   <a href="https://www.youtube.com/watch?v=Kxqa83Us1m4">
-    <img src="https://img.shields.io/badge/Youtube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Youtube Badge"/>
-  </a>
-  </div>
-<h3 align="center">AI-HealthCare-Assistant</h3>
-  
-  <p align="center">
-This is the official AI-HealthCare-Assistant documentation <br/>
+    <a href="https://www.youtube.com/watch?v=Kxqa83Us1m4">
+      <img src="https://img.shields.io/badge/Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Demo"/>
+    </a>
   </p>
- <a href="https://www.youtube.com/watch?v=Kxqa83Us1m4&t=1s">
-    <img src="https://img.youtube.com/vi/Kxqa83Us1m4/0.jpg"/>
+
+  <a href="https://www.youtube.com/watch?v=Kxqa83Us1m4&t=1s">
+    <img src="https://img.youtube.com/vi/Kxqa83Us1m4/0.jpg" width="620" alt="Project Demo Video"/>
   </a>
- </div>
 
-  
-  
+  <br/>
+  <em>▲ Click to watch the full demo</em>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#-about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#-project-main-features">Project Main Features</a></li>
-        <li><a href="#-project-technical-architecture">Project Technical Architecture</a></li>
-        <li><a href="#-built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#-getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#-prerequisites">Prerequisites</a></li>
-        <li><a href="#-installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#-usage">Usage</a></li>
-    <li><a href="#-roadmap">Roadmap</a></li>
-    <li><a href="#-achievements">Achievements</a></li>
-    <li><a href="#-contributing">Contributing</a></li>
-    <li><a href="#-contact">Contact</a></li>
-    <li><a href="#-acknowledgments">Acknowledgments</a></li>
-
-  </ol>
-</details>
-
-
-<!-- ABOUT THE PROJECT -->
-## 📃 About The Project
-<b>"NearestDoctor"</b> is an AI healthcare assistant that uses AI and machine learning algorithms to improve patients' experience by providing them professional medical assistance. Patients will be able to find the nearest doctor to their location, ask about illness symptoms, and schedule an appointment with a doctor based on their availability. Immediate responses will be provided by a chatbot to redeem the needs of our patients using Artificial Intelligence techniques for decision making. Also, our solution offers a very unique concept with developing patient records using Blockchain. The assistant will create a medical record and store it in Blockchain to make them accessible to any of the patient's chosen doctors with granted permission. Thanks to the decentralized nature of Blockchain, patient records would be securely spread among a large number of servers, posing little risk to their sensitive information.<br>
-This web application centralizes the schedules and medical services in a single dashboard. This solution offers a real-time overview of the coverage of reports that facilitate the management of resources.<br>
-
- ### 📜 Project Main features
-1. **🤖 Symptoms Detection:** using Artificial Intelligence for specialist recommendation and illness detection.
-2. **📅 Appointment Scheduling:** based on the nearest doctor to your location or the first available appointment.
-3. **📘 Medical Records:** securely stored in the blockchain using smart contracts.
-4. **💬 Blogs and Forum:** using machine learning for patient satisfaction prediction.
-5. **📈 Real-time reports:** using machine learning to offer an overview of many aspects of the application.
-6. **🙋 Advanced authentication:** using facial recognition to match the identity of a doctor, Card ID data extraction, and machine learning for identity verification.
-7. **🛒 Paramedical e-shop:** using machine learning for patient's behavioral analysis prediction.
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-
-### 📐 Project Technical Architecture 
-
-<div align="center">
-  <h1>
-<img src="https://user-images.githubusercontent.com/78981558/155615523-4663648b-50a2-4e45-a67e-3685dd28206d.png" width="700" height="500">
-</h1>
 </div>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+---
 
-### 🚀 Built With
+## 📖 Table of Contents
 
-**NearestDoctor** is built using MERN Stack technology. You may find below the list of the frameworks/libraries that we used to build our project :
+- [About The Project](#-about-the-project)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Architecture](#-architecture)
+- [Getting Started](#-getting-started)
+- [How It Works](#-how-it-works)
+- [Screenshots](#-screenshots)
+- [Roadmap](#-roadmap)
+- [Achievements](#-achievements)
+- [Contributing](#-contributing)
+- [Team](#-team)
+- [Acknowledgments](#-acknowledgments)
+
+---
+
+## 🧠 About The Project
+
+**NearestDoctor** is a full-stack, AI-powered healthcare web application that bridges the gap between patients and medical professionals. It combines machine learning, blockchain, facial recognition, and natural language processing into a seamless platform that covers the entire patient journey from first symptom to secured medical record.
+
+> 💡 *"Every patient deserves professional medical guidance, instantly and securely — no matter where they are."*
+
+### The Problem
+
+Despite advances in digital health, patients still face three core challenges:
+
+- 🔍 **Finding the right doctor**: it's hard to know which specialist fits your symptoms.
+- 📆 **Getting an appointment**: scheduling is manual, slow, and rarely location-aware.
+- 🔐 **Securing medical records**: records are fragmented, inaccessible, and vulnerable to breaches.
+
+NearestDoctor was designed from the ground up to solve all three.
+
+---
+
+## ✨ Key Features
+
+| Feature | Description |
+|--------|-------------|
+| 🤖 **AI Symptom Detection & Chatbot** | Patients chat with a **Dialogflow**-powered bot, describe symptoms, and receive an illness prediction with the right specialist recommendation. |
+| 📍 **Location-Based Doctor Search** | Find the nearest doctor or first available appointment in real time. |
+| 📅 **Smart Appointment Scheduling** | Book with the nearest doctor or earliest available slot directly through the chatbot flow. |
+| 🔗 **Blockchain Medical Records** | Patient data is stored on **Ethereum** using smart contracts. Every update creates a verifiable, immutable transaction block. |
+| 🫁 **X-Ray Lung Diagnosis** | Doctors upload chest X-rays; a **TensorFlow** pre-trained model predicts **COVID-19**, **tuberculosis**, or **pneumonia** in seconds. |
+| 🧠 **Mental Health Test** | Patients take a guided quiz to assess their mental wellbeing, then receive a result and curated article suggestions. |
+| 🪪 **Doctor Identity Verification** | Doctors verify their real identity using a national card ID processed through the **Nanonets AI OCR API** before they can register. |
+| 🤳 **Multi-Mode Authentication** | Three login options: **LinkedIn OAuth**, **username/password**, or **Face ID** (TensorFlow deep learning model). |
+| 📰 **Blogs & Web Scraping Search** | Doctors publish articles; an integrated web scraping engine lets users search for external medical content by keyword. |
+| 🛒 **Paramedical E-Shop** | ML-based patient behavioral analysis drives personalized product recommendations. |
+| 🎙️ **AI Voice Assistant** | **ALAN SDK** integration lets users navigate the platform entirely by voice commands. |
+| 💳 **Integrated Payments** | **Stripe API** handles doctor subscription plans and patient service payments. |
+
+---
+
+## 🚀 Tech Stack
+
+<div align="center">
+
+<a href="https://reactjs.org/"><img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" width="80" height="80"/></a>
+<a href="https://nodejs.org/en/"><img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" width="80" height="80"/></a>
+<a href="http://expressjs.com/"><img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" title="ExpressJS" width="80" height="80"/></a>
+<a href="https://www.python.org/"><img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" width="80" height="80"/></a>
+<a href="https://flask.palletsprojects.com/"><img src="https://user-images.githubusercontent.com/78981558/177000805-0c23d775-7133-4dc9-b476-8826e3a6cda3.png" title="Flask" width="80" height="80"/></a>
+<a href="https://www.mongodb.com/"><img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original-wordmark.svg" title="MongoDB" width="80" height="80"/></a>
+
+</div>
+
 <br/>
 
+| Layer | Technology | Version |
+|-------|-----------|---------|
+| Frontend | React.js | v18 |
+| Backend API | Node.js + Express.js | Node v16.13.1 / Express v4.17.1 |
+| AI/ML Microservices | Python + Flask | Flask v2.1 |
+| Database | MongoDB | v5.9.1 |
+| Blockchain | Ethereum Smart Contracts | — |
+| Face Recognition | TensorFlow (pre-trained deep learning model) | — |
+| ID Card OCR | Nanonets AI API | — |
+| Chatbot (Symptoms + Appointments) | Dialogflow | — |
+| X-Ray Diagnosis | TensorFlow (pre-trained model) | — |
+| Maps & Location | Google Maps API | — |
+| Voice Assistant | ALAN SDK | — |
+| Payments | Stripe API | — |
+| OAuth | LinkedIn OAuth | — |
+| Languages | JavaScript, Python, HTML5, CSS | — |
 
-  <div align="center">
-	
-   <a href="https://www.mongodb.com/">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original-wordmark.svg" title="MongoDB" alt="MongoDB" width="150" height="150"/>
-    </a>
-	
- <a href="https://reactjs.org/">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="150" height="150"/>
-  </a>
-	
-  <a href="https://nodejs.org/en/">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="150" height="150"/>
- </a>
-  <a href="http://expressjs.com/">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" title="ExpressJS" alt="ExpressJS" width="150" height="150"/>
-    </a>
-  
-   <a href="https://www.python.org/">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" alt="Python" width="150" height="150"/>
-  </a>
-      <a href="https://flask.palletsprojects.com/en/2.1.x/">
-    <img src="https://user-images.githubusercontent.com/78981558/177000805-0c23d775-7133-4dc9-b476-8826e3a6cda3.png" title="Flask" alt="Flask" width="150" height="150"/>
-  </a>
-  </div>
-  
-<p align="right">(<a href="#top">back to top</a>)</p>
+---
+
+## 📐 Architecture
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/78981558/155615523-4663648b-50a2-4e45-a67e-3685dd28206d.png" width="750" alt="Technical Architecture Diagram"/>
+</div>
+
+The platform follows a **microservices-inspired MERN architecture**:
+
+- The **React.js frontend** communicates with the **Node/Express REST API** for core operations.
+- **AI features** run as independent **Flask microservices** (symptom detection, face recognition, X-ray diagnosis, OCR, behavioral analysis).
+- **MongoDB** stores application data users, appointments, blogs, shop inventory.
+- **Ethereum smart contracts** handle patient medical records with immutability and permission-based access control.
 
 
+---
 
-<!-- GETTING STARTED -->
-## ✨ Getting Started
-To get a local copy up and running follow these simple example steps.
+## ✅ Getting Started
 
-### 🚧 Prerequisites
+### Prerequisites
 
-You may find below the list of things you need to use this project :
-* Make sure MongoDB is running on your system.
-* You will need to install the "yarn" or "npm" command line.
+- [Node.js](https://nodejs.org/) v16+ and `npm` or `yarn`
+- [MongoDB](https://www.mongodb.com/) running locally or via a cloud URI (v5.9.1+)
+- [Python 3.8+](https://www.python.org/) for AI/ML microservices
+- [Git](https://git-scm.com/)
 
-### 🛠 Installation
+### Installation
 
-_In order to install the app you need to follow the instructions below :_
-
-1. Clone the repo
-   ```sh
+1. **Clone the repository**
+   ```bash
    git clone https://github.com/ahlem-phantom/AI-HealthCare-Assistant.git
+   cd AI-HealthCare-Assistant
    ```
-2. Install NPM packages dependencies 
-   ```sh
-   npm install 
+
+2. **Install Node.js dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
    ```
-   Or 
-   
-    ```sh
-   yarn install 
+
+3. **Install Python dependencies** *(for AI services)*
+   ```bash
+   pip install -r requirements.txt
    ```
-   
-3. Run the server on 
-   ```sh
+
+4. **Configure environment variables**
+
+   Create a `.env` file in the root directory:
+   ```env
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   PORT=5000
+   STRIPE_SECRET_KEY=your_stripe_key
+   GOOGLE_MAPS_API_KEY=your_maps_key
+   DIALOGFLOW_PROJECT_ID=your_dialogflow_project_id
+   NANONETS_API_KEY=your_nanonets_key
+   ```
+
+5. **Start the main development server**
+   ```bash
    npm run development
    ```
-4. Open localhost:3000 in the browser and that's it you can enjoy the project 🎉!
 
- 
+6. **Start Flask AI microservices** *(in a separate terminal)*
+   ```bash
+   cd py-side
+   flask run
+   ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+7. **Open the app** at `http://localhost:3000` 🎉
 
+---
 
+## 🔄 How It Works
 
-<!-- USAGE EXAMPLES -->
-## ⚡ Usage
+### For Patients
+1. **Select Role** — choose "Patient" at the landing screen.
+2. **Register & Log In** — via username/password or LinkedIn OAuth.
+3. **Describe Symptoms** — chat with the Dialogflow AI bot; receive a specialist recommendation.
+4. **Mental Health Check** — take the guided quiz and get personalized article suggestions.
+5. **Book an Appointment** — schedule with the nearest or first-available doctor via the chatbot and Google Maps.
+6. **Medical Records** — your records are securely stored on the blockchain; grant selective access to your chosen doctors.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-| <img src="https://user-images.githubusercontent.com/78981558/177000911-0c4cb2ca-aff1-4416-be97-5b9173215c9a.png" width="900" height="300"/><br> **Choose a role**| <img src="https://user-images.githubusercontent.com/78981558/177001216-8e8c9cc2-09cd-4c7a-9639-94ec384432cb.png" width="900" height="300"/>  <br>**FaceID Login**| 
-| ------------- | ------------- | 
-| <img src="https://user-images.githubusercontent.com/78981558/177000941-82057aa0-5496-4b69-9aa1-a1c042395fe1.png" width="900" height="300"/><br> **CardId verification**| <img src="https://user-images.githubusercontent.com/78981558/177001352-2aab27c9-e939-4782-b2d9-0181a8888d13.png" width="900" height="300"/>  <br>**Success of cardID verification**| 
-| <img src="https://user-images.githubusercontent.com/78981558/177001224-b804c0df-5db0-4d4c-b83e-de964c501b0b.png" width="900" height="300"/><br> **List of blogs**| <img src="https://user-images.githubusercontent.com/78981558/177000917-86dba137-ba0f-4dfd-83c3-a18fd902be11.png" width="900" height="300"/>  <br>**Web scraping search**| 
-| <img src="https://user-images.githubusercontent.com/78981558/177001237-8932f8c4-31b1-4939-b3f0-042713444cb1.png" width="900" height="300"/><br> **List of appointements**| <img src="https://user-images.githubusercontent.com/78981558/177001041-1dec9540-ec50-47e5-8c79-22dee3dece61.png" width="900" height="300"/>  <br>**Symptoms detection : List of symptoms**| 
-| <img src="https://user-images.githubusercontent.com/78981558/177000997-ecd9c0bc-e3ca-4d0b-bb75-2e55bde0f690.png" width="900" height="300"/><br> **Symptoms detection : Suggestions**| <img src="https://user-images.githubusercontent.com/78981558/177001043-cb8110c3-f1a0-4e2a-b9cd-ef393cbf5ec4.png" width="900" height="300"/>  <br>**Symptoms detection : Suggestions**| 
-<p align="right">(<a href="#top">back to top</a>)</p>
+### For Doctors
+1. **Verify Identity** — upload your national card ID; Nanonets OCR confirms authenticity in real time.
+2. **Register Face ID** — enroll your face using the TensorFlow model for future biometric logins.
+3. **Choose a Plan & Pay** — select a subscription tier and complete payment via Stripe.
+4. **Log In** — use LinkedIn OAuth, username/password, or a live Face ID camera scan.
+5. **Use the Dashboard** — manage appointments, write blogs, run X-ray lung diagnoses (COVID / TB / pneumonia), and access patient records via blockchain with granted permission.
 
+---
 
+## 📸 Screenshots
 
+| | |
+|---|---|
+| ![Choose a role](https://user-images.githubusercontent.com/78981558/177000911-0c4cb2ca-aff1-4416-be97-5b9173215c9a.png) <br/>**1. Choose a Role** | ![FaceID Login](https://user-images.githubusercontent.com/78981558/177001216-8e8c9cc2-09cd-4c7a-9639-94ec384432cb.png) <br/>**2. Face ID Login** |
+| ![CardID Verification](https://user-images.githubusercontent.com/78981558/177000941-82057aa0-5496-4b69-9aa1-a1c042395fe1.png) <br/>**3. Card ID Verification** | ![CardID Success](https://user-images.githubusercontent.com/78981558/177001352-2aab27c9-e939-4782-b2d9-0181a8888d13.png) <br/>**4. Verification Success** |
+| ![Blog List](https://user-images.githubusercontent.com/78981558/177001224-b804c0df-5db0-4d4c-b83e-de964c501b0b.png) <br/>**5. Blog & Forum** | ![Web Scraping](https://user-images.githubusercontent.com/78981558/177000917-86dba137-ba0f-4dfd-83c3-a18fd902be11.png) <br/>**6. Web Scraping Search** |
+| ![Appointments](https://user-images.githubusercontent.com/78981558/177001237-8932f8c4-31b1-4939-b3f0-042713444cb1.png) <br/>**7. Appointments List** | ![Symptoms Detection](https://user-images.githubusercontent.com/78981558/177001041-1dec9540-ec50-47e5-8c79-22dee3dece61.png) <br/>**8. Symptom Selection** |
+| ![Suggestions](https://user-images.githubusercontent.com/78981558/177000997-ecd9c0bc-e3ca-4d0b-bb75-2e55bde0f690.png) <br/>**9. AI Specialist Suggestions** | ![More Suggestions](https://user-images.githubusercontent.com/78981558/177001043-cb8110c3-f1a0-4e2a-b9cd-ef393cbf5ec4.png) <br/>**10. Chatbot Recommendations** |
 
-<!-- ROADMAP -->
-## 🚩 Roadmap
+---
 
-See the [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/issues) for a list of proposed features (and known issues).
+## 🗺️ Roadmap
 
- - [x] Phase 1 : Project Study, Requirement Analysis and Prototyping 
-	 - Problematic definition 
-	 - State of the art
-	 - Preliminary Feasibility Study
-	 - Solution & functional/technical requirements
-	 - Wireframes of the solution
+- [x] **Phase 1 — Study & Prototyping**
+  - Problem definition, state of the art & competitive analysis
+  - Feasibility study, wireframes
 
-- [x] Phase 2 : Advanced Features Specification, Application Design & Realization
-	- Data Model
-	- Physical architecture and technical environments 
-	- Specification of the advanced features
-	- Advanced Feasibility Study (Cases studied problems and Results - development Back-end) 
-	- Development of static user interfaces (Front-end)-> depending on the project
-	- First NodeJS components (scenarios and case studies tests) 
-	- Static User Interfaces (Front-end)
+- [x] **Phase 2 — Design & Initial Build**
+  - Data model & physical/logical architecture design
+  - Static frontend + first Node.js components
 
-- [x] Phase 3.1 : Realization Of Advanced Features, Deployment And Tests
-  - Implementation of the solution (V1)
-  - Continuation Back-End development
-  - Collecting and using flow from external application(Phase 2 + Phase 3) 
-  - Consuming REST services by the front-end
-  - Development of final user interfaces (Front-end) 
-  - Exposing REST services by the back-end Node.js
-  - Integration
-  - Implemented Application V1
+- [x] **Phase 3.1 — Feature Implementation (V1)**
+  - Full backend REST API
+  - Frontend integration with all services
+  - Core AI modules: symptom detection, face ID, OCR verification
 
-- [x] Phase 3.2 : Realization Of Advanced Features, Deployment And Tests
-  - Finalization of final delivrable (V2)
-  - Final Integration/Deployment of the solution 
-  - Tests
-  - Implemented Application V2 
-  - Tests results
-  
-<p align="right">(<a href="#top">back to top</a>)</p>
+- [x] **Phase 3.2 — Finalization & Deployment (V2)**
+  - X-ray diagnosis, mental health test, blockchain records
+  - Final integration, system testing & deployment
 
-##  🏆 Achievements 
-So far, **NearestDoctor** has been selected among dozens of projects to participate in the 9th edition ceremony of best projects of the year 2022 in **Esprit school of engineering**.
-<p align="right">(<a href="#top">back to top</a>)</p>
+- [ ] **v3 — Coming Soon**
 
+---
 
-<!-- CONTRIBUTING -->
-## 😎 Contributing
+## 🔮 Upcoming: Version 3
 
-If you have a suggestion that would make this project better, please fork the repo and create a pull request. Any contributions you make are **greatly appreciated**.
-Don't forget to give the project a star! Thanks again!
+We're actively working on the next major release:
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b Yourbranch`)
-3. Commit your Changes (`git commit -m 'Add some features to project'`)
-4. Push to the Branch (`git push origin Yourbranch`)
+- 🎨 Redesigned UI/UX with a modern design system
+- ⚡ Migration from Node.js backend to **FastAPI**
+- 🤖 Integration of **LLM models** for smarter symptom analysis and conversational AI
+- 🧪 Full CI/CD pipeline for automated testing & deployment
+- 📦 All libraries and dependencies upgraded to latest stable versions
+- 🏗️ Scalable, cloud-ready architecture
+
+---
+
+## 🏆 Achievements
+
+🎖️ **NearestDoctor was selected among dozens of projects** to participate in the **9th Edition Ceremony of Best Engineering Projects of 2022** at **Esprit School of Engineering**, Tunisia.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how to get started:
+
+1. Fork the project
+2. Create your feature branch
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. Commit your changes
+   ```bash
+   git commit -m "Add AmazingFeature"
+   ```
+4. Push to the branch
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
 5. Open a Pull Request
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+See [open issues](https://github.com/ahlem-phantom/AI-HealthCare-Assistant/issues) for ideas and known bugs. Don't forget to ⭐ star the project if you find it useful!
 
-## Upcoming Version (v2)
-We are currently working on **v2** of this project, which will include:
+---
 
-- Enhanced user interface (UI) and improved user experience (UX)
-- Full CI/CD pipeline for automated testing, deployment, and continuous integration
-- Exciting new features and innovative functionalities to extend the app's capabilities
-- Fully functional application with optimized performance and stability
-- Upgraded versions of all libraries and dependencies
-- Scalable architecture to support future expansions
-- Integration of LLM AI models for faster and more accurate results
-- Migration from Node.js backend to **FastAPI** 
+## 👥 Team
 
-<!-- CONTACT -->
-## 💌 Contact
-<b>Project Mentor :</b>    ameni.rommene@esprit.tn 
+Built with 💕 by **AlphaCoders** 5 engineering students from Esprit School of Engineering, Tunisia.
 
-<b>Project Members :</b> 
-| <img src="https://user-images.githubusercontent.com/78981558/157719496-9aec4730-512f-4188-87ca-8dbe6271ebfc.jpg" width="150" height="150"/>  <br> **Ahlem Laajili**| <img src="https://user-images.githubusercontent.com/78981558/157719539-f2829a38-c204-40fc-881d-21b9f407aa84.jpg" width="150" height="150"/>  <br>**Skander Turki**| <img src="https://user-images.githubusercontent.com/78981558/157719519-36d5e110-659c-4c29-80fc-64e78d53e669.jpg" width="150" height="150"/> <br>**Syrine Zahras**| <img src="https://user-images.githubusercontent.com/78981558/157719578-6479fcf3-e4f1-4db0-83d4-158b640552c1.jpg" width="150" height="150"/> <br>**Hichem Ben Zammal**| <img src="https://user-images.githubusercontent.com/78981558/157719597-23028a28-1095-4472-af25-ec631c6c1307.jpg" width="150" height="150"/> <br>**Nesrine Ben Mahmoud**|
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-|<div align="center"><a href="mailto:ahlem.laajili@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge"/></a><a href="https://github.com/ahlem-phantom"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a></div> |<div align="center"><a href="mailto:skander.turki@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge"/></a><a href="https://github.com/skander-turki"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a></div> |<div align="center"><a href="mailto:syrine.zahras@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge"/></a><a href="https://github.com/SyrineZahras"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a></div> | <div align="center"><a href="mailto:hichem.bemzammal@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge"/></a><a href="https://github.com/hichembenzammel"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a></div>  | <div align="center"><a href="mailto:nesrine.benmahmoud@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge"/></a><a href="https://github.com/nesrine1999"><img title="Follow on GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a></div>  |
+**Project Mentor:** [ameni.rommene@esprit.tn](mailto:ameni.rommene@esprit.tn)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+| | | | | |
+|---|---|---|---|---|
+| <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719496-9aec4730-512f-4188-87ca-8dbe6271ebfc.jpg" width="100" height="100"/><br/><b>Ahlem Laajili</b><br/><a href="mailto:ahlem.laajili@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/ahlem-phantom"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719539-f2829a38-c204-40fc-881d-21b9f407aa84.jpg" width="100" height="100"/><br/><b>Skander Turki</b><br/><a href="mailto:skander.turki@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/skander-turki"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719519-36d5e110-659c-4c29-80fc-64e78d53e669.jpg" width="100" height="100"/><br/><b>Syrine Zahras</b><br/><a href="mailto:syrine.zahras@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/SyrineZahras"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719578-6479fcf3-e4f1-4db0-83d4-158b640552c1.jpg" width="100" height="100"/><br/><b>Hichem Ben Zammal</b><br/><a href="mailto:hichem.bemzammal@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/hichembenzammel"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719597-23028a28-1095-4472-af25-ec631c6c1307.jpg" width="100" height="100"/><br/><b>Nesrine Ben Mahmoud</b><br/><a href="mailto:nesrine.benmahmoud@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/nesrine1999"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> |
 
+---
 
-<!-- ACKNOWLEDGMENTS -->
 ## 🙌 Acknowledgments
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
+- [Choose an Open Source License](https://choosealicense.com)
+- [GitHub Pages](https://pages.github.com)
+- [Img Shields](https://shields.io)
+- [Font Awesome](https://fontawesome.com)
+- [Devicons](https://devicon.dev/)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+---
 
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-Developed with 💕 by **AlphaCoders**.
+<div align="center">
+  <sub>Made with 💕 by AlphaCoders · Esprit School of Engineering · Tunisia · 2022</sub>
+  <br/><br/>
+  <a href="#top">⬆ Back to top</a>
+</div>

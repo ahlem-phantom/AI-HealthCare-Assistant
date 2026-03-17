@@ -1,8 +1,10 @@
 import axios from "axios";
+import API_BASE_URL from "../api-config";
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = `${API_BASE_URL}/api/auth/`;
 
 const register = (username, email, password,birthdate,firstname,lastname,phone,role) => {
+  console.log("test"+username, email, password,birthdate,firstname,lastname,phone,role);
   return axios.post(API_URL + "signup", {
     username,
     email,
@@ -66,7 +68,13 @@ const logout = () => {
 };
 
 const getCurrentUser = () => {
-  return JSON.parse(localStorage.getItem("user"));
+  try {
+    const user = localStorage.getItem("user");
+    return user ? JSON.parse(user) : null;
+  } catch (error) {
+    console.error("Error parsing user from localStorage:", error);
+    return null;
+  }
 };
 
 const verifyUser = (code) => {
@@ -82,7 +90,7 @@ const forgotPass = (email) => {
     })
 };
 
-export default {
+const AuthService = {
   register,
   login,
   logout,
@@ -92,3 +100,5 @@ export default {
   loginlinkedin, 
   loginface
 };
+
+export default AuthService;

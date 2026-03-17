@@ -1,28 +1,24 @@
-const sidebarConfig = [{
-        title: 'Appointements',
-        path: '/patient/app',
-        icon: 'fa fa-calendar',
-    },
-    {
-        title: 'Take an appointment',
-        path: '/patient/take-appointment',
-        icon: 'fa fa-comments',
-    },
-    {
-        title: 'Symptoms',
-        path: '/patient/symptoms',
-        icon: 'fa fa-android'
-    },
-    {
-        title: 'Mental Health Test',
-        path: '/patient/test',
-        icon: 'fa fa-question-circle'
-    },
-    {
-        title: 'Doctors',
-        path: '/patient/doctors',
-        icon: 'fa fa-commenting-o'
-    },
+const sidebarConfig = [
+  {
+    title: 'Appointments',
+    path: '/patient/app',
+    icon: 'eva:calendar-fill',
+  },
+  {
+    title: 'Take an appointment',
+    path: '/patient/take-appointment',
+    icon: 'eva:message-square-fill',
+  },
+  {
+    title: 'Symptoms',
+    path: '/patient/symptoms',
+    icon: 'eva:activity-fill',
+  },
+  {
+    title: 'Mental Health Test',
+    path: '/patient/test',
+    icon: 'eva:question-mark-circle-fill',
+  },
 ];
 
 export default sidebarConfig;

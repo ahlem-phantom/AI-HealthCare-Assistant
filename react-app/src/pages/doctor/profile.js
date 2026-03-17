@@ -1,450 +1,230 @@
-import { Link, useNavigate } from "react-router-dom";
-// material
-import { styled } from "@mui/material/styles";
-import { Card, Stack, Container, Typography } from "@mui/material";
-// components
-import Page from "../page";
-import * as Yup from "yup";
-import { useState } from "react";
-import { useFormik, Form, FormikProvider } from "formik";
-
-// material
-
-import {
-  Checkbox,
-  TextField,
-  IconButton,
-  InputAdornment,
-  FormControlLabel,
-} from "@mui/material";
-import { LoadingButton } from "@mui/lab";
-import { useEffect } from "react";
-// ----------------------------------------------------------------------
-
-const RootStyle = styled(Page)(({ theme }) => ({
-  [theme.breakpoints.up("md")]: {
-    display: "flex",
-  },
-}));
-
-const SectionStyle = styled(Card)(({ theme }) => ({
-  width: "100%",
-  maxWidth: 200,
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  backgroundColor: "#87CEEB",
-}));
-
-const ContentStyle = styled("div")(({ theme }) => ({
-  maxWidth: 480,
-  margin: "auto",
-  display: "flex",
-  minHeight: "100vh",
-  flexDirection: "column",
-  justifyContent: "center",
-  padding: theme.spacing(12, 0),
-}));
-
-// ----------------------------------------------------------------------
+import React, { useState } from "react";
+import Iconify from '../../components/common/Iconify';
+import doctorImg from '../../assets/doctor-profile.jpg';
 
 export default function Profile() {
-  
-  const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
-
-  const LoginSchema = Yup.object().shape({
-    email: Yup.string()
-      .email("Email must be a valid email address")
-      .required("Email is required"),
-    password: Yup.string().required("Password is required"),
+  const [profile, setProfile] = useState({
+    username: "dr_smith",
+    email: "dr.smith@example.com",
+    firstName: "John",
+    lastName: "Smith",
+    phone: "+1 (555) 123-4567",
+    gender: "Male",
+    dob: "1980-05-15",
+    biography: "Dr. John Smith is a dedicated professional with over 15 years of experience in cardiology...",
+    clinicName: "HeartCare Plus",
+    clinicAddress: "123 Medical Plaza, Suite 400",
+    services: "Cardiology, Internal Medicine",
+    specialization: "Echo Cardiography, Heart Failure"
   });
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-      remember: true,
-    },
-    validationSchema: LoginSchema,
-    onSubmit: () => {
-      navigate("/doctor/app", { replace: true });
-    },
-  });
-
-  const { errors, touched, values, isSubmitting, handleSubmit, getFieldProps } =
-    formik;
-
-  const handleShowPassword = () => {
-    setShowPassword((show) => !show);
+  const handleSave = (e) => {
+    e.preventDefault();
+    // Simulate save logic
+    console.log("Saving profile:", profile);
   };
 
   return (
-<div>
-  <div className="col-md-7 col-lg-8 col-xl-9">
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">Basic Information</h4>
-        <div className="row form-row">
-          <div className="col-md-12">
-            <div className="form-group">
-              <div className="change-avatar">
-                <div className="profile-img">
-                  <img  src={process.env.PUBLIC_URL + '/cards/doctor.jpg'} style={{ backgroundImage: 'url("images/bg_1.jpg")' }}
-                    alt="User Image" />
+    <div className="max-w-5xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      {/* Page Header */}
+      <div className="flex flex-row items-center justify-between gap-4">
+        <div className="text-left uppercase">
+          <h1 className="text-3xl font-black text-slate-900 tracking-tight">
+            Account <span className="text-sky-500">Profile</span>
+          </h1>
+          <p className="text-slate-500 font-medium mt-1">Manage your professional information and clinic details.</p>
+        </div>
+        <button 
+          onClick={handleSave}
+          className="px-8 py-3.5 rounded-2xl bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all shadow-xl shadow-slate-200 flex items-center justify-center gap-2"
+        >
+          <Iconify icon="eva:save-fill" className="w-5 h-5" />
+          <span className="hidden sm:inline">Save Changes</span>
+          <span className="sm:hidden">Save</span>
+        </button>
+      </div>
 
-                </div>
-                <div className="upload-img">
-                  <div className="change-photo-btn">
-                    <span><i className="fa fa-upload" /> Upload Photo</span>
-                    <input type="file" className="upload" />
-                  </div>
-                  <small className="form-text text-muted">Allowed JPG, GIF or PNG. Max size of 2MB</small>
-                </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left Column - Avatar & Basic Info */}
+        <div className="lg:col-span-1 space-y-8">
+          <div className="bg-white rounded-[2.5rem] border border-slate-50 shadow-xl shadow-slate-100/50 p-8 text-center space-y-6">
+            <div className="relative inline-block group">
+              <div className="w-32 h-32 rounded-[2rem] overflow-hidden ring-4 ring-slate-50 shadow-inner mx-auto">
+                <img 
+                  src={doctorImg} 
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
               </div>
+              <label className="absolute -bottom-2 -right-2 p-3 rounded-2xl bg-sky-500 text-white shadow-lg cursor-pointer hover:scale-110 transition-all active:scale-95">
+                <Iconify icon="eva:camera-fill" className="w-5 h-5" />
+                <input type="file" className="hidden" />
+              </label>
             </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>Username <span className="text-danger">*</span></label>
-              <input type="text" className="form-control" readOnly />
+            
+            <div>
+              <h3 className="text-xl font-black text-slate-900 leading-tight">{profile.firstName} {profile.lastName}</h3>
+              <p className="text-xs font-black uppercase tracking-widest text-sky-500 mt-2">MBBS, Cardiology Specialist</p>
             </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>Email <span className="text-danger">*</span></label>
-              <input type="email" className="form-control" readOnly />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>First Name <span className="text-danger">*</span></label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>Last Name <span className="text-danger">*</span></label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>Phone Number</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>Gender</label>
-              <select className="form-control select">
-                <option>Select</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group mb-0">
-              <label>Date of Birth</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* /Basic Information */}
-    {/* About Me */}
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">About Me</h4>
-        <div className="form-group mb-0">
-          <label>Biography</label>
-          <textarea className="form-control" rows={5} defaultValue={""} />
-        </div>
-      </div>
-    </div>
-    {/* /About Me */}
-    {/* Clinic Info */}
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">Clinic Info</h4>
-        <div className="row form-row">
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>Clinic Name</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>Clinic Address</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-12">
-            <div className="form-group">
-              <label>Clinic Images</label>
-              <form action="#" className="dropzone" />
-            </div>
-            <div className="upload-wrap">
-              <div className="upload-images">
-                <img src={process.env.PUBLIC_URL + 'cards/img/features/feature-01.jpg'} alt="Upload Image" />
-                <a href="javascript:void(0);" className="btn btn-icon btn-danger btn-sm"><i className="far fa-trash-alt" /></a>
-              </div>
-              <div className="upload-images">
-                <img src="assets/img/features/feature-02.jpg" alt="Upload Image" />
-                <a href="javascript:void(0);" className="btn btn-icon btn-danger btn-sm"><i className="far fa-trash-alt" /></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* /Clinic Info */}
-    {/* Contact Details */}
-    <div className="card contact-card">
-      <div className="card-body">
-        <h4 className="card-title">Contact Details</h4>
-        <div className="row form-row">
-          <div className="col-md-6">
-            <div className="form-group">
-              <label>Address Line 1</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label className="control-label">Address Line 2</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label className="control-label">City</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label className="control-label">State / Province</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label className="control-label">Country</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <label className="control-label">Postal Code</label>
-              <input type="text" className="form-control" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* /Contact Details */}
-    {/* Pricing */}
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">Pricing</h4>
-        <div className="form-group mb-0">
-          <div id="pricing_select">
-            <div className="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="price_free" name="rating_option" className="custom-control-input" defaultValue="price_free" defaultChecked />
-              <label className="custom-control-label" htmlFor="price_free">Free</label>
-            </div>
-            <div className="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="price_custom" name="rating_option" defaultValue="custom_price" className="custom-control-input" />
-              <label className="custom-control-label" htmlFor="price_custom">Custom Price (per hour)</label>
-            </div>
-          </div>
-        </div>
-        <div className="row custom_price_cont" id="custom_price_cont" style={{display: 'none'}}>
-          <div className="col-md-4">
-            <input type="text" className="form-control" id="custom_rating_input" name="custom_rating_count" defaultValue placeholder={20} />
-            <small className="form-text text-muted">Custom price you can add</small>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* /Pricing */}
-    {/* Services and Specialization */}
-    <div className="card services-card">
-      <div className="card-body">
-        <h4 className="card-title">Services and Specialization</h4>
-        <div className="form-group">
-          <label>Services</label>
-          <input type="text" data-role="tagsinput" className="input-tags form-control" placeholder="Enter Services" name="services" defaultValue="Tooth cleaning " id="services" />
-          <small className="form-text text-muted">Note : Type &amp; Press enter to add new services</small>
-        </div> 
-        <div className="form-group mb-0">
-          <label>Specialization </label>
-          <input className="input-tags form-control" type="text" data-role="tagsinput" placeholder="Enter Specialization" name="specialist" defaultValue="Children Care,Dental Care" id="specialist" />
-          <small className="form-text text-muted">Note : Type &amp; Press  enter to add new specialization</small>
-        </div> 
-      </div>              
-    </div>
-    {/* /Services and Specialization */}
-    {/* Education */}
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">Education</h4>
-        <div className="education-info">
-          <div className="row form-row education-cont">
-            <div className="col-12 col-md-10 col-lg-11">
-              <div className="row form-row">
-                <div className="col-12 col-md-6 col-lg-4">
-                  <div className="form-group">
-                    <label>Degree</label>
-                    <input type="text" className="form-control" />
-                  </div> 
-                </div>
-                <div className="col-12 col-md-6 col-lg-4">
-                  <div className="form-group">
-                    <label>College/Institute</label>
-                    <input type="text" className="form-control" />
-                  </div> 
-                </div>
-                <div className="col-12 col-md-6 col-lg-4">
-                  <div className="form-group">
-                    <label>Year of Completion</label>
-                    <input type="text" className="form-control" />
-                  </div> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="add-more">
-          <a href="javascript:void(0);" className="add-education"><i className="fa fa-plus-circle" /> Add More</a>
-        </div>
-      </div>
-    </div>
-    {/* /Education */}
-    {/* Experience */}
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">Experience</h4>
-        <div className="experience-info">
-          <div className="row form-row experience-cont">
-            <div className="col-12 col-md-10 col-lg-11">
-              <div className="row form-row">
-                <div className="col-12 col-md-6 col-lg-4">
-                  <div className="form-group">
-                    <label>Hospital Name</label>
-                    <input type="text" className="form-control" />
-                  </div> 
-                </div>
-                <div className="col-12 col-md-6 col-lg-4">
-                  <div className="form-group">
-                    <label>From</label>
-                    <input type="text" className="form-control" />
-                  </div> 
-                </div>
-                <div className="col-12 col-md-6 col-lg-4">
-                  <div className="form-group">
-                    <label>To</label>
-                    <input type="text" className="form-control" />
-                  </div> 
-                </div>
-                <div className="col-12 col-md-6 col-lg-4">
-                  <div className="form-group">
-                    <label>Designation</label>
-                    <input type="text" className="form-control" />
-                  </div> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="add-more">
-          <a href="javascript:void(0);" className="add-experience"><i className="fa fa-plus-circle" /> Add More</a>
-        </div>
-      </div>
-    </div>
-    {/* /Experience */}
-    {/* Awards */}
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">Awards</h4>
-        <div className="awards-info">
-          <div className="row form-row awards-cont">
-            <div className="col-12 col-md-5">
-              <div className="form-group">
-                <label>Awards</label>
-                <input type="text" className="form-control" />
-              </div> 
-            </div>
-            <div className="col-12 col-md-5">
-              <div className="form-group">
-                <label>Year</label>
-                <input type="text" className="form-control" />
-              </div> 
-            </div>
-          </div>
-        </div>
-        <div className="add-more">
-          <a href="javascript:void(0);" className="add-award"><i className="fa fa-plus-circle" /> Add More</a>
-        </div>
-      </div>
-    </div>
-    {/* /Awards */}
-    {/* Memberships */}
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">Memberships</h4>
-        <div className="membership-info">
-          <div className="row form-row membership-cont">
-            <div className="col-12 col-md-10 col-lg-5">
-              <div className="form-group">
-                <label>Memberships</label>
-                <input type="text" className="form-control" />
-              </div> 
-            </div>
-          </div>
-        </div>
-        <div className="add-more">
-          <a href="javascript:void(0);" className="add-membership"><i className="fa fa-plus-circle" /> Add More</a>
-        </div>
-      </div>
-    </div>
-    {/* /Memberships */}
-    {/* Registrations */}
-    <div className="card">
-      <div className="card-body">
-        <h4 className="card-title">Registrations</h4>
-        <div className="registrations-info">
-          <div className="row form-row reg-cont">
-            <div className="col-12 col-md-5">
-              <div className="form-group">
-                <label>Registrations</label>
-                <input type="text" className="form-control" />
-              </div> 
-            </div>
-            <div className="col-12 col-md-5">
-              <div className="form-group">
-                <label>Year</label>
-                <input type="text" className="form-control" />
-              </div> 
-            </div>
-          </div>
-        </div>
-        <div className="add-more">
-          <a href="javascript:void(0);" className="add-reg"><i className="fa fa-plus-circle" /> Add More</a>
-        </div>
-      </div>
-    </div>
-    {/* /Registrations */}
-    <div className="submit-section submit-btn-bottom">
-      <button type="submit" className="btn btn-primary submit-btn">Save Changes</button>
-    </div>
-  </div>
-</div>
 
-      );
-    }
+            <div className="pt-6 border-t border-slate-50 space-y-4">
+              <div className="flex items-center gap-4 px-4 py-3 rounded-2xl bg-slate-50 text-slate-600">
+                <Iconify icon="eva:person-fill" className="text-sky-400 w-5 h-5" />
+                <span className="text-sm font-bold">{profile.username}</span>
+              </div>
+              <div className="flex items-center gap-4 px-4 py-3 rounded-2xl bg-slate-50 text-slate-600 overflow-hidden">
+                <Iconify icon="eva:email-fill" className="text-sky-400 w-5 h-5" />
+                <span className="text-sm font-bold truncate">{profile.email}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-[2.5rem] border border-slate-50 shadow-xl shadow-slate-100/50 p-8 space-y-6">
+            <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400">Account Safety</h4>
+            <div className="space-y-2">
+              <button className="w-full flex items-center justify-between p-4 rounded-2xl hover:bg-slate-50 transition-all text-slate-600 font-bold group text-sm">
+                <div className="flex items-center gap-3">
+                  <Iconify icon="eva:lock-fill" className="text-slate-300 group-hover:text-sky-500 w-5 h-5 transition-colors" />
+                  Change Password
+                </div>
+                <Iconify icon="eva:chevron-right-fill" className="w-4 h-4" />
+              </button>
+              <button className="w-full flex items-center justify-between p-4 rounded-2xl hover:bg-rose-50 transition-all text-rose-500 font-bold group text-sm">
+                <div className="flex items-center gap-3">
+                  <Iconify icon="eva:trash-2-fill" className="text-rose-200 group-hover:text-rose-500 w-5 h-5 transition-colors" />
+                  Delete Account
+                </div>
+                <Iconify icon="eva:chevron-right-fill" className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Form Fields */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* General Information */}
+          <div className="bg-white rounded-[2.5rem] border border-slate-50 shadow-xl shadow-slate-100/50 p-10 space-y-8">
+            <div className="flex items-center gap-4 pb-6 border-b border-slate-50">
+              <div className="p-3.5 rounded-2xl bg-sky-50 text-sky-500">
+                <Iconify icon="eva:info-fill" className="w-6 h-6" />
+              </div>
+              <div>
+                <h2 className="text-xl font-black text-slate-900 leading-tight">General Information</h2>
+                <p className="text-slate-500 font-medium text-xs mt-1">Update your personal contact and ID details.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">First Name</label>
+                <input 
+                  type="text"
+                  value={profile.firstName}
+                  className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all font-medium text-slate-900"
+                  onChange={(e) => setProfile({...profile, firstName: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Last Name</label>
+                <input 
+                  type="text"
+                  value={profile.lastName}
+                  className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all font-medium text-slate-900"
+                  onChange={(e) => setProfile({...profile, lastName: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Phone Number</label>
+                <input 
+                  type="text"
+                  value={profile.phone}
+                  className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all font-medium text-slate-900"
+                  onChange={(e) => setProfile({...profile, phone: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Gender</label>
+                <select 
+                  value={profile.gender}
+                  className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all font-medium appearance-none text-slate-900"
+                  onChange={(e) => setProfile({...profile, gender: e.target.value})}
+                >
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            
+            <div className="space-y-2">
+              <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Biography</label>
+              <textarea 
+                rows={4}
+                value={profile.biography}
+                className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all font-medium resize-none text-slate-900"
+                onChange={(e) => setProfile({...profile, biography: e.target.value})}
+              />
+            </div>
+          </div>
+
+          {/* Clinic & Professional Info */}
+          <div className="bg-white rounded-[2.5rem] border border-slate-50 shadow-xl shadow-slate-100/50 p-10 space-y-8">
+            <div className="flex items-center gap-4 pb-6 border-b border-slate-50">
+              <div className="p-3.5 rounded-2xl bg-sky-50 text-sky-500">
+                <Iconify icon="eva:home-fill" className="w-6 h-6" />
+              </div>
+              <div>
+                <h2 className="text-xl font-black text-slate-900 leading-tight">Clinic & Professional</h2>
+                <p className="text-slate-500 font-medium text-xs mt-1">Details about your practice and medical expertise.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Clinic Name</label>
+                <input 
+                  type="text"
+                  value={profile.clinicName}
+                  className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all font-medium text-slate-900"
+                  onChange={(e) => setProfile({...profile, clinicName: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Clinic Address</label>
+                <input 
+                  type="text"
+                  value={profile.clinicAddress}
+                  className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all font-medium text-slate-900"
+                  onChange={(e) => setProfile({...profile, clinicAddress: e.target.value})}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Services</label>
+                <input 
+                  type="text"
+                  value={profile.services}
+                  className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all font-medium text-slate-900"
+                  onChange={(e) => setProfile({...profile, services: e.target.value})}
+                />
+                <p className="text-[10px] text-slate-400 font-bold ml-1 uppercase tracking-tighter">Multiple services separate with commas</p>
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Specializations</label>
+                <input 
+                  type="text"
+                  value={profile.specialization}
+                  className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 outline-none transition-all font-medium text-slate-900"
+                  onChange={(e) => setProfile({...profile, specialization: e.target.value})}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
     

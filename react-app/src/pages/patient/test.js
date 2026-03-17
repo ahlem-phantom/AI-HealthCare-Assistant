@@ -1,108 +1,40 @@
 import React from 'react';
-import './chat.css';
-import PropTypes from "prop-types"
-import withStyles from "@material-ui/core/styles/withStyles"
-import CssBaseline from "@material-ui/core/CssBaseline"
-import AppBar from "@material-ui/core/AppBar"
-import Toolbar from "@material-ui/core/Toolbar"
-import Paper from "@material-ui/core/Paper"
-import Typography from "@material-ui/core/Typography"
-import Divider from "@material-ui/core/Divider"
-import StepForm from "./StepForm"
 
+import StepForm from "./StepForm";
 
-const styles = theme => ({
-    appBar: {
-      position: "relative",
-      paddingRight: 10,
-      paddingLeft: 10
-    },
-    layout: {
-      width: "auto",
-      marginLeft: theme.spacing(2),
-      marginRight: theme.spacing(2),
-      [theme.breakpoints.up(800 + theme.spacing(2) * 2)]: {
-        width: 800,
-        marginLeft: "auto",
-        marginRight: "auto"
-      }
-    },
-    paper: {
-      marginTop: theme.spacing(3),
-      marginBottom: theme.spacing(3),
-      padding: theme.spacing(2),
-      [theme.breakpoints.up(800 + theme.spacing(3) * 2)]: {
-        marginTop: theme.spacing(8),
-        marginBottom: theme.spacing(8),
-        padding: theme.spacing(3)
-      }
-    }
-  })
-  const App = ({ classes }) => {
-    return (
-
-      <div className="main-wrapper">
- 
-      <div className="page-wrapper">
-        <div className="content">
-          <div className="row">
-          <div className="col-md-12">
-      <div className="card-box">
-
-        <div className="App">
-      <CssBaseline />
-      <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
- 
-         
-        </Toolbar>
-      </AppBar>
-      <main className={classes.layout}>
-        <Typography variant="h3" align="center" style={{ marginTop: 80, fontWeight: "bold" }}>
-        Are You Having Mental Health Problems?
-        </Typography>
-        <Typography
-          variant="h5"
-          align="center"
-          style={{ marginTop: 10, marginBottom: 10 }}
-        >
-             Please answer the following questions on a scale of 1 to 5. 
-        </Typography>
-        <Paper className={classes.paper}>
-          <StepForm />
-        </Paper>
-        <Divider style={{ marginTop: 100 }} />
-        <Typography
-          component="p"
-          align="center"
-          style={{ margin: "10px 0", fontSize: "12px" }}
-        >
-        
-       
-        </Typography>
-      </main>
-    </div>
-
-        
-        
-        
-         
-                </div>
-              </div>
-    
+const App = () => {
+  return (
+    <div className="min-h-screen bg-slate-50 selection:bg-sky-100">
+      <div className="max-w-4xl mx-auto px-6 py-16">
+        <div className="text-center mb-16 space-y-4">
+          <div className="inline-block px-4 py-1.5 bg-sky-50 text-sky-600 rounded-full text-xs font-black uppercase tracking-widest border border-sky-100 mb-2">
+            AI Assessment Engine
           </div>
-         
+          <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+            Are You Having Mental Health Problems?
+          </h1>
+          <p className="text-xl text-slate-500 font-medium max-w-2xl mx-auto italic">
+            Please answer the following questions on a scale of 1 to 5. 
+            Our AI assistant will help analyze your responses.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-[0_20px_70px_-15px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden">
+          {/* Decorative side accent */}
+          <div className="absolute top-0 left-0 w-2 h-full bg-sky-500" />
+          
+          <StepForm />
+        </div>
+
+        <div className="mt-16 text-center space-y-6">
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+          <p className="text-slate-400 text-xs font-bold uppercase tracking-[0.3em]">
+            Confidential • Anonymous • Private
+          </p>
         </div>
       </div>
     </div>
-    
-  
-    );
-    }
+  );
+}
 
-
-App.propTypes = {
-    classes: PropTypes.object.isRequired
-  }
-
-  export default withStyles(styles)(App)
+export default App;

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import API_BASE_URL from "../../api-config";
 import { useState } from 'react';
 
 function Upload(props) {
@@ -16,7 +17,7 @@ function Upload(props) {
                 'content-type': 'multipart/form-data'
             }
         };
-        axios.put("http://localhost:8080/users/user-profile/"+params,formData,config)
+        axios.put(`${API_BASE_URL}/users/user-profile/`+params,formData,config)
             .then((response) => {
                 alert("The file is successfully uploaded");
             }).catch((error) => {

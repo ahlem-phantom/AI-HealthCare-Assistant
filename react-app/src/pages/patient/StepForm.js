@@ -1,254 +1,115 @@
-import React, { useState, Fragment } from "react";
-import Stepper from "@material-ui/core/Stepper";
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
-import FirstStep from "./FirstStep";
-import SecondStep from "./SecondStep";
-import ThirdStep from "./ThirdStep";
-import FourthStep from "./FourthStep";
-import FifthStep from "./FifthStep";
-import SixthStep from "./SixthStep";
-import SeventhStep from "./SeventhStep";
-import EighthStep from "./EighthStep";
-import NinethStep from "./NinethStep";
-import TenthStep from "./TenthStep";
+import React, { useState } from "react";
+import QuestionStep from "./QuestionStep";
 import Confirm from "./Confirm";
 import Success from "./Success";
+import Iconify from "../../components/common/Iconify";
 
-export default function StepForm() {
-
-const labels = [
-  "Interest",
-  "Sadness",
-  "Sleep",
-  "Energy",
-  "Appetite",
-  "Feeling",
-  "Trouble",
-  "Moving",
-  "Thoughts",
-  "Issues",
-  "Confirmation"
+const questions = [
+  { id: "interest", label: "Interest", text: "Have you lost interest or pleasure in doing things?" },
+  { id: "sadness", label: "Sadness", text: "Have you been feeling down, depressed, or hopeless?" },
+  { id: "sleep", label: "Sleep", text: "Trouble falling or staying asleep, or sleeping too much?" },
+  { id: "energy", label: "Energy", text: "Feeling tired or having little energy?" },
+  { id: "appetite", label: "Appetite", text: "Poor appetite or overeating?" },
+  { id: "feeling", label: "Feeling", text: "Feeling bad about yourself, or that you are a failure?" },
+  { id: "trouble", label: "Trouble", text: "Trouble concentrating on things, such as reading or watching TV?" },
+  { id: "moving", label: "Moving", text: "Moving or speaking so slowly that other people noticed?" },
+  { id: "thoughts", label: "Thoughts", text: "Thoughts that you would be better off dead?" },
+  { id: "issues", label: "Issues", text: "How difficult have these problems made your daily life?" }
 ];
 
-// const StepForm = () => {
-const [steps, setSteps] = useState(0);
+const labels = [...questions.map(q => q.label), "Confirmation"];
 
-const [answer, setAnswer] = useState("")
- 
-const [sadAnswer, setSadAnswer] = useState("")
+export default function StepForm() {
+  const [steps, setSteps] = useState(0);
+  const [answers, setAnswers] = useState({});
 
-const [sleepAnswer, setSleepAnswer] = useState("")
-
-const [energyAnswer, setEnergyAnswer] = useState("")
-
-const [appetiteAnswer, setAppetiteAnswer] = useState("")
-
-const[feelingAnswer, setFeelingAnswer] = useState("")
-
-const[troubleAnswer, setTroubleAnswer] = useState("")
-
-const[movingAnswer, setMovingAnswer] = useState("")
-
-const[thoughtsAnswer, setThoughtsAnswer] = useState("")
-
-const[issuesAnswer, setIssuesAnswer] = useState("")
-
-const handleChange = (evt, value) => {
-    setAnswer(value)
-  }
-
- const handleChange2 =  (evt, value) => {
-  setSadAnswer(value)
- }
-
- const handleChange3 = (evt, value) => {
-  setSleepAnswer(value)
- }
-
- const handleChange4 = (evt, value) => {
-  setEnergyAnswer(value)
- }
-
- const handleChange5 = (evt, value) => {
-  setAppetiteAnswer(value)
- }
-
- const handleChange6 = (evt, value) => {
-  setFeelingAnswer(value)
- }
-
- const handleChange7 = (evt, value) => {
-  setTroubleAnswer(value)
- }
-  
- const handleChange8 = (evt, value) => {
-  setMovingAnswer(value)
- }
-
- const handleChange9 = (evt, value) => {
-  setThoughtsAnswer(value)
- }
-
- const handleChange10 = (evt, value) => {
-  setIssuesAnswer(value)
- }
-
-          const quesAnswers = [
-              {"interest": answer }, 
-              {"sadness": sadAnswer},
-              {"sleep": sleepAnswer},
-              {"energy": energyAnswer},
-              {"appetite": appetiteAnswer},
-              {"feeling": feelingAnswer},
-              {"trouble": troubleAnswer},
-              {"moving": movingAnswer},
-              {"thoughts": thoughtsAnswer},
-              {"issues": issuesAnswer},
-          ]
- 
-
-  // Proceed to next step
   const handleNext = () => setSteps(steps + 1);
-  // Go back to prev step
-  const handleBack = () => setSteps(steps - 1)
+  const handleBack = () => setSteps(steps - 1);
 
- 
-  const handleSteps = step => {
+  const handleAnswerChange = (evt, value) => {
+    const questionId = questions[steps].id;
+    setAnswers(prev => ({ ...prev, [questionId]: value }));
+  };
 
-    switch (step) {
-      case 0:
-        return (
-          <FirstStep
-            handleNext={handleNext}
-            handleChange={handleChange}
-            value={quesAnswers[0]}
-          />
-        );
-      case 1:
-        return (
-          <SecondStep
-            handleNext={handleNext}
-            handleBack={handleBack}
-            handleChange={handleChange2}
-            value={quesAnswers[1]}
-          />
-        );
-      case 2:
-        return (
-          <ThirdStep
-            handleNext={handleNext}
-            handleBack={handleBack}
-            handleChange={handleChange3}
-            value={quesAnswers[2]}
-          />
-        );
-      case 3:
-        return (
-          <FourthStep
-            handleNext={handleNext}
-            handleBack={handleBack}
-            handleChange={handleChange4}
-            value={quesAnswers[3]}
-          />
-        );
-      case 4:
-        return (
-          <FifthStep
-            handleNext={handleNext}
-            handleBack={handleBack}
-            handleChange={handleChange5}
-            value={quesAnswers[4]}
-          />
-        );
-        case 5:
-          return (
-            <SixthStep
-              handleNext={handleNext}
-              handleBack={handleBack}
-              handleChange={handleChange6}
-              value={quesAnswers[5]}
-            />
-        );  
-        case 6:
-          return (
-            <SeventhStep
-              handleNext={handleNext}
-              handleBack={handleBack}
-              handleChange={handleChange7}
-              value={quesAnswers[6]}
-            />
-        );  
-        case 7:
-          return (
-            <EighthStep
-              handleNext={handleNext}
-              handleBack={handleBack}
-              handleChange={handleChange8}
-              value={quesAnswers[7]}
-            />
-        );  
-        case 8:
-          return (
-            <NinethStep
-              handleNext={handleNext}
-              handleBack={handleBack}
-              handleChange={handleChange9}
-              value={quesAnswers[8]}
-            />
-        );  
-        case 9:
-          return (
-            <TenthStep
-              handleNext={handleNext}
-              handleBack={handleBack}
-              handleChange={handleChange10}
-              value={quesAnswers[9]}
-            />
-        ); 
-        
-      case 10:
-        return (
-          <Confirm
-            handleNext={handleNext}
-            handleBack={handleBack}
-            values={quesAnswers} 
-          />
-        );
-        case 11:
-          return (
-            <Success
-              handleNext={handleNext}
-              handleBack={handleBack}
-              values={quesAnswers} 
-            />
-          );
-      default:
-        break;
-        }
-      };
+  // Convert answers object to the array format expected by Confirm and Success
+  const formattedAnswers = questions.map(q => ({ [q.id]: answers[q.id] || 0 }));
 
-  // Handle components
+  const renderContent = () => {
+    if (steps < questions.length) {
+      const currentQuestion = questions[steps];
+      return (
+        <QuestionStep
+          question={currentQuestion.text}
+          value={answers[currentQuestion.id] || 0}
+          onChange={handleAnswerChange}
+          handleNext={handleNext}
+          handleBack={handleBack}
+          isFirst={steps === 0}
+          isLast={steps === questions.length - 1}
+        />
+      );
+    }
+
+    if (steps === questions.length) {
+      return (
+        <Confirm
+          handleNext={handleNext}
+          handleBack={handleBack}
+          values={formattedAnswers}
+        />
+      );
+    }
+
+    return <Success values={formattedAnswers} />;
+  };
+
   return (
-    <Fragment>
-      {steps === labels.length ? (
-        <Success values={quesAnswers}  />
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      {steps <= questions.length ? (
+        <div className="space-y-12">
+          {/* Custom Step Indicator */}
+          <div className="relative pt-4 pb-8">
+            <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-100 -translate-y-1/2 rounded-full" />
+            <div 
+              className="absolute top-1/2 left-0 h-1 bg-sky-500 -translate-y-1/2 rounded-full transition-all duration-700 ease-out shadow-[0_0_15px_rgba(14,165,233,0.3)]"
+              style={{ width: `${(steps / (labels.length - 1)) * 100}%` }}
+            />
+            
+            <div className="relative flex justify-between items-center">
+              {labels.map((label, index) => {
+                const isActive = index === steps;
+                const isPast = index < steps;
+                return (
+                  <div key={label} className="relative flex flex-col items-center">
+                    <div className={`w-10 h-10 rounded-2xl flex items-center justify-center text-xs font-black transition-all duration-500 z-10 border-4 border-slate-50 ${
+                      isActive 
+                      ? 'bg-slate-900 text-white shadow-2xl shadow-slate-200 scale-125 rotate-6' 
+                      : isPast 
+                      ? 'bg-sky-500 text-white border-sky-100' 
+                      : 'bg-white text-slate-300'
+                    }`}>
+                      {isPast ? (
+                        <Iconify icon="eva:checkmark-fill" className="w-5 h-5" />
+                      ) : index + 1}
+                    </div>
+                    <span className={`absolute -bottom-10 whitespace-nowrap text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-500 hidden md:block ${
+                      isActive ? 'text-slate-900 translate-y-1' : 'text-slate-300'
+                    }`}>
+                      {label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="bg-white border border-slate-100 rounded-[3rem] p-8 md:p-16 shadow-[0_30px_100px_-20px_rgba(0,0,0,0.04)] mt-12">
+             {renderContent()}
+          </div>
+        </div>
       ) : (
-        <Fragment>
-          <Stepper
-            activeStep={steps}
-            style={{ paddingTop: 30, paddingBottom: 50 }}
-            alternativeLabel
-          >
-            {labels.map(label => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          {handleSteps(steps)}
-        </Fragment>
+        <Success values={formattedAnswers} />
       )}
-    </Fragment>
-  )
-}
+    </div>
+  );
+}

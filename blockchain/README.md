@@ -267,24 +267,4 @@ Notes:
 - Lower BLOCKCHAIN_DIFFICULTY for faster local mining.
 - Set BLOCKCHAIN_ACCEPT_UNSIGNED_MEDICAL_EVENTS=false once frontend signing is fully enabled.
 
-## Naming migration summary
 
-Current preferred naming:
-
-- wallet -> identity
-- transfer -> signed_event
-- reward -> system_event
-- medical -> medical_event
-
-Backward compatibility remains in place for existing clients and routes.
-
-## Production note
-
-This ledger is designed for healthcare integrity auditing and can be deployed in controlled environments.
-
-For enterprise-critical production use, plan additional hardening:
-
-- Permissioned validator governance and formal node trust policy.
-- Hardened key management (for example HSM or managed KMS).
-- Backup, disaster recovery, and incident response procedures.
-- Monitoring, alerting, and periodic third-party security review.

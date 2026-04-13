@@ -1,5 +1,7 @@
 // import record from '.. /models/Record.js';
-const Record = require('../models/Record.js')
+const Record = require('../models/Record.js');
+const axios = require('axios');
+const BLOCKCHAIN_API_URL = process.env.BLOCKCHAIN_NODE_URL || 'http://localhost:3001';
 
 //add record
 const record_Create_Post = async(req, res) => {
@@ -17,7 +19,18 @@ const record_Create_Post = async(req, res) => {
     //update record
 const record_update = async(req, res) => {
     const id = req.params.id;
-    const record = await Record.findOneAndUpdate({ "userid": { _id: id } }, { $set: req.body }, { new: true })
+    const updateData = req.body.record || req.body;
+    const record = await Record.findOneAndUpdate({ "userid": { _id: id } }, { $set: updateData }, { new: true });
+    
+    if (req.body.blockchainData) {
+        try {
+            await axios.post(`${BLOCKCHAIN_API_URL}/transaction/broadcast`, req.body.blockchainData);
+            await axios.get(`${BLOCKCHAIN_API_URL}/mine`);
+        } catch (err) {
+            console.error("Blockchain error:", err.message);
+        }
+    }
+    
     res.json(record)
 }
 

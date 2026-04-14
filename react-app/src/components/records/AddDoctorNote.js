@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_BASE_URL, BLOCKCHAIN_API_URL } from "../../api-config";
+import { API_BASE_URL } from "../../api-config";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Iconify from '../common/Iconify';
@@ -23,16 +23,18 @@ const AddDoctorNote = () => {
     getRecords();
   }, [id]);
 
-  const onUpdate = async (object) => {
+  const onUpdate = async (updatedObj, blockchainPayload) => {
     try {
-      await axios.post(`${BLOCKCHAIN_API_URL}/transaction/broadcast`, object);
-      await axios.get(`${BLOCKCHAIN_API_URL}/mine`);
+      await axios.put(`${API_BASE_URL}/records/${id}`, {
+        record: updatedObj,
+        blockchainData: blockchainPayload
+      });
     } catch (err) {
-      console.error("Blockchain sync error:", err);
+      console.error("Server sync error:", err);
     }
   };
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!description || !doctor) return;
     
     const user = JSON.parse(localStorage.getItem('user'))?.id;
@@ -45,11 +47,11 @@ const AddDoctorNote = () => {
       "description": description.toString() 
     };
 
-    record.forEach((object) => {
+    for (const object of record) {
       if (!object.prescripton) object.prescripton = [];
       object.prescripton.push(json);
-      onUpdate(json);
-    });
+      await onUpdate(object, json);
+    }
 
     navigate(-1);
   };
@@ -126,4 +128,4 @@ const AddDoctorNote = () => {
   );
 };
 
-export default AddDoctorNote;
+export default AddDoctorNote;

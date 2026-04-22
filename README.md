@@ -34,6 +34,20 @@
 
 ---
 
+## 🚀 2026 Update: Project Evolution Notice
+
+**Important Notice:** This repository contains the original 2022 academic prototype of the NearestDoctor Healthcare platform. 
+
+Thank you to everyone who supported this project with stars, forks, and feedback. The V1 codebase (React/Express/Node) available here remains open-source under the Apache 2.0 license for educational purposes. 
+
+However, the project's vision has been taken forward exclusively by **Ahlem Laajili** and evolved into a **proprietary, commercial startup**. 
+
+The entire platform has been rewritten from scratch by **Ahlem Laajili** using a modern tech stack (Next.js, FastAPI, advanced LLMs, and cloud-native infrastructure). It is now closed-source to protect the new Intellectual Property (IP) owned solely by her. The V2 code (including the FastAPI and Next.js upgrades) will not be pushed to this repository.
+
+If you are interested in the future of NearestDoctor, enterprise solutions, or participating in our upcoming beta, please reach out to Ahlem Laajili directly or stay tuned!
+
+---
+
 ## 📖 Table of Contents
 
 - [About The Project](#-about-the-project)

@@ -255,24 +255,9 @@ The platform follows a **microservices-inspired MERN architecture**:
   - Frontend integration with all services
   - Core AI modules: symptom detection, face ID, OCR verification
 
-- [x] **Phase 3.2 — Finalization & Deployment (V2)**
+- [x] **Phase 3.2 — Finalization & Deployment (V1.5)**
   - X-ray diagnosis, mental health test, blockchain records
   - Final integration, system testing & deployment
-
-- [ ] **v3 — Coming Soon**
-
----
-
-## 🔮 Upcoming: Version 3
-
-We're actively working on the next major release:
-
-- 🎨 Redesigned UI/UX with a modern design system
-- ⚡ Migration from Node.js backend to **FastAPI**
-- 🤖 Integration of **LLM models** for smarter symptom analysis and conversational AI
-- 🧪 Full CI/CD pipeline for automated testing & deployment
-- 📦 All libraries and dependencies upgraded to latest stable versions
-- 🏗️ Scalable, cloud-ready architecture
 
 ---
 
@@ -316,20 +301,19 @@ Built with 💕 by **AlphaCoders** 5 engineering students from Esprit School of 
 
 | | | | | |
 |---|---|---|---|---|
-| <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719496-9aec4730-512f-4188-87ca-8dbe6271ebfc.jpg" width="100" height="100"/><br/><b>Ahlem Laajili</b><br/><a href="mailto:ahlem.laajili@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/ahlem-phantom"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719539-f2829a38-c204-40fc-881d-21b9f407aa84.jpg" width="100" height="100"/><br/><b>Skander Turki</b><br/><a href="mailto:skander.turki@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/skander-turki"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719519-36d5e110-659c-4c29-80fc-64e78d53e669.jpg" width="100" height="100"/><br/><b>Syrine Zahras</b><br/><a href="mailto:syrine.zahras@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/SyrineZahras"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719578-6479fcf3-e4f1-4db0-83d4-158b640552c1.jpg" width="100" height="100"/><br/><b>Hichem Ben Zammal</b><br/><a href="mailto:hichem.bemzammal@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/hichembenzammel"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719597-23028a28-1095-4472-af25-ec631c6c1307.jpg" width="100" height="100"/><br/><b>Nesrine Ben Mahmoud</b><br/><a href="mailto:nesrine.benmahmoud@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/nesrine1999"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> |
+| <div align="center"><img src="https://github.com/user-attachments/assets/bc8d9d03-ea86-4787-bfaf-ddbea17fcb7b" width="100" height="100"/><br/><b>Ahlem Laajili</b><br/><a href="mailto:ahlem.laajili@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/ahlem-phantom"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719539-f2829a38-c204-40fc-881d-21b9f407aa84.jpg" width="100" height="100"/><br/><b>Skander Turki</b><br/><a href="mailto:skander.turki@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/skander-turki"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719519-36d5e110-659c-4c29-80fc-64e78d53e669.jpg" width="100" height="100"/><br/><b>Syrine Zahras</b><br/><a href="mailto:syrine.zahras@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/SyrineZahras"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719578-6479fcf3-e4f1-4db0-83d4-158b640552c1.jpg" width="100" height="100"/><br/><b>Hichem Ben Zammal</b><br/><a href="mailto:hichem.bemzammal@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/hichembenzammel"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> | <div align="center"><img src="https://user-images.githubusercontent.com/78981558/157719597-23028a28-1095-4472-af25-ec631c6c1307.jpg" width="100" height="100"/><br/><b>Nesrine Ben Mahmoud</b><br/><a href="mailto:nesrine.benmahmoud@esprit.tn"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white"/></a> <a href="https://github.com/nesrine1999"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"/></a></div> |
 
 ---
 
 ## ⚠️ Deprecation Notice
-
-> **Important:** This project was built in 2022 and several of its core libraries and dependencies are now **outdated or deprecated**. The codebase across all four modules `react-app/`, `server/`, `py side/`, and `blockchain/`  requires updates before it can be safely run in a modern environment.
+> **Important:** This project prototype was built in 2022 and several of its core libraries and dependencies are now **outdated or deprecated**. The codebase across `react-app/`, `server/`, `py side/`, and `blockchain/` may require dependency updates or patches before it can be safely run in a modern environment.
 >
-> Known areas that need attention:
-> - **React**: project uses an older setup; migration to current React + Vite recommended, update of deprecated dependencies
-> - **Node.js / Express**: dependencies likely have known CVEs; run `npm audit` and update
-> - **Python / Flask**: AI service dependencies (TensorFlow, OpenCV, etc.) need version pinning and updates.
+> Known areas built with legacy 2022 configurations:
+> - **React**: Uses older setups without Vite.
+> - **Node.js / Express**: Some deprecated dependencies; `npm audit` is recommended.
+> - **Python / Flask**: AI service modules need careful version-pinning.
 >
-> A full dependency refresh is planned as part of **v3**. Contributions to modernize the stack are very welcome, see [Contributing](#-contributing).
+> While we do not officially support updates to this legacy public V1 anymore (as development has moved to the V2 startup), educational forks are welcome to tweak and learn from the code!
 
 ---
 
